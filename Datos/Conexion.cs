@@ -11,7 +11,8 @@ namespace Datos
     {
         protected static OracleConnection ObtenerConexion()
         {
-            return new OracleConnection("DATA SOURSE = xe; PASSWORD = MI3deenero; USER ID = SYSTEM;");
+            return new OracleConnection("Data Source=xe;User ID=PROYECTOK;Password=PROYECTOK;Unicode=True");
+            //Data Source=xe;User ID=system;Unicode=True
         }
 
     }

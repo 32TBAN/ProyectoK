@@ -13,5 +13,10 @@ namespace Negocio
         {
             return UsuarioDatos.BuscarUsuarioEmail(texts);
         }
+
+        public static string RecuperarContraseña(string text)
+        {
+            return UsuarioDatos.RecuperarContraseña(text);
+        }
     }
 }

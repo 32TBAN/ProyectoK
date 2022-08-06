@@ -30,10 +30,9 @@
         {
             this.rjTextBox_Usuario = new RJCodeAdvance.RJControls.RJTextBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label5 = new System.Windows.Forms.Label();
-            this.iconButton2 = new FontAwesome.Sharp.IconButton();
+            this.label_Error = new System.Windows.Forms.Label();
+            this.iconButton_Error = new FontAwesome.Sharp.IconButton();
             this.rjButton1 = new RJCodeAdvance.RJControls.RJButton();
-            this.label4 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
             this.rjTextBox_Contrasenia = new RJCodeAdvance.RJControls.RJTextBox();
@@ -41,6 +40,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.iconButton1 = new FontAwesome.Sharp.IconButton();
+            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -72,10 +72,10 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(89)))));
-            this.panel1.Controls.Add(this.label5);
-            this.panel1.Controls.Add(this.iconButton2);
+            this.panel1.Controls.Add(this.linkLabel1);
+            this.panel1.Controls.Add(this.label_Error);
+            this.panel1.Controls.Add(this.iconButton_Error);
             this.panel1.Controls.Add(this.rjButton1);
-            this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.pictureBox2);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.rjTextBox_Contrasenia);
@@ -88,32 +88,32 @@
             this.panel1.Size = new System.Drawing.Size(319, 420);
             this.panel1.TabIndex = 1;
             // 
-            // label5
+            // label_Error
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(65, 252);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(42, 19);
-            this.label5.TabIndex = 10;
-            this.label5.Text = "Error";
-            this.label5.Visible = false;
+            this.label_Error.AutoSize = true;
+            this.label_Error.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_Error.ForeColor = System.Drawing.Color.White;
+            this.label_Error.Location = new System.Drawing.Point(65, 252);
+            this.label_Error.Name = "label_Error";
+            this.label_Error.Size = new System.Drawing.Size(33, 14);
+            this.label_Error.TabIndex = 10;
+            this.label_Error.Text = "Error";
+            this.label_Error.Visible = false;
             // 
-            // iconButton2
+            // iconButton_Error
             // 
-            this.iconButton2.FlatAppearance.BorderSize = 0;
-            this.iconButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton2.IconChar = FontAwesome.Sharp.IconChar.Warning;
-            this.iconButton2.IconColor = System.Drawing.Color.Red;
-            this.iconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton2.IconSize = 25;
-            this.iconButton2.Location = new System.Drawing.Point(27, 250);
-            this.iconButton2.Name = "iconButton2";
-            this.iconButton2.Size = new System.Drawing.Size(37, 25);
-            this.iconButton2.TabIndex = 9;
-            this.iconButton2.UseVisualStyleBackColor = true;
-            this.iconButton2.Visible = false;
+            this.iconButton_Error.FlatAppearance.BorderSize = 0;
+            this.iconButton_Error.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton_Error.IconChar = FontAwesome.Sharp.IconChar.Warning;
+            this.iconButton_Error.IconColor = System.Drawing.Color.Red;
+            this.iconButton_Error.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton_Error.IconSize = 25;
+            this.iconButton_Error.Location = new System.Drawing.Point(27, 250);
+            this.iconButton_Error.Name = "iconButton_Error";
+            this.iconButton_Error.Size = new System.Drawing.Size(37, 25);
+            this.iconButton_Error.TabIndex = 9;
+            this.iconButton_Error.UseVisualStyleBackColor = true;
+            this.iconButton_Error.Visible = false;
             // 
             // rjButton1
             // 
@@ -134,17 +134,6 @@
             this.rjButton1.TextColor = System.Drawing.Color.White;
             this.rjButton1.UseVisualStyleBackColor = false;
             this.rjButton1.Click += new System.EventHandler(this.rjButton1_Click);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(66, 279);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(184, 19);
-            this.label4.TabIndex = 7;
-            this.label4.Text = "Olvidaste tu contraseña?";
             // 
             // pictureBox2
             // 
@@ -237,6 +226,19 @@
             this.iconButton1.UseVisualStyleBackColor = true;
             this.iconButton1.Click += new System.EventHandler(this.iconButton1_Click);
             // 
+            // linkLabel1
+            // 
+            this.linkLabel1.AutoSize = true;
+            this.linkLabel1.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkLabel1.LinkColor = System.Drawing.Color.White;
+            this.linkLabel1.Location = new System.Drawing.Point(66, 288);
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.Size = new System.Drawing.Size(184, 19);
+            this.linkLabel1.TabIndex = 11;
+            this.linkLabel1.TabStop = true;
+            this.linkLabel1.Text = "Olvidaste tu contraseña?";
+            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -248,6 +250,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Login";
             this.Opacity = 0.95D;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Login_MouseDown);
             this.panel1.ResumeLayout(false);
@@ -269,10 +272,10 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label2;
         private RJCodeAdvance.RJControls.RJButton rjButton1;
-        private System.Windows.Forms.Label label4;
         private FontAwesome.Sharp.IconButton iconButton1;
-        private System.Windows.Forms.Label label5;
-        private FontAwesome.Sharp.IconButton iconButton2;
+        private System.Windows.Forms.Label label_Error;
+        private FontAwesome.Sharp.IconButton iconButton_Error;
+        private System.Windows.Forms.LinkLabel linkLabel1;
     }
 }
 

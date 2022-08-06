@@ -13,6 +13,7 @@ namespace Entidades
         public string Nombre { get; set; }
         public string Apellido { get; set; }
         public string Email { get; set; }
+        public string Contraseña { get; set; }
         public byte[] Foto { get; set; }
         public string Perfil { get; set; }
         public UsuarioEntidad()
@@ -20,13 +21,14 @@ namespace Entidades
 
         }
 
-        public UsuarioEntidad(int id, string cedula, string nombre, string apellido, string email, byte[] foto, string perfil)
+        public UsuarioEntidad(int id, string cedula, string nombre, string apellido, string email, string contraseña, byte[] foto, string perfil)
         {
             Id = id;
             Cedula = cedula;
             Nombre = nombre;
             Apellido = apellido;
             Email = email;
+            Contraseña = contraseña;
             Foto = foto;
             Perfil = perfil;
         }

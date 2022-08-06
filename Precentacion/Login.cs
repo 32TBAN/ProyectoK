@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Negocio;
 using Entidades;
+using Precentacion;
 
 namespace Presentacion
 {
@@ -49,16 +50,54 @@ namespace Presentacion
 
         private bool ControlarDatos()
         {
-            usuarioEntidad = UsuarioNegocio.BuscarUsuarioEmail(rjTextBox_Usuario.Texts);
             if (rjTextBox_Usuario.Texts == "")
             {
-
+                MostrarError(0);
+                return false;
             }
             else if (rjTextBox_Contrasenia.Texts == "")
             {
-
+                MostrarError(1);
+                return false;
             }
+            else
+            {
+                usuarioEntidad = UsuarioNegocio.BuscarUsuarioEmail(rjTextBox_Usuario.Texts);
+                if (usuarioEntidad == null)
+                {
+                    usuarioEntidad = new UsuarioEntidad();
+                    MostrarError(2);
+                    return false;
+                }else if (usuarioEntidad.Id == 0)
+                {
+                    MostrarError(3);
+                    return false;
+                }
+                else if (usuarioEntidad.Contraseña != rjTextBox_Contrasenia.Texts)
+                {
+                    MostrarError(4);
+                    return false;
+                }
+            }
+            iconButton_Error.Visible = false;
+            label_Error.Visible = false;
             return true;
+        }
+
+        private void MostrarError(int v)
+        {
+            String[] errors = new string[] { "No ha ingresado su correo", "No ha ingresado su contraseña",
+            "Ha ocurrido un error","Usted no esta registrado","La contraseña no coincide"};
+            label_Error.Text = errors[v];
+            label_Error.ForeColor = Color.Red;
+            iconButton_Error.Visible = true;
+            label_Error.Visible = true;
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            RecuperarContraseña rc = new RecuperarContraseña();
+            rc.Show();
         }
     }
 }
