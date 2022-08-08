@@ -48,7 +48,7 @@ namespace Datos
             }
             catch (Exception)
             {
-                return null;
+                throw;
             }
         }
 
