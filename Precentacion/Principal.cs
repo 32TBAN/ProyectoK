@@ -315,5 +315,9 @@ namespace Precentacion
             iconButton_Form.IconColor = Color.FromArgb(242, 207, 141);
         }
 
+        private void iconButton8_Click(object sender, EventArgs e)
+        {
+            //TODO: SALIR FORM
+        }
     }
 }

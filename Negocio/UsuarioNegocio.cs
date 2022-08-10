@@ -32,5 +32,10 @@ namespace Negocio
                 return UsuarioDatos.Actualizar(usuarioEntidad);
 
         }
+
+        public static UsuarioEntidad BuscarUsuarioID(int idTecnico)
+        {
+            return UsuarioDatos.BuscarUsuarioID(idTecnico);
+        }
     }
 }

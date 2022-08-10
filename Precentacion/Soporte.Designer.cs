@@ -31,9 +31,9 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.iconButton2 = new FontAwesome.Sharp.IconButton();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
+            this.panel_Cabezera = new System.Windows.Forms.Panel();
             this.iconButton1 = new FontAwesome.Sharp.IconButton();
-            this.iconButton5 = new FontAwesome.Sharp.IconButton();
+            this.iconButton_Pincipal = new FontAwesome.Sharp.IconButton();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel_Contendor = new System.Windows.Forms.Panel();
             this.label_Solicitud = new System.Windows.Forms.Label();
@@ -57,7 +57,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.solicitudes1 = new Precentacion.Solicitudes();
             this.panel1.SuspendLayout();
-            this.panel3.SuspendLayout();
+            this.panel_Cabezera.SuspendLayout();
             this.panel_Contendor.SuspendLayout();
             this.panel_NuevaSolicitud.SuspendLayout();
             this.panel7.SuspendLayout();
@@ -107,18 +107,18 @@
             this.panel2.Size = new System.Drawing.Size(755, 1);
             this.panel2.TabIndex = 1;
             // 
-            // panel3
+            // panel_Cabezera
             // 
-            this.panel3.BackColor = System.Drawing.Color.White;
-            this.panel3.Controls.Add(this.solicitudes1);
-            this.panel3.Controls.Add(this.iconButton1);
-            this.panel3.Controls.Add(this.iconButton5);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel3.ForeColor = System.Drawing.Color.Black;
-            this.panel3.Location = new System.Drawing.Point(0, 45);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(755, 87);
-            this.panel3.TabIndex = 2;
+            this.panel_Cabezera.BackColor = System.Drawing.Color.White;
+            this.panel_Cabezera.Controls.Add(this.solicitudes1);
+            this.panel_Cabezera.Controls.Add(this.iconButton1);
+            this.panel_Cabezera.Controls.Add(this.iconButton_Pincipal);
+            this.panel_Cabezera.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel_Cabezera.ForeColor = System.Drawing.Color.Black;
+            this.panel_Cabezera.Location = new System.Drawing.Point(0, 45);
+            this.panel_Cabezera.Name = "panel_Cabezera";
+            this.panel_Cabezera.Size = new System.Drawing.Size(755, 87);
+            this.panel_Cabezera.TabIndex = 2;
             // 
             // iconButton1
             // 
@@ -126,7 +126,7 @@
             this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.iconButton1.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.iconButton1.ForeColor = System.Drawing.Color.Black;
-            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.Calendar;
+            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.EnvelopeCircleCheck;
             this.iconButton1.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(207)))), ((int)(((byte)(141)))));
             this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButton1.IconSize = 25;
@@ -135,37 +135,38 @@
             this.iconButton1.Margin = new System.Windows.Forms.Padding(2);
             this.iconButton1.Name = "iconButton1";
             this.iconButton1.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.iconButton1.Size = new System.Drawing.Size(183, 39);
+            this.iconButton1.Size = new System.Drawing.Size(181, 39);
             this.iconButton1.TabIndex = 17;
             this.iconButton1.Tag = "Agregar Perfil";
-            this.iconButton1.Text = "   Solicitudes Enviadas";
+            this.iconButton1.Text = "   Solicitudes Solucionadas";
             this.iconButton1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.iconButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.iconButton1.UseVisualStyleBackColor = true;
             this.iconButton1.Click += new System.EventHandler(this.iconButton1_Click);
             // 
-            // iconButton5
+            // iconButton_Pincipal
             // 
-            this.iconButton5.FlatAppearance.BorderSize = 0;
-            this.iconButton5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton5.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.iconButton5.ForeColor = System.Drawing.Color.Black;
-            this.iconButton5.IconChar = FontAwesome.Sharp.IconChar.Calendar;
-            this.iconButton5.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(207)))), ((int)(((byte)(141)))));
-            this.iconButton5.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton5.IconSize = 25;
-            this.iconButton5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton5.Location = new System.Drawing.Point(2, 1);
-            this.iconButton5.Margin = new System.Windows.Forms.Padding(2);
-            this.iconButton5.Name = "iconButton5";
-            this.iconButton5.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.iconButton5.Size = new System.Drawing.Size(183, 39);
-            this.iconButton5.TabIndex = 16;
-            this.iconButton5.Tag = "Agregar Perfil";
-            this.iconButton5.Text = "   Principal";
-            this.iconButton5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton5.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconButton5.UseVisualStyleBackColor = true;
+            this.iconButton_Pincipal.FlatAppearance.BorderSize = 0;
+            this.iconButton_Pincipal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton_Pincipal.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.iconButton_Pincipal.ForeColor = System.Drawing.Color.Black;
+            this.iconButton_Pincipal.IconChar = FontAwesome.Sharp.IconChar.Calendar;
+            this.iconButton_Pincipal.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(207)))), ((int)(((byte)(141)))));
+            this.iconButton_Pincipal.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton_Pincipal.IconSize = 25;
+            this.iconButton_Pincipal.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButton_Pincipal.Location = new System.Drawing.Point(2, 1);
+            this.iconButton_Pincipal.Margin = new System.Windows.Forms.Padding(2);
+            this.iconButton_Pincipal.Name = "iconButton_Pincipal";
+            this.iconButton_Pincipal.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.iconButton_Pincipal.Size = new System.Drawing.Size(181, 39);
+            this.iconButton_Pincipal.TabIndex = 16;
+            this.iconButton_Pincipal.Tag = "Agregar Perfil";
+            this.iconButton_Pincipal.Text = "   Principal";
+            this.iconButton_Pincipal.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButton_Pincipal.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.iconButton_Pincipal.UseVisualStyleBackColor = true;
+            this.iconButton_Pincipal.Click += new System.EventHandler(this.iconButton_Pincipal_Click);
             // 
             // panel4
             // 
@@ -216,10 +217,11 @@
             this.panel_NuevaSolicitud.Controls.Add(this.label2);
             this.panel_NuevaSolicitud.Controls.Add(this.textBox_Asunto);
             this.panel_NuevaSolicitud.Controls.Add(this.panel7);
-            this.panel_NuevaSolicitud.Location = new System.Drawing.Point(336, -1);
+            this.panel_NuevaSolicitud.Location = new System.Drawing.Point(336, 5);
             this.panel_NuevaSolicitud.Name = "panel_NuevaSolicitud";
-            this.panel_NuevaSolicitud.Size = new System.Drawing.Size(407, 360);
+            this.panel_NuevaSolicitud.Size = new System.Drawing.Size(407, 354);
             this.panel_NuevaSolicitud.TabIndex = 1;
+            this.panel_NuevaSolicitud.Visible = false;
             // 
             // rjComboBox_Area
             // 
@@ -475,13 +477,13 @@
             this.ClientSize = new System.Drawing.Size(755, 495);
             this.Controls.Add(this.panel_Contendor);
             this.Controls.Add(this.panel4);
-            this.Controls.Add(this.panel3);
+            this.Controls.Add(this.panel_Cabezera);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "Soporte";
             this.Text = "Soporte";
             this.panel1.ResumeLayout(false);
-            this.panel3.ResumeLayout(false);
+            this.panel_Cabezera.ResumeLayout(false);
             this.panel_Contendor.ResumeLayout(false);
             this.panel_Contendor.PerformLayout();
             this.panel_NuevaSolicitud.ResumeLayout(false);
@@ -496,10 +498,10 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel panel_Cabezera;
         private System.Windows.Forms.Panel panel4;
         private FontAwesome.Sharp.IconButton iconButton1;
-        private FontAwesome.Sharp.IconButton iconButton5;
+        private FontAwesome.Sharp.IconButton iconButton_Pincipal;
         private System.Windows.Forms.Panel panel_Contendor;
         private FontAwesome.Sharp.IconButton iconButton2;
         private System.Windows.Forms.Panel panel_NuevaSolicitud;

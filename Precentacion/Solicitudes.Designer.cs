@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.label_Asunto = new System.Windows.Forms.Label();
-            this.label_Descripcion = new System.Windows.Forms.Label();
+            this.label_Emisor = new System.Windows.Forms.Label();
             this.checkBox_Seleccionar = new System.Windows.Forms.CheckBox();
+            this.label_Descripcion = new System.Windows.Forms.Label();
+            this.label_Asunto = new System.Windows.Forms.Label();
             this.label_Fecha = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.label_Emisor = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -43,16 +43,16 @@
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 5;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 28.99408F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 71.00592F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 130F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 305F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 146F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 37.7551F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 62.2449F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 198F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 310F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 149F));
             this.tableLayoutPanel1.Controls.Add(this.label_Emisor, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.checkBox_Seleccionar, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.label_Fecha, 3, 0);
-            this.tableLayoutPanel1.Controls.Add(this.label_Asunto, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.label_Descripcion, 3, 0);
+            this.tableLayoutPanel1.Controls.Add(this.label_Asunto, 2, 0);
+            this.tableLayoutPanel1.Controls.Add(this.label_Fecha, 4, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -61,27 +61,16 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(755, 41);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
-            // label_Asunto
+            // label_Emisor
             // 
-            this.label_Asunto.AutoSize = true;
-            this.label_Asunto.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Asunto.Location = new System.Drawing.Point(176, 0);
-            this.label_Asunto.Name = "label_Asunto";
-            this.label_Asunto.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
-            this.label_Asunto.Size = new System.Drawing.Size(60, 29);
-            this.label_Asunto.TabIndex = 4;
-            this.label_Asunto.Text = "Asunto";
-            // 
-            // label_Descripcion
-            // 
-            this.label_Descripcion.AutoSize = true;
-            this.label_Descripcion.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Descripcion.Location = new System.Drawing.Point(306, 0);
-            this.label_Descripcion.Name = "label_Descripcion";
-            this.label_Descripcion.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
-            this.label_Descripcion.Size = new System.Drawing.Size(93, 29);
-            this.label_Descripcion.TabIndex = 1;
-            this.label_Descripcion.Text = "Descripcion";
+            this.label_Emisor.AutoSize = true;
+            this.label_Emisor.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_Emisor.Location = new System.Drawing.Point(39, 0);
+            this.label_Emisor.Name = "label_Emisor";
+            this.label_Emisor.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
+            this.label_Emisor.Size = new System.Drawing.Size(53, 41);
+            this.label_Emisor.TabIndex = 5;
+            this.label_Emisor.Text = "Emisor";
             // 
             // checkBox_Seleccionar
             // 
@@ -89,15 +78,37 @@
             this.checkBox_Seleccionar.Location = new System.Drawing.Point(3, 3);
             this.checkBox_Seleccionar.Name = "checkBox_Seleccionar";
             this.checkBox_Seleccionar.Padding = new System.Windows.Forms.Padding(10);
-            this.checkBox_Seleccionar.Size = new System.Drawing.Size(35, 34);
+            this.checkBox_Seleccionar.Size = new System.Drawing.Size(30, 34);
             this.checkBox_Seleccionar.TabIndex = 0;
             this.checkBox_Seleccionar.UseVisualStyleBackColor = true;
+            // 
+            // label_Descripcion
+            // 
+            this.label_Descripcion.AutoSize = true;
+            this.label_Descripcion.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_Descripcion.Location = new System.Drawing.Point(298, 0);
+            this.label_Descripcion.Name = "label_Descripcion";
+            this.label_Descripcion.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
+            this.label_Descripcion.Size = new System.Drawing.Size(93, 29);
+            this.label_Descripcion.TabIndex = 1;
+            this.label_Descripcion.Text = "Descripcion";
+            // 
+            // label_Asunto
+            // 
+            this.label_Asunto.AutoSize = true;
+            this.label_Asunto.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_Asunto.Location = new System.Drawing.Point(100, 0);
+            this.label_Asunto.Name = "label_Asunto";
+            this.label_Asunto.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
+            this.label_Asunto.Size = new System.Drawing.Size(60, 29);
+            this.label_Asunto.TabIndex = 4;
+            this.label_Asunto.Text = "Asunto";
             // 
             // label_Fecha
             // 
             this.label_Fecha.AutoSize = true;
             this.label_Fecha.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Fecha.Location = new System.Drawing.Point(611, 0);
+            this.label_Fecha.Location = new System.Drawing.Point(608, 0);
             this.label_Fecha.Name = "label_Fecha";
             this.label_Fecha.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
             this.label_Fecha.Size = new System.Drawing.Size(53, 29);
@@ -125,17 +136,6 @@
             this.label4.Size = new System.Drawing.Size(53, 24);
             this.label4.TabIndex = 4;
             this.label4.Text = "holasdasdasd";
-            // 
-            // label_Emisor
-            // 
-            this.label_Emisor.AutoSize = true;
-            this.label_Emisor.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Emisor.Location = new System.Drawing.Point(53, 0);
-            this.label_Emisor.Name = "label_Emisor";
-            this.label_Emisor.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
-            this.label_Emisor.Size = new System.Drawing.Size(59, 29);
-            this.label_Emisor.TabIndex = 5;
-            this.label_Emisor.Text = "Emisor";
             // 
             // panel1
             // 
@@ -169,7 +169,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label_Asunto;
-        private System.Windows.Forms.Label label_Emisor;
         private System.Windows.Forms.Panel panel1;
+        public System.Windows.Forms.Label label_Emisor;
     }
 }

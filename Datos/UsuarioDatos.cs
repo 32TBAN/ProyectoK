@@ -184,5 +184,47 @@ namespace Datos
                 return "Error no se ha encontrado su correo";
             }
         }
+
+        public static UsuarioEntidad BuscarUsuarioID(int idTecnico)
+        {
+            try
+            {
+                UsuarioEntidad usuarioEntidad = new UsuarioEntidad();
+
+                using (OracleConnection connection = Conexion.ObtenerConexion())
+                {
+                    connection.Open();
+                    using (OracleCommand cmd = new OracleCommand("BuscarUsuarioID", connection))
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.Add("idU", OracleType.Number).Value = idTecnico;
+                        cmd.Parameters.Add("buscar", OracleType.Cursor).Direction = ParameterDirection.Output;
+
+                        using (var dr = cmd.ExecuteReader())
+                        {
+                            if (dr.Read())
+                            {
+                                usuarioEntidad.Id = Convert.ToInt16(dr["ID"].ToString());
+                                usuarioEntidad.Cedula = dr["CEDULA"].ToString();
+                                usuarioEntidad.Nombre = dr["NOMBRE"].ToString();
+                                usuarioEntidad.Apellido = dr["APELLIDO"].ToString();
+                                usuarioEntidad.Email = dr["EMAIL"].ToString();
+                                usuarioEntidad.Perfil = dr["PERFIL"].ToString();
+                                usuarioEntidad.Contraseña = dr["CONTRASE"].ToString();
+                            }
+                        }
+
+                    }
+                }
+
+                usuarioEntidad.Perfil = TipoPerfil(usuarioEntidad.Perfil);
+
+                return usuarioEntidad;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
     }
 }

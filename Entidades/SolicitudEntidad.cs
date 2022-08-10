@@ -18,6 +18,7 @@ namespace Entidades
         public string Area { get; set; }
         public DateTime Fecha { get; set; }
         public bool Estado { get; set; }
+        public string NombreTecnico { get; set; }
         public SolicitudEntidad()
         {
 
