@@ -44,11 +44,114 @@ namespace Datos
                     }
                 }
 
+                usuarioEntidad.Perfil = TipoPerfil(usuarioEntidad.Perfil);
+ 
                 return usuarioEntidad;
             }
             catch (Exception)
             {
                 throw;
+            }
+        }
+
+        public static UsuarioEntidad Actualizar(UsuarioEntidad usuarioEntidad)
+        {
+            throw new NotImplementedException();
+        }
+
+        public static UsuarioEntidad Guardar(UsuarioEntidad usuarioEntidad)
+        {
+            try
+            {
+                using (OracleConnection connection = Conexion.ObtenerConexion())
+                {
+                    connection.Open();
+                    using (OracleCommand cmd = new OracleCommand("GuardarUsuarios", connection))
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.Add("cedulaG", OracleType.VarChar).Value = usuarioEntidad.Cedula;
+                        cmd.Parameters.Add("nombreG", OracleType.VarChar).Value = usuarioEntidad.Nombre;
+                        cmd.Parameters.Add("apellidoG", OracleType.VarChar).Value = usuarioEntidad.Apellido;
+                        cmd.Parameters.Add("emailG", OracleType.VarChar).Value = usuarioEntidad.Email;
+                        cmd.Parameters.Add("fotoG", OracleType.Blob).Value = usuarioEntidad.Foto;
+                        cmd.Parameters.Add("perfilG", OracleType.VarChar).Value = usuarioEntidad.Perfil;
+                        cmd.Parameters.Add("contraseG", OracleType.VarChar).Value = usuarioEntidad.Contraseña;
+
+                        cmd.ExecuteNonQuery();
+                    }
+                }
+                return usuarioEntidad;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+
+        }
+
+        public static UsuarioEntidad BuscarUsuarioCedula(string texts)
+        {
+            try
+            {
+                UsuarioEntidad usuarioEntidad = new UsuarioEntidad();
+
+                using (OracleConnection connection = Conexion.ObtenerConexion())
+                {
+                    connection.Open();
+                    using (OracleCommand cmd = new OracleCommand("BuscarUsuarioCedula", connection))
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.Add("cedula", OracleType.VarChar).Value = texts;
+                        cmd.Parameters.Add("buscar", OracleType.Cursor).Direction = ParameterDirection.Output;
+
+                        using (var dr = cmd.ExecuteReader())
+                        {
+                            if (dr.Read())
+                            {
+                                usuarioEntidad.Id = Convert.ToInt16(dr["ID"].ToString());
+                                usuarioEntidad.Cedula = dr["CEDULA"].ToString();
+                                usuarioEntidad.Nombre = dr["NOMBRE"].ToString();
+                                usuarioEntidad.Apellido = dr["APELLIDO"].ToString();
+                                usuarioEntidad.Email = dr["EMAIL"].ToString();
+                                usuarioEntidad.Perfil = dr["PERFIL"].ToString();
+                                usuarioEntidad.Contraseña = dr["CONTRASE"].ToString();
+                            }
+                        }
+
+                    }
+                }
+
+                usuarioEntidad.Perfil = TipoPerfil(usuarioEntidad.Perfil);
+
+                return usuarioEntidad;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+        private static string TipoPerfil(string perfil)
+        {
+            if (perfil == "G")
+            {
+                return "Gerente";
+            }
+            else if (perfil == "J")
+            {
+                return "Jefe Tecnico";
+            }
+            else if (perfil == "T")
+            {
+                return  "Tecnico";
+            }
+            else if (perfil == "U")
+            {
+                return "Usuario";
+            }
+            else
+            {
+                return "None";
             }
         }
 

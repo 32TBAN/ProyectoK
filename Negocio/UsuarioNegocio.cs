@@ -18,5 +18,19 @@ namespace Negocio
         {
             return UsuarioDatos.RecuperarContraseña(text);
         }
+
+        public static UsuarioEntidad BuscarUsuarioCedula(string texts)
+        {
+            return UsuarioDatos.BuscarUsuarioCedula(texts);
+        }
+
+        public static UsuarioEntidad Guardar(UsuarioEntidad usuarioEntidad)
+        {
+            if (usuarioEntidad.Id == 0)
+                return UsuarioDatos.Guardar(usuarioEntidad);
+            else
+                return UsuarioDatos.Actualizar(usuarioEntidad);
+
+        }
     }
 }
