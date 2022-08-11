@@ -195,6 +195,7 @@ namespace Precentacion
                         MessageBox.Show("Se ha modificado su solicitud");
                         Limpiar();
                         panel_NuevaSolicitud.Visible = false;
+                        CargarDatos(solicitudEntidad.Id);
                     }
                     else
                     {

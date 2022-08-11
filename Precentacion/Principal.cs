@@ -195,7 +195,7 @@ namespace Precentacion
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            AbrirFormularios(new Perfil());
+            AbrirFormularios(new Perfil(usuarioEntidad));
             Reset();
         }
 
@@ -318,6 +318,11 @@ namespace Precentacion
         private void iconButton8_Click(object sender, EventArgs e)
         {
             //TODO: SALIR FORM
+        }
+
+        private void iconButton1_Click_1(object sender, EventArgs e)
+        {
+            //TODO: Asignar una solicitud a un tecnico
         }
     }
 }

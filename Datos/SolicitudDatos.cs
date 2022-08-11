@@ -94,10 +94,7 @@ namespace Datos
         public static SolicitudEntidad Actualizar(SolicitudEntidad solicitudEntidad)
         {
             try
-            {
-
-                SolicitudEntidad solicitud = new SolicitudEntidad();
-
+            { 
                 using (OracleConnection connection = Conexion.ObtenerConexion())
                 {
                     connection.Open();
@@ -114,7 +111,7 @@ namespace Datos
                         cmd.ExecuteNonQuery();
                     }
                 }
-                return solicitud;
+                return solicitudEntidad;
 
             }
             catch (Exception)
@@ -170,6 +167,31 @@ namespace Datos
         }
 
         public static bool EliminarSolicitud(int id)
+        {
+            try
+            {
+                int filasAfectadas = 0;
+                using (OracleConnection connection = Conexion.ObtenerConexion())
+                {
+                    connection.Open();
+                    using (OracleCommand cmd = new OracleCommand("EliminarSolicitud", connection))
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.Add("idS", OracleType.Number).Value = id;
+
+                        filasAfectadas = Convert.ToInt32(cmd.ExecuteNonQuery());
+                    }
+                }
+                return filasAfectadas>0;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+        public static List<SolicitudEntidad> ListaSolicitudesCompleta()
         {
             throw new NotImplementedException();
         }

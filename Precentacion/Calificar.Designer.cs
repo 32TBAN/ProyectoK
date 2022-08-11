@@ -40,27 +40,27 @@
             this.label_Coreo = new System.Windows.Forms.Label();
             this.label_Fecha_Envio = new System.Windows.Forms.Label();
             this.panel_Min = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label_Encargado = new System.Windows.Forms.Label();
-            this.label_Para = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label_Fecha = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
+            this.label_ENCARGO = new System.Windows.Forms.Label();
             this.label_AsuntoMin = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
+            this.label_Fecha = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label_Para = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label_Encargado = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel_Calificasion = new System.Windows.Forms.Panel();
-            this.label_ENCARGO = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.iconButton6 = new FontAwesome.Sharp.IconButton();
-            this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
-            this.iconPictureBox2 = new FontAwesome.Sharp.IconPictureBox();
-            this.iconPictureBox3 = new FontAwesome.Sharp.IconPictureBox();
-            this.iconPictureBox4 = new FontAwesome.Sharp.IconPictureBox();
-            this.iconPictureBox5 = new FontAwesome.Sharp.IconPictureBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.Enviar = new RJCodeAdvance.RJControls.RJButton();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.iconPictureBox5 = new FontAwesome.Sharp.IconPictureBox();
+            this.iconPictureBox4 = new FontAwesome.Sharp.IconPictureBox();
+            this.iconPictureBox3 = new FontAwesome.Sharp.IconPictureBox();
+            this.iconPictureBox2 = new FontAwesome.Sharp.IconPictureBox();
+            this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
+            this.iconButton6 = new FontAwesome.Sharp.IconButton();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.panel_NuevaSolicitud = new System.Windows.Forms.Panel();
             this.rjComboBox_Area = new RJCodeAdvance.RJControls.RJComboBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -82,11 +82,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.rjCircularPictureBox1)).BeginInit();
             this.panel_Min.SuspendLayout();
             this.panel_Calificasion.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
             this.panel_NuevaSolicitud.SuspendLayout();
             this.panel7.SuspendLayout();
             this.SuspendLayout();
@@ -230,6 +230,7 @@
             this.label_Fecha_Envio.Size = new System.Drawing.Size(64, 13);
             this.label_Fecha_Envio.TabIndex = 15;
             this.label_Fecha_Envio.Text = "FechaEnvio";
+            this.label_Fecha_Envio.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // panel_Min
             // 
@@ -248,62 +249,16 @@
             this.panel_Min.TabIndex = 16;
             this.panel_Min.Visible = false;
             // 
-            // label1
+            // label_ENCARGO
             // 
-            this.label1.AutoSize = true;
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(144)))), ((int)(((byte)(131)))));
-            this.label1.Location = new System.Drawing.Point(3, 8);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(59, 13);
-            this.label1.TabIndex = 15;
-            this.label1.Text = "Encargado";
-            // 
-            // label_Encargado
-            // 
-            this.label_Encargado.AutoSize = true;
-            this.label_Encargado.Location = new System.Drawing.Point(14, 21);
-            this.label_Encargado.Name = "label_Encargado";
-            this.label_Encargado.Size = new System.Drawing.Size(59, 13);
-            this.label_Encargado.TabIndex = 16;
-            this.label_Encargado.Text = "Encargado";
-            // 
-            // label_Para
-            // 
-            this.label_Para.AutoSize = true;
-            this.label_Para.Location = new System.Drawing.Point(14, 59);
-            this.label_Para.Name = "label_Para";
-            this.label_Para.Size = new System.Drawing.Size(59, 13);
-            this.label_Para.TabIndex = 18;
-            this.label_Para.Text = "Encargado";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(144)))), ((int)(((byte)(131)))));
-            this.label5.Location = new System.Drawing.Point(3, 46);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(29, 13);
-            this.label5.TabIndex = 17;
-            this.label5.Text = "Para";
-            // 
-            // label_Fecha
-            // 
-            this.label_Fecha.AutoSize = true;
-            this.label_Fecha.Location = new System.Drawing.Point(14, 96);
-            this.label_Fecha.Name = "label_Fecha";
-            this.label_Fecha.Size = new System.Drawing.Size(59, 13);
-            this.label_Fecha.TabIndex = 20;
-            this.label_Fecha.Text = "Encargado";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(144)))), ((int)(((byte)(131)))));
-            this.label7.Location = new System.Drawing.Point(3, 83);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(37, 13);
-            this.label7.TabIndex = 19;
-            this.label7.Text = "Fecha";
+            this.label_ENCARGO.AutoSize = true;
+            this.label_ENCARGO.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_ENCARGO.Location = new System.Drawing.Point(3, 181);
+            this.label_ENCARGO.Name = "label_ENCARGO";
+            this.label_ENCARGO.Size = new System.Drawing.Size(150, 15);
+            this.label_ENCARGO.TabIndex = 23;
+            this.label_ENCARGO.Text = "No hay un encargado aun";
+            this.label_ENCARGO.Visible = false;
             // 
             // label_AsuntoMin
             // 
@@ -324,6 +279,63 @@
             this.label9.TabIndex = 21;
             this.label9.Text = "Asunto";
             // 
+            // label_Fecha
+            // 
+            this.label_Fecha.AutoSize = true;
+            this.label_Fecha.Location = new System.Drawing.Point(14, 96);
+            this.label_Fecha.Name = "label_Fecha";
+            this.label_Fecha.Size = new System.Drawing.Size(59, 13);
+            this.label_Fecha.TabIndex = 20;
+            this.label_Fecha.Text = "Encargado";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(144)))), ((int)(((byte)(131)))));
+            this.label7.Location = new System.Drawing.Point(3, 83);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(37, 13);
+            this.label7.TabIndex = 19;
+            this.label7.Text = "Fecha";
+            // 
+            // label_Para
+            // 
+            this.label_Para.AutoSize = true;
+            this.label_Para.Location = new System.Drawing.Point(14, 59);
+            this.label_Para.Name = "label_Para";
+            this.label_Para.Size = new System.Drawing.Size(59, 13);
+            this.label_Para.TabIndex = 18;
+            this.label_Para.Text = "Encargado";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(144)))), ((int)(((byte)(131)))));
+            this.label5.Location = new System.Drawing.Point(3, 46);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(29, 13);
+            this.label5.TabIndex = 17;
+            this.label5.Text = "Para";
+            // 
+            // label_Encargado
+            // 
+            this.label_Encargado.AutoSize = true;
+            this.label_Encargado.Location = new System.Drawing.Point(14, 21);
+            this.label_Encargado.Name = "label_Encargado";
+            this.label_Encargado.Size = new System.Drawing.Size(59, 13);
+            this.label_Encargado.TabIndex = 16;
+            this.label_Encargado.Text = "Encargado";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(144)))), ((int)(((byte)(131)))));
+            this.label1.Location = new System.Drawing.Point(3, 8);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(59, 13);
+            this.label1.TabIndex = 15;
+            this.label1.Text = "Encargado";
+            // 
             // panel_Calificasion
             // 
             this.panel_Calificasion.Controls.Add(this.Enviar);
@@ -343,141 +355,6 @@
             this.panel_Calificasion.TabIndex = 17;
             this.panel_Calificasion.Visible = false;
             // 
-            // label_ENCARGO
-            // 
-            this.label_ENCARGO.AutoSize = true;
-            this.label_ENCARGO.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_ENCARGO.Location = new System.Drawing.Point(3, 181);
-            this.label_ENCARGO.Name = "label_ENCARGO";
-            this.label_ENCARGO.Size = new System.Drawing.Size(150, 15);
-            this.label_ENCARGO.TabIndex = 23;
-            this.label_ENCARGO.Text = "No hay un encargado aun";
-            this.label_ENCARGO.Visible = false;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Roboto", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(119, 9);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(480, 25);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "Antes podria darnos una valoracion de el servicio";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(315, 60);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(81, 23);
-            this.label4.TabIndex = 1;
-            this.label4.Text = "Calificar";
-            // 
-            // iconButton6
-            // 
-            this.iconButton6.FlatAppearance.BorderSize = 0;
-            this.iconButton6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton6.IconChar = FontAwesome.Sharp.IconChar.X;
-            this.iconButton6.IconColor = System.Drawing.Color.Black;
-            this.iconButton6.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton6.IconSize = 20;
-            this.iconButton6.Location = new System.Drawing.Point(685, 3);
-            this.iconButton6.Name = "iconButton6";
-            this.iconButton6.Size = new System.Drawing.Size(22, 23);
-            this.iconButton6.TabIndex = 2;
-            this.iconButton6.UseVisualStyleBackColor = true;
-            this.iconButton6.Click += new System.EventHandler(this.iconButton6_Click);
-            // 
-            // iconPictureBox1
-            // 
-            this.iconPictureBox1.BackColor = System.Drawing.Color.White;
-            this.iconPictureBox1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.Star;
-            this.iconPictureBox1.IconColor = System.Drawing.SystemColors.ControlText;
-            this.iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconPictureBox1.IconSize = 55;
-            this.iconPictureBox1.Location = new System.Drawing.Point(199, 89);
-            this.iconPictureBox1.Name = "iconPictureBox1";
-            this.iconPictureBox1.Size = new System.Drawing.Size(55, 57);
-            this.iconPictureBox1.TabIndex = 4;
-            this.iconPictureBox1.TabStop = false;
-            // 
-            // iconPictureBox2
-            // 
-            this.iconPictureBox2.BackColor = System.Drawing.Color.White;
-            this.iconPictureBox2.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.iconPictureBox2.IconChar = FontAwesome.Sharp.IconChar.Star;
-            this.iconPictureBox2.IconColor = System.Drawing.SystemColors.ControlText;
-            this.iconPictureBox2.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconPictureBox2.IconSize = 55;
-            this.iconPictureBox2.Location = new System.Drawing.Point(269, 89);
-            this.iconPictureBox2.Name = "iconPictureBox2";
-            this.iconPictureBox2.Size = new System.Drawing.Size(55, 57);
-            this.iconPictureBox2.TabIndex = 5;
-            this.iconPictureBox2.TabStop = false;
-            // 
-            // iconPictureBox3
-            // 
-            this.iconPictureBox3.BackColor = System.Drawing.Color.White;
-            this.iconPictureBox3.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.iconPictureBox3.IconChar = FontAwesome.Sharp.IconChar.Star;
-            this.iconPictureBox3.IconColor = System.Drawing.SystemColors.ControlText;
-            this.iconPictureBox3.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconPictureBox3.IconSize = 55;
-            this.iconPictureBox3.Location = new System.Drawing.Point(339, 90);
-            this.iconPictureBox3.Name = "iconPictureBox3";
-            this.iconPictureBox3.Size = new System.Drawing.Size(55, 57);
-            this.iconPictureBox3.TabIndex = 6;
-            this.iconPictureBox3.TabStop = false;
-            // 
-            // iconPictureBox4
-            // 
-            this.iconPictureBox4.BackColor = System.Drawing.Color.White;
-            this.iconPictureBox4.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.iconPictureBox4.IconChar = FontAwesome.Sharp.IconChar.Star;
-            this.iconPictureBox4.IconColor = System.Drawing.SystemColors.ControlText;
-            this.iconPictureBox4.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconPictureBox4.IconSize = 55;
-            this.iconPictureBox4.Location = new System.Drawing.Point(413, 90);
-            this.iconPictureBox4.Name = "iconPictureBox4";
-            this.iconPictureBox4.Size = new System.Drawing.Size(55, 57);
-            this.iconPictureBox4.TabIndex = 7;
-            this.iconPictureBox4.TabStop = false;
-            // 
-            // iconPictureBox5
-            // 
-            this.iconPictureBox5.BackColor = System.Drawing.Color.White;
-            this.iconPictureBox5.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.iconPictureBox5.IconChar = FontAwesome.Sharp.IconChar.Star;
-            this.iconPictureBox5.IconColor = System.Drawing.SystemColors.ControlText;
-            this.iconPictureBox5.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconPictureBox5.IconSize = 55;
-            this.iconPictureBox5.Location = new System.Drawing.Point(483, 89);
-            this.iconPictureBox5.Name = "iconPictureBox5";
-            this.iconPictureBox5.Size = new System.Drawing.Size(55, 57);
-            this.iconPictureBox5.TabIndex = 8;
-            this.iconPictureBox5.TabStop = false;
-            this.iconPictureBox5.MouseHover += new System.EventHandler(this.iconPictureBox5_MouseHover);
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(195, 159);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(142, 19);
-            this.label6.TabIndex = 9;
-            this.label6.Text = "Enviar Comentario";
-            // 
-            // richTextBox1
-            // 
-            this.richTextBox1.Location = new System.Drawing.Point(343, 161);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(217, 48);
-            this.richTextBox1.TabIndex = 10;
-            this.richTextBox1.Text = "";
-            // 
             // Enviar
             // 
             this.Enviar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(97)))), ((int)(((byte)(209)))));
@@ -496,6 +373,130 @@
             this.Enviar.Text = "Enviar";
             this.Enviar.TextColor = System.Drawing.Color.White;
             this.Enviar.UseVisualStyleBackColor = false;
+            // 
+            // richTextBox1
+            // 
+            this.richTextBox1.Location = new System.Drawing.Point(343, 161);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.Size = new System.Drawing.Size(217, 48);
+            this.richTextBox1.TabIndex = 10;
+            this.richTextBox1.Text = "";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(195, 159);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(142, 19);
+            this.label6.TabIndex = 9;
+            this.label6.Text = "Enviar Comentario";
+            // 
+            // iconPictureBox5
+            // 
+            this.iconPictureBox5.BackColor = System.Drawing.Color.White;
+            this.iconPictureBox5.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.iconPictureBox5.IconChar = FontAwesome.Sharp.IconChar.Star;
+            this.iconPictureBox5.IconColor = System.Drawing.SystemColors.ControlText;
+            this.iconPictureBox5.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconPictureBox5.IconSize = 55;
+            this.iconPictureBox5.Location = new System.Drawing.Point(483, 89);
+            this.iconPictureBox5.Name = "iconPictureBox5";
+            this.iconPictureBox5.Size = new System.Drawing.Size(55, 57);
+            this.iconPictureBox5.TabIndex = 8;
+            this.iconPictureBox5.TabStop = false;
+            this.iconPictureBox5.MouseHover += new System.EventHandler(this.iconPictureBox5_MouseHover);
+            // 
+            // iconPictureBox4
+            // 
+            this.iconPictureBox4.BackColor = System.Drawing.Color.White;
+            this.iconPictureBox4.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.iconPictureBox4.IconChar = FontAwesome.Sharp.IconChar.Star;
+            this.iconPictureBox4.IconColor = System.Drawing.SystemColors.ControlText;
+            this.iconPictureBox4.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconPictureBox4.IconSize = 55;
+            this.iconPictureBox4.Location = new System.Drawing.Point(413, 90);
+            this.iconPictureBox4.Name = "iconPictureBox4";
+            this.iconPictureBox4.Size = new System.Drawing.Size(55, 57);
+            this.iconPictureBox4.TabIndex = 7;
+            this.iconPictureBox4.TabStop = false;
+            // 
+            // iconPictureBox3
+            // 
+            this.iconPictureBox3.BackColor = System.Drawing.Color.White;
+            this.iconPictureBox3.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.iconPictureBox3.IconChar = FontAwesome.Sharp.IconChar.Star;
+            this.iconPictureBox3.IconColor = System.Drawing.SystemColors.ControlText;
+            this.iconPictureBox3.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconPictureBox3.IconSize = 55;
+            this.iconPictureBox3.Location = new System.Drawing.Point(339, 90);
+            this.iconPictureBox3.Name = "iconPictureBox3";
+            this.iconPictureBox3.Size = new System.Drawing.Size(55, 57);
+            this.iconPictureBox3.TabIndex = 6;
+            this.iconPictureBox3.TabStop = false;
+            // 
+            // iconPictureBox2
+            // 
+            this.iconPictureBox2.BackColor = System.Drawing.Color.White;
+            this.iconPictureBox2.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.iconPictureBox2.IconChar = FontAwesome.Sharp.IconChar.Star;
+            this.iconPictureBox2.IconColor = System.Drawing.SystemColors.ControlText;
+            this.iconPictureBox2.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconPictureBox2.IconSize = 55;
+            this.iconPictureBox2.Location = new System.Drawing.Point(269, 89);
+            this.iconPictureBox2.Name = "iconPictureBox2";
+            this.iconPictureBox2.Size = new System.Drawing.Size(55, 57);
+            this.iconPictureBox2.TabIndex = 5;
+            this.iconPictureBox2.TabStop = false;
+            // 
+            // iconPictureBox1
+            // 
+            this.iconPictureBox1.BackColor = System.Drawing.Color.White;
+            this.iconPictureBox1.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.Star;
+            this.iconPictureBox1.IconColor = System.Drawing.SystemColors.ControlText;
+            this.iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconPictureBox1.IconSize = 55;
+            this.iconPictureBox1.Location = new System.Drawing.Point(199, 89);
+            this.iconPictureBox1.Name = "iconPictureBox1";
+            this.iconPictureBox1.Size = new System.Drawing.Size(55, 57);
+            this.iconPictureBox1.TabIndex = 4;
+            this.iconPictureBox1.TabStop = false;
+            // 
+            // iconButton6
+            // 
+            this.iconButton6.FlatAppearance.BorderSize = 0;
+            this.iconButton6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton6.IconChar = FontAwesome.Sharp.IconChar.X;
+            this.iconButton6.IconColor = System.Drawing.Color.Black;
+            this.iconButton6.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton6.IconSize = 20;
+            this.iconButton6.Location = new System.Drawing.Point(685, 3);
+            this.iconButton6.Name = "iconButton6";
+            this.iconButton6.Size = new System.Drawing.Size(22, 23);
+            this.iconButton6.TabIndex = 2;
+            this.iconButton6.UseVisualStyleBackColor = true;
+            this.iconButton6.Click += new System.EventHandler(this.iconButton6_Click);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(315, 60);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(81, 23);
+            this.label4.TabIndex = 1;
+            this.label4.Text = "Calificar";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Roboto", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(119, 9);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(480, 25);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "Antes podria darnos una valoracion de el servicio";
             // 
             // panel_NuevaSolicitud
             // 
@@ -781,11 +782,11 @@
             this.panel_Min.PerformLayout();
             this.panel_Calificasion.ResumeLayout(false);
             this.panel_Calificasion.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).EndInit();
             this.panel_NuevaSolicitud.ResumeLayout(false);
             this.panel_NuevaSolicitud.PerformLayout();
             this.panel7.ResumeLayout(false);

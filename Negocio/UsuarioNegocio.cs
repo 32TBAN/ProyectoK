@@ -37,5 +37,10 @@ namespace Negocio
         {
             return UsuarioDatos.BuscarUsuarioID(idTecnico);
         }
+
+        public static List<UsuarioEntidad> ListaUsuarios()
+        {
+            return UsuarioDatos.ListaUsuarios();
+        }
     }
 }

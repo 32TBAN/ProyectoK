@@ -32,5 +32,10 @@ namespace Negocio
         {
             return SolicitudDatos.ListaSolicitudes(idUsu);
         }
+
+        public static List<SolicitudEntidad> ListaSolicitudesCompleta()
+        {
+            return SolicitudDatos.ListaSolicitudesCompleta();
+        }
     }
 }

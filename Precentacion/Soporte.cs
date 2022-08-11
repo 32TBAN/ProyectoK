@@ -245,5 +245,10 @@ namespace Precentacion
             ActivateButton(sender);
             CargarSolicitudes(true);
         }
+
+        private void iconButton5_Click(object sender, EventArgs e)
+        {
+            //TODO: Mostras solicitudes asignadas por el tecnico jefe
+        }
     }
 }

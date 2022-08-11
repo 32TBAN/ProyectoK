@@ -51,7 +51,7 @@ namespace Presentacion
             //}
         }
 
-        private void Principal_FormClosed(object sender, FormClosedEventArgs e)
+            private void Principal_FormClosed(object sender, FormClosedEventArgs e)
         {
             this.Show();
         }

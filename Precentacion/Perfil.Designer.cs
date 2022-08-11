@@ -33,10 +33,10 @@
             this.rjButton2 = new RJCodeAdvance.RJControls.RJButton();
             this.rjButton1 = new RJCodeAdvance.RJControls.RJButton();
             this.linkLabel2 = new System.Windows.Forms.LinkLabel();
-            this.rjTextBox_Nueva = new RJCodeAdvance.RJControls.RJTextBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.rjTextBox_Confirmacion = new RJCodeAdvance.RJControls.RJTextBox();
-            this.label11 = new System.Windows.Forms.Label();
+            this.rjTextBox_Confirmar = new RJCodeAdvance.RJControls.RJTextBox();
+            this.label_Confirmar = new System.Windows.Forms.Label();
+            this.rjTextBox_NuevaC = new RJCodeAdvance.RJControls.RJTextBox();
+            this.label1_NuevaC = new System.Windows.Forms.Label();
             this.rjTextBox_Contrasenia = new RJCodeAdvance.RJControls.RJTextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.rjTextBox_Email = new RJCodeAdvance.RJControls.RJTextBox();
@@ -57,6 +57,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.rjCircularPictureBox_Foto = new RJCodeAdvance.RJControls.RJCircularPictureBox();
+            this.label_Error = new System.Windows.Forms.Label();
+            this.iconButton_Error = new FontAwesome.Sharp.IconButton();
             this.panel_EditarPerfil.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.rjCircularPictureBox_Foto)).BeginInit();
             this.SuspendLayout();
@@ -66,14 +68,16 @@
             this.panel_EditarPerfil.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel_EditarPerfil.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(89)))));
+            this.panel_EditarPerfil.Controls.Add(this.label_Error);
             this.panel_EditarPerfil.Controls.Add(this.iconButton1);
+            this.panel_EditarPerfil.Controls.Add(this.iconButton_Error);
             this.panel_EditarPerfil.Controls.Add(this.rjButton2);
             this.panel_EditarPerfil.Controls.Add(this.rjButton1);
             this.panel_EditarPerfil.Controls.Add(this.linkLabel2);
-            this.panel_EditarPerfil.Controls.Add(this.rjTextBox_Nueva);
-            this.panel_EditarPerfil.Controls.Add(this.label12);
-            this.panel_EditarPerfil.Controls.Add(this.rjTextBox_Confirmacion);
-            this.panel_EditarPerfil.Controls.Add(this.label11);
+            this.panel_EditarPerfil.Controls.Add(this.rjTextBox_Confirmar);
+            this.panel_EditarPerfil.Controls.Add(this.label_Confirmar);
+            this.panel_EditarPerfil.Controls.Add(this.rjTextBox_NuevaC);
+            this.panel_EditarPerfil.Controls.Add(this.label1_NuevaC);
             this.panel_EditarPerfil.Controls.Add(this.rjTextBox_Contrasenia);
             this.panel_EditarPerfil.Controls.Add(this.label10);
             this.panel_EditarPerfil.Controls.Add(this.rjTextBox_Email);
@@ -102,6 +106,7 @@
             this.iconButton1.Size = new System.Drawing.Size(44, 23);
             this.iconButton1.TabIndex = 18;
             this.iconButton1.UseVisualStyleBackColor = true;
+            this.iconButton1.Click += new System.EventHandler(this.iconButton1_Click);
             // 
             // rjButton2
             // 
@@ -116,7 +121,7 @@
             this.rjButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.rjButton2.Font = new System.Drawing.Font("Roboto", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rjButton2.ForeColor = System.Drawing.Color.White;
-            this.rjButton2.Location = new System.Drawing.Point(144, 417);
+            this.rjButton2.Location = new System.Drawing.Point(142, 430);
             this.rjButton2.Name = "rjButton2";
             this.rjButton2.Size = new System.Drawing.Size(110, 38);
             this.rjButton2.TabIndex = 17;
@@ -137,13 +142,14 @@
             this.rjButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.rjButton1.Font = new System.Drawing.Font("Roboto", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rjButton1.ForeColor = System.Drawing.Color.White;
-            this.rjButton1.Location = new System.Drawing.Point(21, 417);
+            this.rjButton1.Location = new System.Drawing.Point(21, 430);
             this.rjButton1.Name = "rjButton1";
-            this.rjButton1.Size = new System.Drawing.Size(110, 38);
+            this.rjButton1.Size = new System.Drawing.Size(117, 38);
             this.rjButton1.TabIndex = 16;
             this.rjButton1.Text = "Guardar";
             this.rjButton1.TextColor = System.Drawing.Color.White;
             this.rjButton1.UseVisualStyleBackColor = false;
+            this.rjButton1.Click += new System.EventHandler(this.rjButton1_Click);
             // 
             // linkLabel2
             // 
@@ -160,88 +166,93 @@
             this.linkLabel2.TabIndex = 13;
             this.linkLabel2.TabStop = true;
             this.linkLabel2.Text = "Editar";
+            this.linkLabel2.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel2_LinkClicked);
             // 
-            // rjTextBox_Nueva
+            // rjTextBox_Confirmar
             // 
-            this.rjTextBox_Nueva.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.rjTextBox_Confirmar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.rjTextBox_Nueva.AutoSize = true;
-            this.rjTextBox_Nueva.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(36)))), ((int)(((byte)(64)))));
-            this.rjTextBox_Nueva.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(36)))), ((int)(((byte)(64)))));
-            this.rjTextBox_Nueva.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(207)))), ((int)(((byte)(141)))));
-            this.rjTextBox_Nueva.BorderRadius = 5;
-            this.rjTextBox_Nueva.BorderSize = 2;
-            this.rjTextBox_Nueva.Cursor = System.Windows.Forms.Cursors.Default;
-            this.rjTextBox_Nueva.Font = new System.Drawing.Font("Roboto", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rjTextBox_Nueva.ForeColor = System.Drawing.Color.White;
-            this.rjTextBox_Nueva.Location = new System.Drawing.Point(21, 364);
-            this.rjTextBox_Nueva.Margin = new System.Windows.Forms.Padding(4);
-            this.rjTextBox_Nueva.Multiline = false;
-            this.rjTextBox_Nueva.Name = "rjTextBox_Nueva";
-            this.rjTextBox_Nueva.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.rjTextBox_Nueva.PasswordChar = false;
-            this.rjTextBox_Nueva.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.rjTextBox_Nueva.PlaceholderText = "";
-            this.rjTextBox_Nueva.Size = new System.Drawing.Size(235, 28);
-            this.rjTextBox_Nueva.TabIndex = 12;
-            this.rjTextBox_Nueva.Texts = "";
-            this.rjTextBox_Nueva.UnderlinedStyle = false;
+            this.rjTextBox_Confirmar.AutoSize = true;
+            this.rjTextBox_Confirmar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(36)))), ((int)(((byte)(64)))));
+            this.rjTextBox_Confirmar.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(36)))), ((int)(((byte)(64)))));
+            this.rjTextBox_Confirmar.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(207)))), ((int)(((byte)(141)))));
+            this.rjTextBox_Confirmar.BorderRadius = 5;
+            this.rjTextBox_Confirmar.BorderSize = 2;
+            this.rjTextBox_Confirmar.Cursor = System.Windows.Forms.Cursors.Default;
+            this.rjTextBox_Confirmar.Font = new System.Drawing.Font("Roboto", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rjTextBox_Confirmar.ForeColor = System.Drawing.Color.White;
+            this.rjTextBox_Confirmar.Location = new System.Drawing.Point(21, 364);
+            this.rjTextBox_Confirmar.Margin = new System.Windows.Forms.Padding(4);
+            this.rjTextBox_Confirmar.Multiline = false;
+            this.rjTextBox_Confirmar.Name = "rjTextBox_Confirmar";
+            this.rjTextBox_Confirmar.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.rjTextBox_Confirmar.PasswordChar = true;
+            this.rjTextBox_Confirmar.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.rjTextBox_Confirmar.PlaceholderText = "";
+            this.rjTextBox_Confirmar.Size = new System.Drawing.Size(235, 28);
+            this.rjTextBox_Confirmar.TabIndex = 12;
+            this.rjTextBox_Confirmar.Texts = "";
+            this.rjTextBox_Confirmar.UnderlinedStyle = false;
+            this.rjTextBox_Confirmar.Visible = false;
             // 
-            // label12
+            // label_Confirmar
             // 
-            this.label12.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.label_Confirmar.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.label12.AutoSize = true;
-            this.label12.Cursor = System.Windows.Forms.Cursors.Default;
-            this.label12.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.ForeColor = System.Drawing.Color.White;
-            this.label12.Location = new System.Drawing.Point(18, 347);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(111, 15);
-            this.label12.TabIndex = 11;
-            this.label12.Text = "Nueva Contraseña";
+            this.label_Confirmar.AutoSize = true;
+            this.label_Confirmar.Cursor = System.Windows.Forms.Cursors.Default;
+            this.label_Confirmar.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_Confirmar.ForeColor = System.Drawing.Color.White;
+            this.label_Confirmar.Location = new System.Drawing.Point(18, 347);
+            this.label_Confirmar.Name = "label_Confirmar";
+            this.label_Confirmar.Size = new System.Drawing.Size(182, 15);
+            this.label_Confirmar.TabIndex = 11;
+            this.label_Confirmar.Text = "Confirma La Nueva Contraseña";
+            this.label_Confirmar.Visible = false;
             // 
-            // rjTextBox_Confirmacion
+            // rjTextBox_NuevaC
             // 
-            this.rjTextBox_Confirmacion.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.rjTextBox_NuevaC.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.rjTextBox_Confirmacion.AutoSize = true;
-            this.rjTextBox_Confirmacion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(36)))), ((int)(((byte)(64)))));
-            this.rjTextBox_Confirmacion.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(36)))), ((int)(((byte)(64)))));
-            this.rjTextBox_Confirmacion.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(207)))), ((int)(((byte)(141)))));
-            this.rjTextBox_Confirmacion.BorderRadius = 5;
-            this.rjTextBox_Confirmacion.BorderSize = 2;
-            this.rjTextBox_Confirmacion.Cursor = System.Windows.Forms.Cursors.Default;
-            this.rjTextBox_Confirmacion.Font = new System.Drawing.Font("Roboto", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rjTextBox_Confirmacion.ForeColor = System.Drawing.Color.White;
-            this.rjTextBox_Confirmacion.Location = new System.Drawing.Point(21, 303);
-            this.rjTextBox_Confirmacion.Margin = new System.Windows.Forms.Padding(4);
-            this.rjTextBox_Confirmacion.Multiline = false;
-            this.rjTextBox_Confirmacion.Name = "rjTextBox_Confirmacion";
-            this.rjTextBox_Confirmacion.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.rjTextBox_Confirmacion.PasswordChar = false;
-            this.rjTextBox_Confirmacion.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.rjTextBox_Confirmacion.PlaceholderText = "";
-            this.rjTextBox_Confirmacion.Size = new System.Drawing.Size(235, 28);
-            this.rjTextBox_Confirmacion.TabIndex = 10;
-            this.rjTextBox_Confirmacion.Texts = "";
-            this.rjTextBox_Confirmacion.UnderlinedStyle = false;
+            this.rjTextBox_NuevaC.AutoSize = true;
+            this.rjTextBox_NuevaC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(36)))), ((int)(((byte)(64)))));
+            this.rjTextBox_NuevaC.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(36)))), ((int)(((byte)(64)))));
+            this.rjTextBox_NuevaC.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(207)))), ((int)(((byte)(141)))));
+            this.rjTextBox_NuevaC.BorderRadius = 5;
+            this.rjTextBox_NuevaC.BorderSize = 2;
+            this.rjTextBox_NuevaC.Cursor = System.Windows.Forms.Cursors.Default;
+            this.rjTextBox_NuevaC.Font = new System.Drawing.Font("Roboto", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rjTextBox_NuevaC.ForeColor = System.Drawing.Color.White;
+            this.rjTextBox_NuevaC.Location = new System.Drawing.Point(21, 303);
+            this.rjTextBox_NuevaC.Margin = new System.Windows.Forms.Padding(4);
+            this.rjTextBox_NuevaC.Multiline = false;
+            this.rjTextBox_NuevaC.Name = "rjTextBox_NuevaC";
+            this.rjTextBox_NuevaC.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.rjTextBox_NuevaC.PasswordChar = true;
+            this.rjTextBox_NuevaC.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.rjTextBox_NuevaC.PlaceholderText = "";
+            this.rjTextBox_NuevaC.Size = new System.Drawing.Size(235, 28);
+            this.rjTextBox_NuevaC.TabIndex = 10;
+            this.rjTextBox_NuevaC.Texts = "";
+            this.rjTextBox_NuevaC.UnderlinedStyle = false;
+            this.rjTextBox_NuevaC.Visible = false;
             // 
-            // label11
+            // label1_NuevaC
             // 
-            this.label11.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.label1_NuevaC.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.label11.AutoSize = true;
-            this.label11.Cursor = System.Windows.Forms.Cursors.Default;
-            this.label11.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.ForeColor = System.Drawing.Color.White;
-            this.label11.Location = new System.Drawing.Point(18, 286);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(140, 15);
-            this.label11.TabIndex = 9;
-            this.label11.Text = "Confirma tu Contraseña";
+            this.label1_NuevaC.AutoSize = true;
+            this.label1_NuevaC.Cursor = System.Windows.Forms.Cursors.Default;
+            this.label1_NuevaC.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1_NuevaC.ForeColor = System.Drawing.Color.White;
+            this.label1_NuevaC.Location = new System.Drawing.Point(18, 286);
+            this.label1_NuevaC.Name = "label1_NuevaC";
+            this.label1_NuevaC.Size = new System.Drawing.Size(111, 15);
+            this.label1_NuevaC.TabIndex = 9;
+            this.label1_NuevaC.Text = "Nueva Contraseña";
+            this.label1_NuevaC.Visible = false;
             // 
             // rjTextBox_Contrasenia
             // 
@@ -261,7 +272,7 @@
             this.rjTextBox_Contrasenia.Multiline = false;
             this.rjTextBox_Contrasenia.Name = "rjTextBox_Contrasenia";
             this.rjTextBox_Contrasenia.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.rjTextBox_Contrasenia.PasswordChar = false;
+            this.rjTextBox_Contrasenia.PasswordChar = true;
             this.rjTextBox_Contrasenia.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.rjTextBox_Contrasenia.PlaceholderText = "";
             this.rjTextBox_Contrasenia.Size = new System.Drawing.Size(235, 28);
@@ -559,6 +570,33 @@
             this.rjCircularPictureBox_Foto.TabIndex = 47;
             this.rjCircularPictureBox_Foto.TabStop = false;
             // 
+            // label_Error
+            // 
+            this.label_Error.AutoSize = true;
+            this.label_Error.Font = new System.Drawing.Font("Roboto", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_Error.ForeColor = System.Drawing.Color.White;
+            this.label_Error.Location = new System.Drawing.Point(59, 406);
+            this.label_Error.Name = "label_Error";
+            this.label_Error.Size = new System.Drawing.Size(31, 13);
+            this.label_Error.TabIndex = 49;
+            this.label_Error.Text = "Error";
+            this.label_Error.Visible = false;
+            // 
+            // iconButton_Error
+            // 
+            this.iconButton_Error.FlatAppearance.BorderSize = 0;
+            this.iconButton_Error.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton_Error.IconChar = FontAwesome.Sharp.IconChar.Warning;
+            this.iconButton_Error.IconColor = System.Drawing.Color.Red;
+            this.iconButton_Error.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton_Error.IconSize = 25;
+            this.iconButton_Error.Location = new System.Drawing.Point(19, 399);
+            this.iconButton_Error.Name = "iconButton_Error";
+            this.iconButton_Error.Size = new System.Drawing.Size(37, 25);
+            this.iconButton_Error.TabIndex = 48;
+            this.iconButton_Error.UseVisualStyleBackColor = true;
+            this.iconButton_Error.Visible = false;
+            // 
             // Perfil
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -590,10 +628,10 @@
         #endregion
         private System.Windows.Forms.Panel panel_EditarPerfil;
         private System.Windows.Forms.LinkLabel linkLabel2;
-        private RJCodeAdvance.RJControls.RJTextBox rjTextBox_Nueva;
-        private System.Windows.Forms.Label label12;
-        private RJCodeAdvance.RJControls.RJTextBox rjTextBox_Confirmacion;
-        private System.Windows.Forms.Label label11;
+        private RJCodeAdvance.RJControls.RJTextBox rjTextBox_Confirmar;
+        private System.Windows.Forms.Label label_Confirmar;
+        private RJCodeAdvance.RJControls.RJTextBox rjTextBox_NuevaC;
+        private System.Windows.Forms.Label label1_NuevaC;
         private RJCodeAdvance.RJControls.RJTextBox rjTextBox_Contrasenia;
         private System.Windows.Forms.Label label10;
         private RJCodeAdvance.RJControls.RJTextBox rjTextBox_Email;
@@ -617,5 +655,7 @@
         private RJCodeAdvance.RJControls.RJButton rjButton2;
         private RJCodeAdvance.RJControls.RJButton rjButton1;
         private FontAwesome.Sharp.IconButton iconButton1;
+        private System.Windows.Forms.Label label_Error;
+        private FontAwesome.Sharp.IconButton iconButton_Error;
     }
 }

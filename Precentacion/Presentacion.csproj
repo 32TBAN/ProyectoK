@@ -62,6 +62,12 @@
     <Compile Include="AgregarPerfil.Designer.cs">
       <DependentUpon>AgregarPerfil.cs</DependentUpon>
     </Compile>
+    <Compile Include="Asignacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Asignacion.Designer.cs">
+      <DependentUpon>Asignacion.cs</DependentUpon>
+    </Compile>
     <Compile Include="Calificar.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -108,6 +114,9 @@
     </Compile>
     <EmbeddedResource Include="AgregarPerfil.resx">
       <DependentUpon>AgregarPerfil.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Asignacion.resx">
+      <DependentUpon>Asignacion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Calificar.resx">
       <DependentUpon>Calificar.cs</DependentUpon>

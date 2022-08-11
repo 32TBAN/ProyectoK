@@ -56,7 +56,33 @@ namespace Datos
 
         public static UsuarioEntidad Actualizar(UsuarioEntidad usuarioEntidad)
         {
-            throw new NotImplementedException();
+            try
+            {
+                using (OracleConnection connection = Conexion.ObtenerConexion())
+                {
+                    connection.Open();
+                    using (OracleCommand cmd = new OracleCommand("ActualizarUsuario", connection))
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.Add("idG", OracleType.Number).Value = usuarioEntidad.Id;
+                        cmd.Parameters.Add("cedulaG", OracleType.VarChar).Value = usuarioEntidad.Cedula;
+                        cmd.Parameters.Add("nombreG", OracleType.VarChar).Value = usuarioEntidad.Nombre;
+                        cmd.Parameters.Add("apellidoG", OracleType.VarChar).Value = usuarioEntidad.Apellido;
+                        cmd.Parameters.Add("emailG", OracleType.VarChar).Value = usuarioEntidad.Email;
+                        cmd.Parameters.Add("fotoG", OracleType.Blob).Value = usuarioEntidad.Foto;
+                        cmd.Parameters.Add("perfilG", OracleType.VarChar).Value = usuarioEntidad.Perfil[0];
+                        cmd.Parameters.Add("contraseG", OracleType.VarChar).Value = usuarioEntidad.Contraseña;
+                        cmd.ExecuteNonQuery();
+                    }
+                }
+                return usuarioEntidad;
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
 
         public static UsuarioEntidad Guardar(UsuarioEntidad usuarioEntidad)
@@ -223,6 +249,50 @@ namespace Datos
             }
             catch (Exception)
             {
+                throw;
+            }
+        }
+
+        public static List<UsuarioEntidad> ListaUsuarios()
+        {
+            try
+            {
+                List<UsuarioEntidad> listaUsuarioEntidad = new List<UsuarioEntidad>();
+
+                using (OracleConnection connection = Conexion.ObtenerConexion())
+                {
+                    connection.Open();
+                    using (OracleCommand cmd = new OracleCommand("ListaUsuarios", connection))
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.Add("buscar", OracleType.Cursor).Direction = ParameterDirection.Output;
+
+                        using (var dr = cmd.ExecuteReader())
+                        {
+                            while (dr.Read())
+                            {
+                                //TODO: Completar lista
+
+                                //listaUsuarioEntidad.Add(new UsuarioEntidad(
+                                    //Convert.ToInt16(dr["ID"].ToString()),
+                                    //dr["CEDULA"].ToString(),
+                                    // dr["NOMBRE"].ToString(),
+                                    //  dr["APELLIDO"].ToString(),
+                                    //  dr["EMAIL"].ToString(),
+                                    //  dr["CONTRASE"].ToString(),
+                                    //  dr["PERFIL"].ToString()));
+                            }
+                            
+                        }
+
+                    }
+                }
+
+                return listaUsuarioEntidad;
+            }
+            catch (Exception)
+            {
+
                 throw;
             }
         }
