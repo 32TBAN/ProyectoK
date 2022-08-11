@@ -36,10 +36,18 @@ namespace Precentacion
             get { return label_Fecha.Text; }
             set { label_Fecha.Text = value; }
         }
+        public int IdSolicitud { 
+            get { return Convert.ToInt32(textBox_IdSol.Text);}
+            set { textBox_IdSol.Text = Convert.ToString(value);} 
+        }
         public Solicitudes()
         {
             InitializeComponent();
         }
 
+        private void label_Descripcion_MouseHover(object sender, EventArgs e)
+        {
+            textBox_IdSol.Visible = true;
+        }
     }
 }

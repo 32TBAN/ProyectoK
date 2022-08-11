@@ -18,6 +18,7 @@ namespace Precentacion
         SolicitudEntidad solicitudEntidad = new SolicitudEntidad();
         private IconButton bottonActivo;
         private Panel bordeInferior;
+        int IdSolicitud;
         public UsuarioEntidad usuarioEntidad { get; set; }
         public Soporte(UsuarioEntidad usuarioEntidad)
         {
@@ -48,7 +49,7 @@ namespace Precentacion
                     foreach (var item in solicitudEntidads)
                     {
                         Solicitudes solicitudes = new Solicitudes();
-                        solicitudes.label_Emisor.Click += Label_Emisor_Click;
+                        solicitudes.textBox_IdSol.Click += TextBox_IdSol_Click;
                         if (item.IdTecnico == 0)
                             solicitudes.Emisor = "Aun no se ha asignado aun tecnico";
                         else
@@ -56,7 +57,8 @@ namespace Precentacion
                         solicitudes.Asunto = item.Asunto;
                         solicitudes.Descripcion = item.Descripcion;
                         solicitudes.Fecha = item.Fecha.ToShortDateString();
-        
+                        solicitudes.IdSolicitud = item.Id;
+
                         panel_Contendor.Controls.Add(solicitudes);
                         foreach (Solicitudes sol in panel_Contendor.Controls.OfType<Solicitudes>())
                         {
@@ -79,6 +81,7 @@ namespace Precentacion
                                 solicitudes.Asunto = item.Asunto;
                                 solicitudes.Descripcion = item.Descripcion;
                                 solicitudes.Fecha = item.Fecha.ToShortDateString();
+                                solicitudes.IdSolicitud = item.Id;
 
                                 panel_Contendor.Controls.Add(solicitudes);
                                 foreach (Solicitudes sol in panel_Contendor.Controls.OfType<Solicitudes>())
@@ -103,13 +106,15 @@ namespace Precentacion
             panel_NuevaSolicitud.Visible = false;
         }
 
-        private void Label_Emisor_Click(object sender, EventArgs e)
+        //Envia la informacion
+        private void TextBox_IdSol_Click(object sender, EventArgs e)
         {
             panel_Cabezera.Visible = false;
             panel_Contendor.Controls.Clear();
-            AbrirForm(new Calificar());
-           //TODO: VER DESCRIPCION COMPLETA Y SI YA HAY UN TECNICO ENCARGADO
+            panel_Contendor.Controls.Add(panel_NuevaSolicitud);
+            AbrirForm(new Calificar(Convert.ToInt32(((TextBox)(sender)).Text)));
         }
+
         public void AbrirForm(Form form)
         {
             form.TopLevel = true;
@@ -125,7 +130,8 @@ namespace Precentacion
 
         private void Form_FormClosed(object sender, FormClosedEventArgs e)
         {
-            //TODO: Cargar las listas
+            panel_Cabezera.Visible = true;
+            CargarSolicitudes(true);
         }
 
         private void iconButton1_Click(object sender, EventArgs e)
@@ -162,7 +168,7 @@ namespace Precentacion
         {
             if (ControlDatos())
             {
-                solicitudEntidad.IdUsuario = 22;
+                solicitudEntidad.IdUsuario = 22;//TODO: Poner datos usuario
                 solicitudEntidad.IdTecnico = 0;
                 solicitudEntidad.Asunto = textBox_Asunto.Text;
                 solicitudEntidad.Descripcion = richTextBox_Descripcion.Text;

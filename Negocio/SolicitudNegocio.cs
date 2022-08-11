@@ -10,6 +10,16 @@ namespace Negocio
 {
     public static class SolicitudNegocio
     {
+        public static SolicitudEntidad BuscarSolicitud(int idSolicitud)
+        {
+            return SolicitudDatos.BuscarSolicitud(idSolicitud);
+        }
+
+        public static bool EliminarSolicitud(int id)
+        {
+            return SolicitudDatos.EliminarSolicitud(id);
+        }
+
         public static SolicitudEntidad Guardar(SolicitudEntidad solicitudEntidad)
         {
             if (solicitudEntidad.Id == 0)
