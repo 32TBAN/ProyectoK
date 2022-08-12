@@ -40,6 +40,7 @@
             this.iconButton2 = new FontAwesome.Sharp.IconButton();
             this.iconButton4 = new FontAwesome.Sharp.IconButton();
             this.panel_Menu = new System.Windows.Forms.Panel();
+            this.iconButton1 = new FontAwesome.Sharp.IconButton();
             this.iconButton8 = new FontAwesome.Sharp.IconButton();
             this.iconButton6 = new FontAwesome.Sharp.IconButton();
             this.iconButton5 = new FontAwesome.Sharp.IconButton();
@@ -48,15 +49,14 @@
             this.label_Permisos = new System.Windows.Forms.Label();
             this.linkLabel_Perfil = new System.Windows.Forms.LinkLabel();
             this.iconButton_Menu = new FontAwesome.Sharp.IconButton();
-            this.rjCircularPictureBox1 = new RJCodeAdvance.RJControls.RJCircularPictureBox();
+            this.rjCircularPictureBox_ImagenP = new RJCodeAdvance.RJControls.RJCircularPictureBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.iconButton1 = new FontAwesome.Sharp.IconButton();
             this.panel1.SuspendLayout();
             this.panel_C.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel_Menu.SuspendLayout();
             this.panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.rjCircularPictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rjCircularPictureBox_ImagenP)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -213,6 +213,31 @@
             this.panel_Menu.Size = new System.Drawing.Size(230, 561);
             this.panel_Menu.TabIndex = 18;
             // 
+            // iconButton1
+            // 
+            this.iconButton1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.iconButton1.FlatAppearance.BorderSize = 0;
+            this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton1.Font = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.iconButton1.ForeColor = System.Drawing.Color.White;
+            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.Envelope;
+            this.iconButton1.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(207)))), ((int)(((byte)(141)))));
+            this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton1.IconSize = 30;
+            this.iconButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButton1.Location = new System.Drawing.Point(0, 190);
+            this.iconButton1.Margin = new System.Windows.Forms.Padding(2);
+            this.iconButton1.Name = "iconButton1";
+            this.iconButton1.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.iconButton1.Size = new System.Drawing.Size(230, 60);
+            this.iconButton1.TabIndex = 19;
+            this.iconButton1.Tag = "Asignar Solicitud";
+            this.iconButton1.Text = "   Asignar Solicitud";
+            this.iconButton1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.iconButton1.UseVisualStyleBackColor = true;
+            this.iconButton1.Click += new System.EventHandler(this.iconButton1_Click_1);
+            // 
             // iconButton8
             // 
             this.iconButton8.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -294,7 +319,7 @@
             this.panel4.Controls.Add(this.label_Permisos);
             this.panel4.Controls.Add(this.linkLabel_Perfil);
             this.panel4.Controls.Add(this.iconButton_Menu);
-            this.panel4.Controls.Add(this.rjCircularPictureBox1);
+            this.panel4.Controls.Add(this.rjCircularPictureBox_ImagenP);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel4.Location = new System.Drawing.Point(0, 0);
             this.panel4.Margin = new System.Windows.Forms.Padding(2);
@@ -359,51 +384,26 @@
             this.iconButton_Menu.UseVisualStyleBackColor = true;
             this.iconButton_Menu.Click += new System.EventHandler(this.iconButton1_Click);
             // 
-            // rjCircularPictureBox1
+            // rjCircularPictureBox_ImagenP
             // 
-            this.rjCircularPictureBox1.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
-            this.rjCircularPictureBox1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(89)))));
-            this.rjCircularPictureBox1.BorderColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(207)))), ((int)(((byte)(141)))));
-            this.rjCircularPictureBox1.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
-            this.rjCircularPictureBox1.BorderSize = 2;
-            this.rjCircularPictureBox1.GradientAngle = 50F;
-            this.rjCircularPictureBox1.Location = new System.Drawing.Point(0, 3);
-            this.rjCircularPictureBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.rjCircularPictureBox1.Name = "rjCircularPictureBox1";
-            this.rjCircularPictureBox1.Size = new System.Drawing.Size(65, 65);
-            this.rjCircularPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.rjCircularPictureBox1.TabIndex = 5;
-            this.rjCircularPictureBox1.TabStop = false;
+            this.rjCircularPictureBox_ImagenP.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
+            this.rjCircularPictureBox_ImagenP.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(89)))));
+            this.rjCircularPictureBox_ImagenP.BorderColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(207)))), ((int)(((byte)(141)))));
+            this.rjCircularPictureBox_ImagenP.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
+            this.rjCircularPictureBox_ImagenP.BorderSize = 2;
+            this.rjCircularPictureBox_ImagenP.GradientAngle = 50F;
+            this.rjCircularPictureBox_ImagenP.Location = new System.Drawing.Point(0, 3);
+            this.rjCircularPictureBox_ImagenP.Margin = new System.Windows.Forms.Padding(2);
+            this.rjCircularPictureBox_ImagenP.Name = "rjCircularPictureBox_ImagenP";
+            this.rjCircularPictureBox_ImagenP.Size = new System.Drawing.Size(65, 65);
+            this.rjCircularPictureBox_ImagenP.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.rjCircularPictureBox_ImagenP.TabIndex = 5;
+            this.rjCircularPictureBox_ImagenP.TabStop = false;
             // 
             // timer1
             // 
             this.timer1.Enabled = true;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // iconButton1
-            // 
-            this.iconButton1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.iconButton1.FlatAppearance.BorderSize = 0;
-            this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton1.Font = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.iconButton1.ForeColor = System.Drawing.Color.White;
-            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.Envelope;
-            this.iconButton1.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(207)))), ((int)(((byte)(141)))));
-            this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton1.IconSize = 30;
-            this.iconButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton1.Location = new System.Drawing.Point(0, 190);
-            this.iconButton1.Margin = new System.Windows.Forms.Padding(2);
-            this.iconButton1.Name = "iconButton1";
-            this.iconButton1.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.iconButton1.Size = new System.Drawing.Size(230, 60);
-            this.iconButton1.TabIndex = 19;
-            this.iconButton1.Tag = "Asignar Solicitud";
-            this.iconButton1.Text = "   Asignar Solicitud";
-            this.iconButton1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconButton1.UseVisualStyleBackColor = true;
-            this.iconButton1.Click += new System.EventHandler(this.iconButton1_Click_1);
             // 
             // Principal
             // 
@@ -425,7 +425,7 @@
             this.panel_Menu.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.rjCircularPictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rjCircularPictureBox_ImagenP)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -448,7 +448,7 @@
         private System.Windows.Forms.Label label_Permisos;
         private System.Windows.Forms.LinkLabel linkLabel_Perfil;
         private FontAwesome.Sharp.IconButton iconButton_Menu;
-        private RJCodeAdvance.RJControls.RJCircularPictureBox rjCircularPictureBox1;
+        private RJCodeAdvance.RJControls.RJCircularPictureBox rjCircularPictureBox_ImagenP;
         private FontAwesome.Sharp.IconButton iconButton6;
         private FontAwesome.Sharp.IconButton iconButton8;
         private FontAwesome.Sharp.IconButton iconButton_Form;

@@ -373,6 +373,7 @@
             this.Enviar.Text = "Enviar";
             this.Enviar.TextColor = System.Drawing.Color.White;
             this.Enviar.UseVisualStyleBackColor = false;
+            this.Enviar.Click += new System.EventHandler(this.Enviar_Click);
             // 
             // richTextBox1
             // 

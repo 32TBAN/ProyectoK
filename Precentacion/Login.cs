@@ -42,13 +42,13 @@ namespace Presentacion
 
         private void rjButton1_Click(object sender, EventArgs e)
         {
-            //if (ControlarDatos())
-            //{
+            if (ControlarDatos())
+            {
                 this.Hide();
                 Principal principal = new Principal(usuarioEntidad);
                 principal.FormClosed += Principal_FormClosed;
                 principal.Show();
-            //}
+            }
         }
 
             private void Principal_FormClosed(object sender, FormClosedEventArgs e)

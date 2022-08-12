@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AsignacionesDatos.cs" />
     <Compile Include="Conexion.cs" />
     <Compile Include="MensajesEmail\ServicioCorreo.cs" />
     <Compile Include="MensajesEmail\SoporteEmail.cs" />

@@ -60,7 +60,8 @@ namespace Precentacion
 
         private void NotaServicio()
         {
-            
+            //TODO: Calificar
+            panel_Calificasion.Visible = true;
         }
 
         private void iconButton3_Click(object sender, EventArgs e)
@@ -163,6 +164,7 @@ namespace Precentacion
         private void iconPictureBox5_MouseHover(object sender, EventArgs e)
         {
             //TODO: Calificacion estrellas
+
         }
 
         private void iconButton7_Click(object sender, EventArgs e)
@@ -207,6 +209,12 @@ namespace Precentacion
             {
                 MessageBox.Show("No puede editar esta solicitud");
             }
+        }
+
+        private void Enviar_Click(object sender, EventArgs e)
+        {
+            //enviar calificacion
+            this.Close();
         }
     }
 }

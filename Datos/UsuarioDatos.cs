@@ -38,6 +38,7 @@ namespace Datos
                                 usuarioEntidad.Email = dr["EMAIL"].ToString();
                                 usuarioEntidad.Perfil = dr["PERFIL"].ToString();
                                 usuarioEntidad.Contraseña = dr["CONTRASE"].ToString();
+                                usuarioEntidad.Foto = (byte[])dr["FOTO"];
                             }
                         }
                      
@@ -271,16 +272,15 @@ namespace Datos
                         {
                             while (dr.Read())
                             {
-                                //TODO: Completar lista
-
-                                //listaUsuarioEntidad.Add(new UsuarioEntidad(
-                                    //Convert.ToInt16(dr["ID"].ToString()),
-                                    //dr["CEDULA"].ToString(),
-                                    // dr["NOMBRE"].ToString(),
-                                    //  dr["APELLIDO"].ToString(),
-                                    //  dr["EMAIL"].ToString(),
-                                    //  dr["CONTRASE"].ToString(),
-                                    //  dr["PERFIL"].ToString()));
+                                listaUsuarioEntidad.Add(new UsuarioEntidad(
+                                    Convert.ToInt16(dr["ID"].ToString()),
+                                    dr["CEDULA"].ToString(),
+                                    dr["NOMBRE"].ToString(),
+                                    dr["APELLIDO"].ToString(),
+                                    dr["EMAIL"].ToString(),
+                                    dr["CONTRASE"].ToString(),
+                                    (byte[])(dr["FOTO"]),
+                                    dr["PERFIL"].ToString()));
                             }
                             
                         }

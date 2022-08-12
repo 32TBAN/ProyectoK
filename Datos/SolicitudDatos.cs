@@ -106,8 +106,11 @@ namespace Datos
                         cmd.Parameters.Add("descripcionG", OracleType.NVarChar).Value = solicitudEntidad.Descripcion;
                         cmd.Parameters.Add("urgenciaG", OracleType.NVarChar).Value = solicitudEntidad.Urgencia;
                         cmd.Parameters.Add("dispocitivoG", OracleType.NVarChar).Value = solicitudEntidad.Dispositivo;
-                        cmd.Parameters.Add("areaG", OracleType.NVarChar).Value = solicitudEntidad.Dispositivo;
+                        cmd.Parameters.Add("areaG", OracleType.NVarChar).Value = solicitudEntidad.Area;
                         cmd.Parameters.Add("fechaG", OracleType.DateTime).Value = solicitudEntidad.Fecha;
+                        cmd.Parameters.Add("estadoG", OracleType.Number).Value = Convert.ToInt16(solicitudEntidad.Estado);
+                        cmd.Parameters.Add("idT", OracleType.Number).Value = solicitudEntidad.IdTecnico;
+
                         cmd.ExecuteNonQuery();
                     }
                 }
@@ -193,7 +196,50 @@ namespace Datos
 
         public static List<SolicitudEntidad> ListaSolicitudesCompleta()
         {
-            throw new NotImplementedException();
+            try
+            {
+                List<SolicitudEntidad> listaSolicitud = new List<SolicitudEntidad>();
+
+                using (OracleConnection connection = Conexion.ObtenerConexion())
+                {
+                    connection.Open();
+                    using (OracleCommand cmd = new OracleCommand("ListaUsuariosC", connection))
+                    {
+                            cmd.CommandType = CommandType.StoredProcedure;
+                            cmd.Parameters.Add("buscar", OracleType.Cursor).Direction = ParameterDirection.Output;
+
+                            using (var dr = cmd.ExecuteReader())
+                            {
+                              while (dr.Read())
+                              {
+                                int c = 0;
+                                if (dr["ID_TEC"].ToString() == "")
+                                    c = 0;
+                                else
+                                    c = Convert.ToInt32(dr["ID_TEC"].ToString());
+                                listaSolicitud.Add(new SolicitudEntidad(
+                                    Convert.ToInt32(dr["ID"].ToString()),
+                                    Convert.ToInt32(dr["ID_USU"].ToString()),
+                                    c, dr["ASUNTO"].ToString(),
+                                    dr["DESCRIP"].ToString(),
+                                    dr["URGENCI"].ToString(),
+                                    dr["DISPOCI"].ToString(),
+                                    dr["AREA"].ToString(),
+                                    (DateTime)(dr["FECHA"]),
+                                    Convert.ToBoolean(dr["ESTADO"])));
+                              }      
+                            }
+
+                        }
+
+                    }
+                return listaSolicitud;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
     }
 }

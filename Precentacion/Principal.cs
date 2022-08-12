@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Globalization;
+using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
@@ -40,6 +41,27 @@ namespace Precentacion
         {
             label_Permisos.Text = usuarioEntidad.Perfil;
             label_Nombre.Text = usuarioEntidad.Nombre + " " + usuarioEntidad.Apellido;
+
+            if (usuarioEntidad.Foto != null)
+            {
+                rjCircularPictureBox_ImagenP.Image = CargarImagen(usuarioEntidad.Foto);
+            }
+        }
+
+        private Image CargarImagen(byte[] foto)
+        {
+            try
+            {
+                MemoryStream ms = new MemoryStream(foto, 0, foto.Length);
+                ms.Write(foto, 0, foto.Length);
+                return Image.FromStream(ms, true);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
         }
         #region Botones
         private struct RGBColors
@@ -239,7 +261,7 @@ namespace Precentacion
             if (this.panel_Menu.Width > 200) 
             {
                 panel_Menu.Width = 100;
-                rjCircularPictureBox1.Visible = false;
+                rjCircularPictureBox_ImagenP.Visible = false;
                 label_Permisos.Visible = false;
                 label_Nombre.Visible = false;
                 linkLabel_Perfil.Visible = false;
@@ -254,7 +276,7 @@ namespace Precentacion
             else
             { //Expand menu
                 panel_Menu.Width = 230;
-                rjCircularPictureBox1.Visible = true;
+                rjCircularPictureBox_ImagenP.Visible = true;
                 label_Permisos.Visible = true;
                 label_Nombre.Visible = true;
                 linkLabel_Perfil.Visible = true;
@@ -293,11 +315,6 @@ namespace Precentacion
             AbrirFormularios(new Soporte(usuarioEntidad));
         }
 
-        private void iconButton7_Click(object sender, EventArgs e)
-        {
-            ActivateButton(sender, RGBColors.color3);
-        }
-
         private void iconButton_Form_Click(object sender, EventArgs e)
         {
             if (formAbierto != null)
@@ -323,6 +340,8 @@ namespace Precentacion
         private void iconButton1_Click_1(object sender, EventArgs e)
         {
             //TODO: Asignar una solicitud a un tecnico
+            ActivateButton(sender, RGBColors.color3);
+            AbrirFormularios(new Asignacion());
         }
     }
 }

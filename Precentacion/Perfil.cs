@@ -41,7 +41,7 @@ namespace Precentacion
             label_Email.Text = usuarioEntidad.Email;
             label_Permisos.Text = usuarioEntidad.Perfil;
             //TODO: mETODO PARA CARGA LA FOTO
-            // rjCircularPictureBox_Foto.Image = CargarImagen(usuarioEntidad.Foto);
+            //rjCircularPictureBox_Foto.Image = CargarImagen(usuarioEntidad.Foto);
             rjTextBox_Nombre.Texts = usuarioEntidad.Nombre;
             rjTextBox_Apellido.Texts = usuarioEntidad.Apellido;
             rjTextBox_Email.Texts = usuarioEntidad.Email;
