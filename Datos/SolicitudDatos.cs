@@ -75,7 +75,7 @@ namespace Datos
                                     dr["DISPOCI"].ToString(),
                                     dr["AREA"].ToString(),
                                     (DateTime)(dr["FECHA"]),
-                                    Convert.ToBoolean(dr["ESTADO"])));
+                                    Convert.ToInt16(dr["ESTADO"].ToString())));
                             }
                         }
 
@@ -155,7 +155,7 @@ namespace Datos
                                 solicitud.Dispositivo = dr["DISPOCI"].ToString();
                                 solicitud.Area = dr["AREA"].ToString();
                                 solicitud.Fecha = (DateTime)(dr["FECHA"]);
-                                solicitud.Estado = Convert.ToBoolean(dr["ESTADO"]);
+                                solicitud.Estado = Convert.ToInt16(dr["ESTADO"].ToString());
                             }
                         }
 
@@ -226,7 +226,7 @@ namespace Datos
                                     dr["DISPOCI"].ToString(),
                                     dr["AREA"].ToString(),
                                     (DateTime)(dr["FECHA"]),
-                                    Convert.ToBoolean(dr["ESTADO"])));
+                                    Convert.ToInt16(dr["ESTADO"].ToString())));
                               }      
                             }
 

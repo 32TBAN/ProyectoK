@@ -28,9 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView_Solicitudes = new System.Windows.Forms.DataGridView();
             this.label3 = new System.Windows.Forms.Label();
@@ -40,9 +41,12 @@
             this.dataGridView_Asignadas = new System.Windows.Forms.DataGridView();
             this.label2 = new System.Windows.Forms.Label();
             this.label_Tecnico = new System.Windows.Forms.Label();
+            this.dataGridView_SolicitudesTec = new System.Windows.Forms.DataGridView();
+            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Solicitudes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Tecnicos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Asignadas)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_SolicitudesTec)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -53,9 +57,9 @@
             this.label1.Font = new System.Drawing.Font("Roboto", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(354, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(119, 25);
+            this.label1.Size = new System.Drawing.Size(229, 25);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Solicitudes";
+            this.label1.Text = "Solicitudes pendientes";
             // 
             // dataGridView_Solicitudes
             // 
@@ -65,14 +69,14 @@
             this.dataGridView_Solicitudes.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView_Solicitudes.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dataGridView_Solicitudes.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(231)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(231)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView_Solicitudes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(231)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(231)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView_Solicitudes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dataGridView_Solicitudes.ColumnHeadersHeight = 30;
             this.dataGridView_Solicitudes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dataGridView_Solicitudes.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -80,7 +84,7 @@
             this.dataGridView_Solicitudes.Location = new System.Drawing.Point(359, 37);
             this.dataGridView_Solicitudes.Name = "dataGridView_Solicitudes";
             this.dataGridView_Solicitudes.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.dataGridView_Solicitudes.Size = new System.Drawing.Size(459, 175);
+            this.dataGridView_Solicitudes.Size = new System.Drawing.Size(438, 175);
             this.dataGridView_Solicitudes.TabIndex = 2;
             this.dataGridView_Solicitudes.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_Solicitudes_CellClick);
             // 
@@ -133,14 +137,14 @@
             this.dataGridView_Tecnicos.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView_Tecnicos.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dataGridView_Tecnicos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(231)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(231)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView_Tecnicos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(231)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(231)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView_Tecnicos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.dataGridView_Tecnicos.ColumnHeadersHeight = 30;
             this.dataGridView_Tecnicos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dataGridView_Tecnicos.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -160,14 +164,14 @@
             this.dataGridView_Asignadas.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView_Asignadas.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dataGridView_Asignadas.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(231)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(231)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView_Asignadas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(231)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(231)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView_Asignadas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.dataGridView_Asignadas.ColumnHeadersHeight = 30;
             this.dataGridView_Asignadas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dataGridView_Asignadas.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -199,12 +203,53 @@
             this.label_Tecnico.TabIndex = 11;
             this.label_Tecnico.Text = "Tecnico";
             // 
+            // dataGridView_SolicitudesTec
+            // 
+            this.dataGridView_SolicitudesTec.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dataGridView_SolicitudesTec.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dataGridView_SolicitudesTec.BackgroundColor = System.Drawing.Color.White;
+            this.dataGridView_SolicitudesTec.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataGridView_SolicitudesTec.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.dataGridView_SolicitudesTec.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(231)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(231)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView_SolicitudesTec.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            this.dataGridView_SolicitudesTec.ColumnHeadersHeight = 30;
+            this.dataGridView_SolicitudesTec.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dataGridView_SolicitudesTec.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.dataGridView_SolicitudesTec.EnableHeadersVisualStyles = false;
+            this.dataGridView_SolicitudesTec.Location = new System.Drawing.Point(17, 249);
+            this.dataGridView_SolicitudesTec.Name = "dataGridView_SolicitudesTec";
+            this.dataGridView_SolicitudesTec.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dataGridView_SolicitudesTec.Size = new System.Drawing.Size(324, 181);
+            this.dataGridView_SolicitudesTec.TabIndex = 12;
+            this.dataGridView_SolicitudesTec.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_SolicitudesTec_CellClick);
+            // 
+            // label4
+            // 
+            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(13, 227);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(269, 19);
+            this.label4.TabIndex = 13;
+            this.label4.Text = "Solicitudes del tecnico seleccionado";
+            // 
             // Asignacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(824, 442);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.dataGridView_SolicitudesTec);
             this.Controls.Add(this.label_Tecnico);
             this.Controls.Add(this.dataGridView_Asignadas);
             this.Controls.Add(this.label2);
@@ -219,6 +264,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Solicitudes)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Tecnicos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Asignadas)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_SolicitudesTec)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -235,5 +281,7 @@
         private System.Windows.Forms.DataGridView dataGridView_Asignadas;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label_Tecnico;
+        private System.Windows.Forms.DataGridView dataGridView_SolicitudesTec;
+        private System.Windows.Forms.Label label4;
     }
 }

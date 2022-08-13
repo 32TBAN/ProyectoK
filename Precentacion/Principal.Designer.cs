@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Principal));
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel_C = new System.Windows.Forms.Panel();
@@ -51,12 +54,16 @@
             this.iconButton_Menu = new FontAwesome.Sharp.IconButton();
             this.rjCircularPictureBox_ImagenP = new RJCodeAdvance.RJControls.RJCircularPictureBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.label_Bienvenida = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.panel1.SuspendLayout();
             this.panel_C.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel_Menu.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.rjCircularPictureBox_ImagenP)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -74,6 +81,9 @@
             // panel_C
             // 
             this.panel_C.BackColor = System.Drawing.Color.White;
+            this.panel_C.Controls.Add(this.chart1);
+            this.panel_C.Controls.Add(this.label1);
+            this.panel_C.Controls.Add(this.label_Bienvenida);
             this.panel_C.Controls.Add(this.label_Hora);
             this.panel_C.Controls.Add(this.label_fecha);
             this.panel_C.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -85,10 +95,11 @@
             // 
             // label_Hora
             // 
+            this.label_Hora.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label_Hora.AutoSize = true;
             this.label_Hora.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_Hora.ForeColor = System.Drawing.Color.Black;
-            this.label_Hora.Location = new System.Drawing.Point(76, 56);
+            this.label_Hora.Location = new System.Drawing.Point(537, 34);
             this.label_Hora.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label_Hora.Name = "label_Hora";
             this.label_Hora.Size = new System.Drawing.Size(52, 19);
@@ -97,10 +108,11 @@
             // 
             // label_fecha
             // 
+            this.label_fecha.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label_fecha.AutoSize = true;
             this.label_fecha.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_fecha.ForeColor = System.Drawing.Color.Black;
-            this.label_fecha.Location = new System.Drawing.Point(33, 24);
+            this.label_fecha.Location = new System.Drawing.Point(494, 2);
             this.label_fecha.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label_fecha.Name = "label_fecha";
             this.label_fecha.Size = new System.Drawing.Size(52, 19);
@@ -405,6 +417,43 @@
             this.timer1.Enabled = true;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // label_Bienvenida
+            // 
+            this.label_Bienvenida.AutoSize = true;
+            this.label_Bienvenida.Font = new System.Drawing.Font("Roboto", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_Bienvenida.Location = new System.Drawing.Point(5, 13);
+            this.label_Bienvenida.Name = "label_Bienvenida";
+            this.label_Bienvenida.Size = new System.Drawing.Size(122, 25);
+            this.label_Bienvenida.TabIndex = 13;
+            this.label_Bienvenida.Text = "Bienvenid@";
+            // 
+            // label1
+            // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Roboto", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(252, 59);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(173, 25);
+            this.label1.TabIndex = 14;
+            this.label1.Text = "Servicio al cliente";
+            // 
+            // chart1
+            // 
+            chartArea1.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chart1.Legends.Add(legend1);
+            this.chart1.Location = new System.Drawing.Point(10, 103);
+            this.chart1.Name = "chart1";
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.chart1.Series.Add(series1);
+            this.chart1.Size = new System.Drawing.Size(692, 400);
+            this.chart1.TabIndex = 15;
+            this.chart1.Text = "chart1";
+            // 
             // Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -426,6 +475,7 @@
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.rjCircularPictureBox_ImagenP)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -453,5 +503,8 @@
         private FontAwesome.Sharp.IconButton iconButton8;
         private FontAwesome.Sharp.IconButton iconButton_Form;
         private FontAwesome.Sharp.IconButton iconButton1;
+        private System.Windows.Forms.Label label_Bienvenida;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
     }
 }

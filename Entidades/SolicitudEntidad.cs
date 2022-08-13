@@ -17,14 +17,14 @@ namespace Entidades
         public string Dispositivo { get; set; }
         public string Area { get; set; }
         public DateTime Fecha { get; set; }
-        public bool Estado { get; set; }
+        public int Estado { get; set; }
         public string NombreTecnico { get; set; }
         public SolicitudEntidad()
         {
 
         }
 
-        public SolicitudEntidad(int id, int idUsuario, int idTecnico, string asunto, string descripcion, string urgencia, string dispositivo, string area, DateTime fecha, bool estado)
+        public SolicitudEntidad(int id, int idUsuario, int idTecnico, string asunto, string descripcion, string urgencia, string dispositivo, string area, DateTime fecha, int estado)
         {
             Id = id;
             IdUsuario = idUsuario;

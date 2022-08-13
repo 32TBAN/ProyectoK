@@ -40,7 +40,7 @@ namespace Precentacion
 
             foreach (var item in SolicitudNegocio.ListaSolicitudesCompleta())
             {
-                if (!item.Estado)
+                if (item.Estado == 0)
                 {
                     solicitudEntidads.Add(item);
                 }
@@ -82,12 +82,29 @@ namespace Precentacion
                 usuarioSeleccionado.Cedula = dataGridView_Tecnicos.Rows[e.RowIndex].Cells["Cedula"].Value.ToString();
                 textBox_Cedula.Text = usuarioSeleccionado.Cedula;
                 label_Tecnico.Text = usuarioSeleccionado.Cedula;
+                CargarSolictudesTec();
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Error no ha seleccionado una fila valida" +
                     " " + ex.Message.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void CargarSolictudesTec()
+        {
+            List<SolicitudEntidad> solicitudEntidadTecnico = new List<SolicitudEntidad>();
+            foreach (var item in SolicitudNegocio.ListaSolicitudesCompleta())
+            {
+                if (item.IdTecnico == usuarioSeleccionado.Id && item.Estado == 1)
+                    solicitudEntidadTecnico.Add(item);
+            }
+            dataGridView_SolicitudesTec.DataSource = solicitudEntidadTecnico;
+            dataGridView_SolicitudesTec.Columns["Id"].Visible = false;
+            dataGridView_SolicitudesTec.Columns["IdUsuario"].Visible = false;
+            dataGridView_SolicitudesTec.Columns["IdTecnico"].Visible = false;
+            dataGridView_SolicitudesTec.Columns["NombreTecnico"].Visible = false;
+            dataGridView_SolicitudesTec.Columns["Estado"].Visible = false;
         }
 
         private void dataGridView_Solicitudes_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -177,20 +194,60 @@ namespace Precentacion
                     asignacion.Terminada = false;
                     asignacion.Total = 0;
                     asignacion = AsignacionNegocio.Guardar(asignacion);
-                    item.Estado = true;
                     item.IdTecnico = usuarioSeleccionado.Id;
+                    item.Estado = 1;
                     SolicitudNegocio.Guardar(item);
                     if (asignacion == null)
                     {
                         MessageBox.Show("Error al asignar la solicitud"+" "+asignacion.IdSolicitud);
+             
                     }
                 }
                 MessageBox.Show("Se han asignado tadas las solicitudes");
                 CargarDataGrint();
+                CargarSolictudesTec();
+                solicitudEntidadsAsignadas.Clear();
                 dataGridView_Asignadas.DataSource = null;
             }
             else
                 MessageBox.Show("Aun no hay ninguna solicitud");
+        }
+
+        private void dataGridView_SolicitudesTec_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                //TODO: Quitar del a lista de asignaciones y actulizar el estado a un no asignada
+                int Q = Convert.ToInt32(dataGridView_SolicitudesTec.Rows[e.RowIndex].Cells["Id"].Value.ToString());
+                EliminarAsignacion(Q);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error no ha seleccionado una fila valida" +
+                    " " + ex.Message.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void EliminarAsignacion(int quitar)
+        {
+            if (MessageBox.Show("Esta seguro que desea quitarle esta solicitud a este tecnico?", "Quitar", MessageBoxButtons.YesNo,
+                 MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                SolicitudEntidad solicitudEntidadEliminar = SolicitudNegocio.BuscarSolicitud(quitar);
+                if (AsignacionNegocio.Eliminar(solicitudEntidadEliminar.Id, solicitudEntidadEliminar.IdTecnico))
+                {
+                    MessageBox.Show("Se ha quitado esa asigancion");
+                    solicitudEntidadEliminar.Estado = 0;
+                    solicitudEntidadEliminar = SolicitudNegocio.Guardar(solicitudEntidadEliminar);
+                    CargarDataGrint();
+                    CargarSolictudesTec();
+                }
+                else
+                {
+                    MessageBox.Show("Error eliminar");
+                }
+                CargarSolucitudes();
+            }
         }
     }
 }

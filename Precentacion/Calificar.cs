@@ -48,7 +48,7 @@ namespace Precentacion
 
         private void iconButton1_Click(object sender, EventArgs e)
         {
-            if (solicitudEntidad.Estado)
+            if (solicitudEntidad.Estado==2)
             {
                 NotaServicio();
             }
@@ -102,7 +102,7 @@ namespace Precentacion
 
         private void iconButton5_Click(object sender, EventArgs e)
         {
-            if (solicitudEntidad.Estado)
+            if (solicitudEntidad.Estado == 2)
             {
                 NotaServicio();
             }
@@ -176,10 +176,14 @@ namespace Precentacion
         {
             panel_NuevaSolicitud.Visible = false;
         }
-
+        /// <summary>
+        /// Edita la solicitudes
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void rjButton1_Click(object sender, EventArgs e)
         {
-            if (!solicitudEntidad.Estado)
+            if (solicitudEntidad.Estado == 0)
             {
                 if (ControlDatos())
                 {
@@ -189,7 +193,7 @@ namespace Precentacion
                     solicitudEntidad.Dispositivo = rjComboBox_Dispositivo.Texts;
                     solicitudEntidad.Area = rjComboBox_Area.Texts;
                     solicitudEntidad.Fecha = DateTime.Now;
-                    solicitudEntidad.Estado = false;
+                    solicitudEntidad.Estado = 0;
 
                     solicitudEntidad = SolicitudNegocio.Guardar(solicitudEntidad);
                     if (solicitudEntidad != null)

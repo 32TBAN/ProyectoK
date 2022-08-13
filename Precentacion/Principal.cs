@@ -46,6 +46,7 @@ namespace Precentacion
             {
                 rjCircularPictureBox_ImagenP.Image = CargarImagen(usuarioEntidad.Foto);
             }
+            label_Bienvenida.Text += " " + usuarioEntidad.Nombre;
         }
 
         private Image CargarImagen(byte[] foto)
@@ -101,10 +102,10 @@ namespace Precentacion
         {
             if (bottonActivo != null)
             {
-                bottonActivo.BackColor = Color.FromArgb(41, 39, 89);
+                bottonActivo.BackColor = Color.FromArgb(41,39, 89);
                 bottonActivo.ForeColor = Color.Gainsboro;
                 bottonActivo.TextAlign = ContentAlignment.MiddleLeft;
-                bottonActivo.IconColor = Color.Gainsboro;
+                bottonActivo.IconColor = Color.FromArgb(242, 207, 141);
                 bottonActivo.TextImageRelation = TextImageRelation.ImageBeforeText;
                 bottonActivo.ImageAlign = ContentAlignment.MiddleLeft;
             }

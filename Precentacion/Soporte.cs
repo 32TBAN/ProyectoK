@@ -18,7 +18,7 @@ namespace Precentacion
         SolicitudEntidad solicitudEntidad = new SolicitudEntidad();
         private IconButton bottonActivo;
         private Panel bordeInferior;
-        int IdSolicitud;
+
         public UsuarioEntidad usuarioEntidad { get; set; }
         public Soporte(UsuarioEntidad usuarioEntidad)
         {
@@ -69,12 +69,13 @@ namespace Precentacion
                 }
                 else
                 {
-                    List<SolicitudEntidad> solicitudHechas = solicitudEntidads.Where(x => x.Estado == true).ToList();
+                    //Carga los datos de solicitudes hechas
+                    List<SolicitudEntidad> solicitudHechas = solicitudEntidads.Where(x => x.Estado == 2).ToList();
                     if (solicitudHechas.Count >=1 )
                     {
                         foreach (var item in solicitudHechas)
                         {
-                            if (item.Estado)
+                            if (item.Estado == 2)
                             {
                                 Solicitudes solicitudes = new Solicitudes();
                                 solicitudes.Emisor = "Aun no se ha asignado aun tecnico";
@@ -163,7 +164,11 @@ namespace Precentacion
             textBox_Asunto.Text = "";
             richTextBox_Descripcion.Text = "";
         }
-
+        /// <summary>
+        /// Guarda la solcitud
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void rjButton1_Click(object sender, EventArgs e)
         {
             if (ControlDatos())
@@ -176,7 +181,7 @@ namespace Precentacion
                 solicitudEntidad.Dispositivo = rjComboBox_Dispositivo.Texts;
                 solicitudEntidad.Area = rjComboBox_Area.Texts;
                 solicitudEntidad.Fecha = DateTime.Now;
-                solicitudEntidad.Estado = false;
+                solicitudEntidad.Estado = 0;
 
                 solicitudEntidad = SolicitudNegocio.Guardar(solicitudEntidad);
                 if (solicitudEntidad != null)
