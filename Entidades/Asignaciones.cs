@@ -13,18 +13,20 @@ namespace Entidades
         public string Respuesta { get; set; }
         public bool Terminada { get; set; }
         public float Total { get; set; }
+        public DateTime FechaFin { get; set; }
         public Asignaciones()
         {
 
         }
 
-        public Asignaciones(int idSolicitud, int idTecnico, string respuesta, bool terminada, float total)
+        public Asignaciones(int idSolicitud, int idTecnico, string respuesta, bool terminada, float total, DateTime fechaFin)
         {
             IdSolicitud = idSolicitud;
             IdTecnico = idTecnico;
             Respuesta = respuesta;
             Terminada = terminada;
             Total = total;
+            FechaFin = fechaFin;
         }
     }
 }

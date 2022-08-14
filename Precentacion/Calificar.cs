@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -30,20 +31,58 @@ namespace Precentacion
             if (solicitudEntidad != null)
             {
                 label_Asunto.Text = solicitudEntidad.Asunto;
+                label_Descrpcion.Text = solicitudEntidad.Descripcion;
+                label_Fecha_Envio.Text = solicitudEntidad.Fecha.ToLongDateString() + "        ";
                 usuarioEntidadTecnico = UsuarioNegocio.BuscarUsuarioID(solicitudEntidad.IdTecnico);
-                if (usuarioEntidadTecnico.Id != 0)
+                if (solicitudEntidad.Estado == 1)
                 {
-                    label_Coreo.Text = usuarioEntidadTecnico.Email;
+                    CargarTexto();
+                    label_Fecha.Text = "En proceso";
+                    richTextBox_Requisitos.Text = "Aun no se revisa su solicitud";
+                    Total.Text = "Aun no se revisa su solicitud";
+                }
+                else if (solicitudEntidad.Estado == 2)
+                {
+                    CargarTexto();
+                    label_Fecha.Text = " ";
+                    richTextBox_Requisitos.Text = " ";
+                    Total.Text += "";
+                    //TODO: Cargar datos asignacion terminada
                 }
                 else
                 {
                     label_Coreo.Text = "No se ha asignado";
+                    richTextBox_Requisitos.Text = "No se ha asignado";
+                    label_Fecha.Text = "En proceso";
                 }
-                label_Descrpcion.Text = solicitudEntidad.Descripcion;
-                label_Fecha_Envio.Text = solicitudEntidad.Fecha.ToLongDateString()+"        ";
+
             }
             usuarioEntidadNormal = UsuarioNegocio.BuscarUsuarioID(solicitudEntidad.IdUsuario);
+            if (usuarioEntidadNormal.Perfil == "Tecnico")
+            {
+                rjButton_EnviarRes.Visible = true;
+            }
 
+        }
+
+        private void CargarTexto() {
+            label_Coreo.Text = usuarioEntidadTecnico.Email;
+            rjCircularPictureBox_perfil.Image = CargarImagen(usuarioEntidadTecnico.Foto);
+        }
+
+        private Image CargarImagen(byte[] foto)
+        {
+            try
+            {
+                MemoryStream ms = new MemoryStream(foto, 0, foto.Length);
+                ms.Write(foto, 0, foto.Length);
+                return Image.FromStream(ms, true);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
 
         private void iconButton1_Click(object sender, EventArgs e)
@@ -70,7 +109,7 @@ namespace Precentacion
             if (!panel_Min.Visible)
             {
                 panel_Min.Visible = true;
-                if (usuarioEntidadTecnico.Id != 0)
+                if (usuarioEntidadTecnico.Id != 0 && solicitudEntidad.Estado != 0)
                 {
                     label_Encargado.Text = usuarioEntidadTecnico.Nombre + " " + usuarioEntidadTecnico.Apellido;
                     if (usuarioEntidadNormal != null)
@@ -220,5 +259,6 @@ namespace Precentacion
             //enviar calificacion
             this.Close();
         }
+
     }
 }

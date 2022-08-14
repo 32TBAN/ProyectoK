@@ -238,6 +238,7 @@ namespace Datos
                                 usuarioEntidad.Email = dr["EMAIL"].ToString();
                                 usuarioEntidad.Perfil = dr["PERFIL"].ToString();
                                 usuarioEntidad.Contraseña = dr["CONTRASE"].ToString();
+                                usuarioEntidad.Foto = (byte[])dr["Foto"];
                             }
                         }
 

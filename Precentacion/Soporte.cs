@@ -50,7 +50,7 @@ namespace Precentacion
                     {
                         Solicitudes solicitudes = new Solicitudes();
                         solicitudes.textBox_IdSol.Click += TextBox_IdSol_Click;
-                        if (item.IdTecnico == 0)
+                        if (item.Estado == 0)
                             solicitudes.Emisor = "Aun no se ha asignado aun tecnico";
                         else
                             solicitudes.Emisor = UsuarioNegocio.BuscarUsuarioID(item.IdTecnico).Nombre;

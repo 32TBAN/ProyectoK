@@ -344,5 +344,11 @@ namespace Precentacion
             ActivateButton(sender, RGBColors.color3);
             AbrirFormularios(new Asignacion());
         }
+
+        private void iconButton7_Click(object sender, EventArgs e)
+        {
+            ActivateButton(sender,RGBColors.color4);
+            AbrirFormularios(new Revicion());
+        }
     }
 }

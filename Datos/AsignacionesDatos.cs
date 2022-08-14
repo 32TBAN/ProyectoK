@@ -94,7 +94,8 @@ namespace Datos
                                     Convert.ToInt32(dr["ID_TEC"].ToString()),
                                     dr["RESPUESTA"].ToString(),
                                     Convert.ToBoolean(dr["TERMINADA"].ToString()),
-                                    Convert.ToSingle(dr["TOTAL"].ToString())));
+                                    Convert.ToSingle(dr["TOTAL"].ToString()),
+                                    Convert.ToDateTime(dr["FEC_FIN"])));
                             }
                         }
 

@@ -35,6 +35,9 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Principal));
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel_C = new System.Windows.Forms.Panel();
+            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label_Bienvenida = new System.Windows.Forms.Label();
             this.label_Hora = new System.Windows.Forms.Label();
             this.label_fecha = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -43,6 +46,7 @@
             this.iconButton2 = new FontAwesome.Sharp.IconButton();
             this.iconButton4 = new FontAwesome.Sharp.IconButton();
             this.panel_Menu = new System.Windows.Forms.Panel();
+            this.iconButton7 = new FontAwesome.Sharp.IconButton();
             this.iconButton1 = new FontAwesome.Sharp.IconButton();
             this.iconButton8 = new FontAwesome.Sharp.IconButton();
             this.iconButton6 = new FontAwesome.Sharp.IconButton();
@@ -54,16 +58,13 @@
             this.iconButton_Menu = new FontAwesome.Sharp.IconButton();
             this.rjCircularPictureBox_ImagenP = new RJCodeAdvance.RJControls.RJCircularPictureBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.label_Bienvenida = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.panel1.SuspendLayout();
             this.panel_C.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.panel3.SuspendLayout();
             this.panel_Menu.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.rjCircularPictureBox_ImagenP)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -75,7 +76,7 @@
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(944, 561);
+            this.panel1.Size = new System.Drawing.Size(944, 661);
             this.panel1.TabIndex = 0;
             // 
             // panel_C
@@ -90,8 +91,45 @@
             this.panel_C.Location = new System.Drawing.Point(230, 27);
             this.panel_C.Margin = new System.Windows.Forms.Padding(2);
             this.panel_C.Name = "panel_C";
-            this.panel_C.Size = new System.Drawing.Size(714, 534);
+            this.panel_C.Size = new System.Drawing.Size(714, 634);
             this.panel_C.TabIndex = 20;
+            // 
+            // chart1
+            // 
+            chartArea1.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chart1.Legends.Add(legend1);
+            this.chart1.Location = new System.Drawing.Point(10, 103);
+            this.chart1.Name = "chart1";
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.chart1.Series.Add(series1);
+            this.chart1.Size = new System.Drawing.Size(692, 400);
+            this.chart1.TabIndex = 15;
+            this.chart1.Text = "chart1";
+            // 
+            // label1
+            // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Roboto", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(252, 109);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(173, 25);
+            this.label1.TabIndex = 14;
+            this.label1.Text = "Servicio al cliente";
+            // 
+            // label_Bienvenida
+            // 
+            this.label_Bienvenida.AutoSize = true;
+            this.label_Bienvenida.Font = new System.Drawing.Font("Roboto", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_Bienvenida.Location = new System.Drawing.Point(5, 13);
+            this.label_Bienvenida.Name = "label_Bienvenida";
+            this.label_Bienvenida.Size = new System.Drawing.Size(122, 25);
+            this.label_Bienvenida.TabIndex = 13;
+            this.label_Bienvenida.Text = "Bienvenid@";
             // 
             // label_Hora
             // 
@@ -213,6 +251,7 @@
             // panel_Menu
             // 
             this.panel_Menu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(89)))));
+            this.panel_Menu.Controls.Add(this.iconButton7);
             this.panel_Menu.Controls.Add(this.iconButton1);
             this.panel_Menu.Controls.Add(this.iconButton8);
             this.panel_Menu.Controls.Add(this.iconButton6);
@@ -222,8 +261,33 @@
             this.panel_Menu.Location = new System.Drawing.Point(0, 0);
             this.panel_Menu.Margin = new System.Windows.Forms.Padding(2);
             this.panel_Menu.Name = "panel_Menu";
-            this.panel_Menu.Size = new System.Drawing.Size(230, 561);
+            this.panel_Menu.Size = new System.Drawing.Size(230, 661);
             this.panel_Menu.TabIndex = 18;
+            // 
+            // iconButton7
+            // 
+            this.iconButton7.Dock = System.Windows.Forms.DockStyle.Top;
+            this.iconButton7.FlatAppearance.BorderSize = 0;
+            this.iconButton7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton7.Font = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.iconButton7.ForeColor = System.Drawing.Color.White;
+            this.iconButton7.IconChar = FontAwesome.Sharp.IconChar.Clipboard;
+            this.iconButton7.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(207)))), ((int)(((byte)(141)))));
+            this.iconButton7.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton7.IconSize = 30;
+            this.iconButton7.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButton7.Location = new System.Drawing.Point(0, 250);
+            this.iconButton7.Margin = new System.Windows.Forms.Padding(2);
+            this.iconButton7.Name = "iconButton7";
+            this.iconButton7.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.iconButton7.Size = new System.Drawing.Size(230, 60);
+            this.iconButton7.TabIndex = 20;
+            this.iconButton7.Tag = "Revisión Asignaciones";
+            this.iconButton7.Text = "   Revisión Asignaciones";
+            this.iconButton7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButton7.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.iconButton7.UseVisualStyleBackColor = true;
+            this.iconButton7.Click += new System.EventHandler(this.iconButton7_Click);
             // 
             // iconButton1
             // 
@@ -262,7 +326,7 @@
             this.iconButton8.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButton8.IconSize = 30;
             this.iconButton8.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton8.Location = new System.Drawing.Point(0, 519);
+            this.iconButton8.Location = new System.Drawing.Point(0, 619);
             this.iconButton8.Margin = new System.Windows.Forms.Padding(2);
             this.iconButton8.Name = "iconButton8";
             this.iconButton8.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
@@ -417,48 +481,11 @@
             this.timer1.Enabled = true;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // label_Bienvenida
-            // 
-            this.label_Bienvenida.AutoSize = true;
-            this.label_Bienvenida.Font = new System.Drawing.Font("Roboto", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Bienvenida.Location = new System.Drawing.Point(5, 13);
-            this.label_Bienvenida.Name = "label_Bienvenida";
-            this.label_Bienvenida.Size = new System.Drawing.Size(122, 25);
-            this.label_Bienvenida.TabIndex = 13;
-            this.label_Bienvenida.Text = "Bienvenid@";
-            // 
-            // label1
-            // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Roboto", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(252, 59);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(173, 25);
-            this.label1.TabIndex = 14;
-            this.label1.Text = "Servicio al cliente";
-            // 
-            // chart1
-            // 
-            chartArea1.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.chart1.Legends.Add(legend1);
-            this.chart1.Location = new System.Drawing.Point(10, 103);
-            this.chart1.Name = "chart1";
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.chart1.Series.Add(series1);
-            this.chart1.Size = new System.Drawing.Size(692, 400);
-            this.chart1.TabIndex = 15;
-            this.chart1.Text = "chart1";
-            // 
             // Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(944, 561);
+            this.ClientSize = new System.Drawing.Size(944, 661);
             this.Controls.Add(this.panel1);
             this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -470,12 +497,12 @@
             this.panel1.ResumeLayout(false);
             this.panel_C.ResumeLayout(false);
             this.panel_C.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel_Menu.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.rjCircularPictureBox_ImagenP)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -506,5 +533,6 @@
         private System.Windows.Forms.Label label_Bienvenida;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
+        private FontAwesome.Sharp.IconButton iconButton7;
     }
 }

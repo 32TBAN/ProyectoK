@@ -32,6 +32,7 @@
             this.iconButton2 = new FontAwesome.Sharp.IconButton();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel_Cabezera = new System.Windows.Forms.Panel();
+            this.iconButton5 = new FontAwesome.Sharp.IconButton();
             this.solicitudes1 = new Precentacion.Solicitudes();
             this.iconButton1 = new FontAwesome.Sharp.IconButton();
             this.iconButton_Pincipal = new FontAwesome.Sharp.IconButton();
@@ -56,7 +57,6 @@
             this.panel7 = new System.Windows.Forms.Panel();
             this.iconButton3 = new FontAwesome.Sharp.IconButton();
             this.label1 = new System.Windows.Forms.Label();
-            this.iconButton5 = new FontAwesome.Sharp.IconButton();
             this.panel1.SuspendLayout();
             this.panel_Cabezera.SuspendLayout();
             this.panel_Contendor.SuspendLayout();
@@ -122,6 +122,30 @@
             this.panel_Cabezera.Size = new System.Drawing.Size(755, 87);
             this.panel_Cabezera.TabIndex = 2;
             // 
+            // iconButton5
+            // 
+            this.iconButton5.FlatAppearance.BorderSize = 0;
+            this.iconButton5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton5.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.iconButton5.ForeColor = System.Drawing.Color.Black;
+            this.iconButton5.IconChar = FontAwesome.Sharp.IconChar.EnvelopeCircleCheck;
+            this.iconButton5.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(207)))), ((int)(((byte)(141)))));
+            this.iconButton5.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton5.IconSize = 25;
+            this.iconButton5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButton5.Location = new System.Drawing.Point(368, 0);
+            this.iconButton5.Margin = new System.Windows.Forms.Padding(2);
+            this.iconButton5.Name = "iconButton5";
+            this.iconButton5.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.iconButton5.Size = new System.Drawing.Size(181, 39);
+            this.iconButton5.TabIndex = 19;
+            this.iconButton5.Tag = "Agregar Perfil";
+            this.iconButton5.Text = "   Solicitudes Asignadas";
+            this.iconButton5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButton5.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.iconButton5.UseVisualStyleBackColor = true;
+            this.iconButton5.Click += new System.EventHandler(this.iconButton5_Click);
+            // 
             // solicitudes1
             // 
             this.solicitudes1.Asunto = "Asunto";
@@ -129,6 +153,7 @@
             this.solicitudes1.Descripcion = "Descripcion";
             this.solicitudes1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.solicitudes1.Emisor = "Emisor";
+            this.solicitudes1.Enabled = false;
             this.solicitudes1.Fecha = "Fecha";
             this.solicitudes1.Location = new System.Drawing.Point(0, 46);
             this.solicitudes1.Name = "solicitudes1";
@@ -470,30 +495,6 @@
             this.label1.Size = new System.Drawing.Size(113, 18);
             this.label1.TabIndex = 0;
             this.label1.Text = "Nueva Solicitud";
-            // 
-            // iconButton5
-            // 
-            this.iconButton5.FlatAppearance.BorderSize = 0;
-            this.iconButton5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton5.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.iconButton5.ForeColor = System.Drawing.Color.Black;
-            this.iconButton5.IconChar = FontAwesome.Sharp.IconChar.EnvelopeCircleCheck;
-            this.iconButton5.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(207)))), ((int)(((byte)(141)))));
-            this.iconButton5.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton5.IconSize = 25;
-            this.iconButton5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton5.Location = new System.Drawing.Point(368, 0);
-            this.iconButton5.Margin = new System.Windows.Forms.Padding(2);
-            this.iconButton5.Name = "iconButton5";
-            this.iconButton5.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.iconButton5.Size = new System.Drawing.Size(181, 39);
-            this.iconButton5.TabIndex = 19;
-            this.iconButton5.Tag = "Agregar Perfil";
-            this.iconButton5.Text = "   Solicitudes Asignadas";
-            this.iconButton5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton5.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconButton5.UseVisualStyleBackColor = true;
-            this.iconButton5.Click += new System.EventHandler(this.iconButton5_Click);
             // 
             // Soporte
             // 

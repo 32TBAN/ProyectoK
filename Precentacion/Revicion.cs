@@ -39,6 +39,7 @@ namespace Precentacion
             dataGridView_Realizadas.Columns["IdTecnico"].Visible = false;
             dataGridView_Realizadas.Columns["NombreTecnico"].Visible = false;
             dataGridView_Realizadas.Columns["Estado"].Visible = false;
+            dataGridView_Realizadas.Columns["Fecha"].Visible = false;
         }
     }
 }

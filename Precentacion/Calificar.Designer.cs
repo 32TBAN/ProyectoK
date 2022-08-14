@@ -36,7 +36,7 @@
             this.iconButton2 = new FontAwesome.Sharp.IconButton();
             this.iconButton3 = new FontAwesome.Sharp.IconButton();
             this.iconButton5 = new FontAwesome.Sharp.IconButton();
-            this.rjCircularPictureBox1 = new RJCodeAdvance.RJControls.RJCircularPictureBox();
+            this.rjCircularPictureBox_perfil = new RJCodeAdvance.RJControls.RJCircularPictureBox();
             this.label_Coreo = new System.Windows.Forms.Label();
             this.label_Fecha_Envio = new System.Windows.Forms.Label();
             this.panel_Min = new System.Windows.Forms.Panel();
@@ -64,6 +64,7 @@
             this.panel_NuevaSolicitud = new System.Windows.Forms.Panel();
             this.rjComboBox_Area = new RJCodeAdvance.RJControls.RJComboBox();
             this.label8 = new System.Windows.Forms.Label();
+            this.label_RequicitisT = new System.Windows.Forms.Label();
             this.label_Error = new System.Windows.Forms.Label();
             this.iconButton_Error = new FontAwesome.Sharp.IconButton();
             this.rjComboBox_Dispositivo = new RJCodeAdvance.RJControls.RJComboBox();
@@ -79,7 +80,10 @@
             this.panel7 = new System.Windows.Forms.Panel();
             this.iconButton8 = new FontAwesome.Sharp.IconButton();
             this.label14 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.rjCircularPictureBox1)).BeginInit();
+            this.Total = new System.Windows.Forms.Label();
+            this.richTextBox_Requisitos = new System.Windows.Forms.RichTextBox();
+            this.rjButton_EnviarRes = new RJCodeAdvance.RJControls.RJButton();
+            ((System.ComponentModel.ISupportInitialize)(this.rjCircularPictureBox_perfil)).BeginInit();
             this.panel_Min.SuspendLayout();
             this.panel_Calificasion.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox5)).BeginInit();
@@ -190,27 +194,27 @@
             this.iconButton5.IconColor = System.Drawing.Color.Black;
             this.iconButton5.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButton5.IconSize = 20;
-            this.iconButton5.Location = new System.Drawing.Point(703, -2);
+            this.iconButton5.Location = new System.Drawing.Point(1099, -2);
             this.iconButton5.Name = "iconButton5";
             this.iconButton5.Size = new System.Drawing.Size(33, 27);
             this.iconButton5.TabIndex = 12;
             this.iconButton5.UseVisualStyleBackColor = true;
             this.iconButton5.Click += new System.EventHandler(this.iconButton5_Click);
             // 
-            // rjCircularPictureBox1
+            // rjCircularPictureBox_perfil
             // 
-            this.rjCircularPictureBox1.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
-            this.rjCircularPictureBox1.BorderColor = System.Drawing.Color.RoyalBlue;
-            this.rjCircularPictureBox1.BorderColor2 = System.Drawing.Color.HotPink;
-            this.rjCircularPictureBox1.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
-            this.rjCircularPictureBox1.BorderSize = 2;
-            this.rjCircularPictureBox1.GradientAngle = 50F;
-            this.rjCircularPictureBox1.Location = new System.Drawing.Point(12, 67);
-            this.rjCircularPictureBox1.Name = "rjCircularPictureBox1";
-            this.rjCircularPictureBox1.Size = new System.Drawing.Size(48, 48);
-            this.rjCircularPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.rjCircularPictureBox1.TabIndex = 13;
-            this.rjCircularPictureBox1.TabStop = false;
+            this.rjCircularPictureBox_perfil.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
+            this.rjCircularPictureBox_perfil.BorderColor = System.Drawing.Color.RoyalBlue;
+            this.rjCircularPictureBox_perfil.BorderColor2 = System.Drawing.Color.HotPink;
+            this.rjCircularPictureBox_perfil.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
+            this.rjCircularPictureBox_perfil.BorderSize = 2;
+            this.rjCircularPictureBox_perfil.GradientAngle = 50F;
+            this.rjCircularPictureBox_perfil.Location = new System.Drawing.Point(12, 67);
+            this.rjCircularPictureBox_perfil.Name = "rjCircularPictureBox_perfil";
+            this.rjCircularPictureBox_perfil.Size = new System.Drawing.Size(48, 48);
+            this.rjCircularPictureBox_perfil.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.rjCircularPictureBox_perfil.TabIndex = 13;
+            this.rjCircularPictureBox_perfil.TabStop = false;
             // 
             // label_Coreo
             // 
@@ -225,7 +229,7 @@
             // 
             this.label_Fecha_Envio.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label_Fecha_Envio.AutoSize = true;
-            this.label_Fecha_Envio.Location = new System.Drawing.Point(588, 79);
+            this.label_Fecha_Envio.Location = new System.Drawing.Point(984, 79);
             this.label_Fecha_Envio.Name = "label_Fecha_Envio";
             this.label_Fecha_Envio.Size = new System.Drawing.Size(64, 13);
             this.label_Fecha_Envio.TabIndex = 15;
@@ -349,9 +353,9 @@
             this.panel_Calificasion.Controls.Add(this.iconButton6);
             this.panel_Calificasion.Controls.Add(this.label4);
             this.panel_Calificasion.Controls.Add(this.label3);
-            this.panel_Calificasion.Location = new System.Drawing.Point(17, 201);
+            this.panel_Calificasion.Location = new System.Drawing.Point(526, 395);
             this.panel_Calificasion.Name = "panel_Calificasion";
-            this.panel_Calificasion.Size = new System.Drawing.Size(710, 296);
+            this.panel_Calificasion.Size = new System.Drawing.Size(606, 296);
             this.panel_Calificasion.TabIndex = 17;
             this.panel_Calificasion.Visible = false;
             // 
@@ -366,7 +370,7 @@
             this.Enviar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Enviar.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Enviar.ForeColor = System.Drawing.Color.White;
-            this.Enviar.Location = new System.Drawing.Point(283, 222);
+            this.Enviar.Location = new System.Drawing.Point(223, 220);
             this.Enviar.Name = "Enviar";
             this.Enviar.Size = new System.Drawing.Size(169, 49);
             this.Enviar.TabIndex = 11;
@@ -377,7 +381,7 @@
             // 
             // richTextBox1
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(343, 161);
+            this.richTextBox1.Location = new System.Drawing.Point(283, 159);
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.Size = new System.Drawing.Size(217, 48);
             this.richTextBox1.TabIndex = 10;
@@ -387,7 +391,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(195, 159);
+            this.label6.Location = new System.Drawing.Point(135, 157);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(142, 19);
             this.label6.TabIndex = 9;
@@ -401,7 +405,7 @@
             this.iconPictureBox5.IconColor = System.Drawing.SystemColors.ControlText;
             this.iconPictureBox5.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconPictureBox5.IconSize = 55;
-            this.iconPictureBox5.Location = new System.Drawing.Point(483, 89);
+            this.iconPictureBox5.Location = new System.Drawing.Point(423, 87);
             this.iconPictureBox5.Name = "iconPictureBox5";
             this.iconPictureBox5.Size = new System.Drawing.Size(55, 57);
             this.iconPictureBox5.TabIndex = 8;
@@ -416,7 +420,7 @@
             this.iconPictureBox4.IconColor = System.Drawing.SystemColors.ControlText;
             this.iconPictureBox4.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconPictureBox4.IconSize = 55;
-            this.iconPictureBox4.Location = new System.Drawing.Point(413, 90);
+            this.iconPictureBox4.Location = new System.Drawing.Point(353, 88);
             this.iconPictureBox4.Name = "iconPictureBox4";
             this.iconPictureBox4.Size = new System.Drawing.Size(55, 57);
             this.iconPictureBox4.TabIndex = 7;
@@ -430,7 +434,7 @@
             this.iconPictureBox3.IconColor = System.Drawing.SystemColors.ControlText;
             this.iconPictureBox3.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconPictureBox3.IconSize = 55;
-            this.iconPictureBox3.Location = new System.Drawing.Point(339, 90);
+            this.iconPictureBox3.Location = new System.Drawing.Point(279, 88);
             this.iconPictureBox3.Name = "iconPictureBox3";
             this.iconPictureBox3.Size = new System.Drawing.Size(55, 57);
             this.iconPictureBox3.TabIndex = 6;
@@ -444,7 +448,7 @@
             this.iconPictureBox2.IconColor = System.Drawing.SystemColors.ControlText;
             this.iconPictureBox2.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconPictureBox2.IconSize = 55;
-            this.iconPictureBox2.Location = new System.Drawing.Point(269, 89);
+            this.iconPictureBox2.Location = new System.Drawing.Point(209, 87);
             this.iconPictureBox2.Name = "iconPictureBox2";
             this.iconPictureBox2.Size = new System.Drawing.Size(55, 57);
             this.iconPictureBox2.TabIndex = 5;
@@ -458,7 +462,7 @@
             this.iconPictureBox1.IconColor = System.Drawing.SystemColors.ControlText;
             this.iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconPictureBox1.IconSize = 55;
-            this.iconPictureBox1.Location = new System.Drawing.Point(199, 89);
+            this.iconPictureBox1.Location = new System.Drawing.Point(139, 87);
             this.iconPictureBox1.Name = "iconPictureBox1";
             this.iconPictureBox1.Size = new System.Drawing.Size(55, 57);
             this.iconPictureBox1.TabIndex = 4;
@@ -483,7 +487,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(315, 60);
+            this.label4.Location = new System.Drawing.Point(255, 58);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(81, 23);
             this.label4.TabIndex = 1;
@@ -493,7 +497,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Roboto", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(119, 9);
+            this.label3.Location = new System.Drawing.Point(59, 7);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(480, 25);
             this.label3.TabIndex = 0;
@@ -517,7 +521,7 @@
             this.panel_NuevaSolicitud.Controls.Add(this.label13);
             this.panel_NuevaSolicitud.Controls.Add(this.textBox_Asunto);
             this.panel_NuevaSolicitud.Controls.Add(this.panel7);
-            this.panel_NuevaSolicitud.Location = new System.Drawing.Point(121, 12);
+            this.panel_NuevaSolicitud.Location = new System.Drawing.Point(98, 20);
             this.panel_NuevaSolicitud.Name = "panel_NuevaSolicitud";
             this.panel_NuevaSolicitud.Size = new System.Drawing.Size(407, 354);
             this.panel_NuevaSolicitud.TabIndex = 18;
@@ -554,6 +558,16 @@
             this.label8.Size = new System.Drawing.Size(39, 18);
             this.label8.TabIndex = 21;
             this.label8.Text = "Area";
+            // 
+            // label_RequicitisT
+            // 
+            this.label_RequicitisT.AutoSize = true;
+            this.label_RequicitisT.Font = new System.Drawing.Font("Roboto", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_RequicitisT.Location = new System.Drawing.Point(12, 374);
+            this.label_RequicitisT.Name = "label_RequicitisT";
+            this.label_RequicitisT.Size = new System.Drawing.Size(337, 25);
+            this.label_RequicitisT.TabIndex = 19;
+            this.label_RequicitisT.Text = "Respuesta y requesitos del técnico";
             // 
             // label_Error
             // 
@@ -755,18 +769,61 @@
             this.label14.TabIndex = 0;
             this.label14.Text = "Editar Solicitud";
             // 
+            // Total
+            // 
+            this.Total.AutoSize = true;
+            this.Total.Font = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Total.Location = new System.Drawing.Point(13, 515);
+            this.Total.Name = "Total";
+            this.Total.Size = new System.Drawing.Size(48, 18);
+            this.Total.TabIndex = 21;
+            this.Total.Text = "Total: ";
+            // 
+            // richTextBox_Requisitos
+            // 
+            this.richTextBox_Requisitos.Location = new System.Drawing.Point(16, 402);
+            this.richTextBox_Requisitos.Name = "richTextBox_Requisitos";
+            this.richTextBox_Requisitos.ReadOnly = true;
+            this.richTextBox_Requisitos.Size = new System.Drawing.Size(488, 96);
+            this.richTextBox_Requisitos.TabIndex = 22;
+            this.richTextBox_Requisitos.Text = "";
+            // 
+            // rjButton_EnviarRes
+            // 
+            this.rjButton_EnviarRes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(97)))), ((int)(((byte)(209)))));
+            this.rjButton_EnviarRes.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(97)))), ((int)(((byte)(209)))));
+            this.rjButton_EnviarRes.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.rjButton_EnviarRes.BorderRadius = 15;
+            this.rjButton_EnviarRes.BorderSize = 0;
+            this.rjButton_EnviarRes.FlatAppearance.BorderSize = 0;
+            this.rjButton_EnviarRes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rjButton_EnviarRes.Font = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rjButton_EnviarRes.ForeColor = System.Drawing.Color.White;
+            this.rjButton_EnviarRes.Location = new System.Drawing.Point(401, 504);
+            this.rjButton_EnviarRes.Name = "rjButton_EnviarRes";
+            this.rjButton_EnviarRes.Size = new System.Drawing.Size(93, 33);
+            this.rjButton_EnviarRes.TabIndex = 23;
+            this.rjButton_EnviarRes.Text = "Enviar";
+            this.rjButton_EnviarRes.TextColor = System.Drawing.Color.White;
+            this.rjButton_EnviarRes.UseVisualStyleBackColor = false;
+            this.rjButton_EnviarRes.Visible = false;
+            // 
             // Calificar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(739, 496);
+            this.ClientSize = new System.Drawing.Size(1135, 694);
+            this.Controls.Add(this.rjButton_EnviarRes);
+            this.Controls.Add(this.richTextBox_Requisitos);
+            this.Controls.Add(this.label_RequicitisT);
+            this.Controls.Add(this.Total);
             this.Controls.Add(this.panel_NuevaSolicitud);
             this.Controls.Add(this.panel_Calificasion);
             this.Controls.Add(this.panel_Min);
             this.Controls.Add(this.label_Fecha_Envio);
             this.Controls.Add(this.label_Coreo);
-            this.Controls.Add(this.rjCircularPictureBox1);
+            this.Controls.Add(this.rjCircularPictureBox_perfil);
             this.Controls.Add(this.iconButton5);
             this.Controls.Add(this.iconButton3);
             this.Controls.Add(this.iconButton2);
@@ -778,7 +835,7 @@
             this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.Name = "Calificar";
             this.Text = "Calificar";
-            ((System.ComponentModel.ISupportInitialize)(this.rjCircularPictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rjCircularPictureBox_perfil)).EndInit();
             this.panel_Min.ResumeLayout(false);
             this.panel_Min.PerformLayout();
             this.panel_Calificasion.ResumeLayout(false);
@@ -807,7 +864,7 @@
         private FontAwesome.Sharp.IconButton iconButton2;
         private FontAwesome.Sharp.IconButton iconButton3;
         private FontAwesome.Sharp.IconButton iconButton5;
-        private RJCodeAdvance.RJControls.RJCircularPictureBox rjCircularPictureBox1;
+        private RJCodeAdvance.RJControls.RJCircularPictureBox rjCircularPictureBox_perfil;
         private System.Windows.Forms.Label label_Coreo;
         private System.Windows.Forms.Label label_Fecha_Envio;
         private System.Windows.Forms.Panel panel_Min;
@@ -850,5 +907,9 @@
         private System.Windows.Forms.Panel panel7;
         private FontAwesome.Sharp.IconButton iconButton8;
         private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label_RequicitisT;
+        private System.Windows.Forms.Label Total;
+        private System.Windows.Forms.RichTextBox richTextBox_Requisitos;
+        private RJCodeAdvance.RJControls.RJButton rjButton_EnviarRes;
     }
 }
