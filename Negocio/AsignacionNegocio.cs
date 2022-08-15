@@ -9,6 +9,11 @@ namespace Negocio
 {
     public static class AsignacionNegocio
     {
+        public static Asignaciones Actualizar(Asignaciones asignacion)
+        {
+            return AsignacionesDatos.Actualizar(asignacion);
+        }
+
         public static bool Eliminar(int id, int idTecnico)
         {
             return AsignacionesDatos.Eliminar(id,idTecnico);

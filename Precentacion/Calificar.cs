@@ -18,36 +18,61 @@ namespace Precentacion
         private SolicitudEntidad solicitudEntidad { get; set; }
         private UsuarioEntidad usuarioEntidadTecnico { get; set; }
         private UsuarioEntidad usuarioEntidadNormal { get; set; }
-
-        public Calificar(int idSolicitud)
+        private int usllama { get; set; }
+        Asignaciones asignacion = new Asignaciones();
+        public Calificar(int idSolicitud,int usllama)
         {
             InitializeComponent();
+            this.usllama = usllama;
             CargarDatos(idSolicitud);
         }
 
         private void CargarDatos(int idSolicitud)
         {
             solicitudEntidad = SolicitudNegocio.BuscarSolicitud(idSolicitud);
+            usuarioEntidadNormal = UsuarioNegocio.BuscarUsuarioID(solicitudEntidad.IdUsuario);
+            usuarioEntidadTecnico = UsuarioNegocio.BuscarUsuarioID(solicitudEntidad.IdTecnico);
+
             if (solicitudEntidad != null)
             {
-                label_Asunto.Text = solicitudEntidad.Asunto;
-                label_Descrpcion.Text = solicitudEntidad.Descripcion;
-                label_Fecha_Envio.Text = solicitudEntidad.Fecha.ToLongDateString() + "        ";
-                usuarioEntidadTecnico = UsuarioNegocio.BuscarUsuarioID(solicitudEntidad.IdTecnico);
+                CargarTxtPerfil();
+            }
+        }
+
+        private void CargarTxtPerfil()
+        {
+            label_Asunto.Text = solicitudEntidad.Asunto;
+            label_Descrpcion.Text = solicitudEntidad.Descripcion;
+            label_Fecha_Envio.Text = solicitudEntidad.Fecha.ToLongDateString() + "        ";
+            asignacion.IdSolicitud = solicitudEntidad.Id;
+            asignacion.IdTecnico = usuarioEntidadTecnico.Id;
+
+            if (usuarioEntidadNormal.Id == usllama)
+            {
                 if (solicitudEntidad.Estado == 1)
                 {
-                    CargarTexto();
+                    label_Coreo.Text = usuarioEntidadTecnico.Email;
+                    rjCircularPictureBox_perfil.Image = CargarImagen(usuarioEntidadTecnico.Foto);
                     label_Fecha.Text = "En proceso";
                     richTextBox_Requisitos.Text = "Aun no se revisa su solicitud";
                     Total.Text = "Aun no se revisa su solicitud";
                 }
                 else if (solicitudEntidad.Estado == 2)
                 {
-                    CargarTexto();
-                    label_Fecha.Text = " ";
-                    richTextBox_Requisitos.Text = " ";
-                    Total.Text += "";
-                    //TODO: Cargar datos asignacion terminada
+                    label_Coreo.Text = usuarioEntidadTecnico.Email;
+                    rjCircularPictureBox_perfil.Image = CargarImagen(usuarioEntidadTecnico.Foto);
+
+                    List<Asignaciones>  asignacionesTerminada = AsignacionNegocio.ListaAsignacionTerminada();
+
+                    foreach (var item in asignacionesTerminada)
+                    {
+                        if (item.IdSolicitud == solicitudEntidad.Id)
+                        {
+                            label_Fecha.Text = item.FechaFin.ToString();
+                            richTextBox_Requisitos.Text = item.Respuesta;
+                            Total.Text += item.Total.ToString();
+                        }
+                    }
                 }
                 else
                 {
@@ -55,19 +80,51 @@ namespace Precentacion
                     richTextBox_Requisitos.Text = "No se ha asignado";
                     label_Fecha.Text = "En proceso";
                 }
-
             }
-            usuarioEntidadNormal = UsuarioNegocio.BuscarUsuarioID(solicitudEntidad.IdUsuario);
-            if (usuarioEntidadNormal.Perfil == "Tecnico")
+            else
             {
-                rjButton_EnviarRes.Visible = true;
+                UsuarioEntidad usuarioEnvio = UsuarioNegocio.BuscarUsuarioID(solicitudEntidad.IdUsuario);
+                if (solicitudEntidad.Estado == 1)
+                {
+                    label_Coreo.Text = usuarioEnvio.Email;
+                    rjCircularPictureBox_perfil.Image = CargarImagen(usuarioEnvio.Foto);
+                    label_Fecha.Text = solicitudEntidad.Fecha.ToString();
+                    richTextBox_Requisitos.Text = "Escriba todo lo necesitado para solicionar el problema(heramientas, programas etc.)";
+                    Total.Text += "Aun no se revisa la solicitud";
+
+                    List<Asignaciones> asignacionesTerminada = AsignacionNegocio.ListaAsignacionTerminada();
+                    foreach (var item in asignacionesTerminada)
+                    {
+                        if (item.IdSolicitud == solicitudEntidad.Id)
+                        {
+                            label_Coreo.Text = usuarioEnvio.Email;
+                            rjCircularPictureBox_perfil.Image = CargarImagen(usuarioEnvio.Foto);
+                            label_Fecha.Text = solicitudEntidad.Fecha.ToString();
+                            richTextBox_Requisitos.Text = item.Respuesta;
+                            Total.Text += item.Total.ToString();
+                        }
+                    }
+
+                    richTextBox_Requisitos.ReadOnly = false;
+                    rjButton_EnviarRes.Visible = true;
+                }
+                else
+                {
+                    List<Asignaciones> asignacionesTerminada = AsignacionNegocio.ListaAsignacionTerminada();
+                    foreach (var item in asignacionesTerminada)
+                    {
+                        if (item.IdSolicitud == solicitudEntidad.Id)
+                        {
+                            label_Coreo.Text = usuarioEnvio.Email;
+                            rjCircularPictureBox_perfil.Image = CargarImagen(usuarioEnvio.Foto);
+                            label_Fecha.Text = solicitudEntidad.Fecha.ToString();
+                            richTextBox_Requisitos.Text = item.Respuesta;
+                            Total.Text += item.Total.ToString();
+                        }
+                    }
+                    richTextBox_Requisitos.ReadOnly = true;
+                }
             }
-
-        }
-
-        private void CargarTexto() {
-            label_Coreo.Text = usuarioEntidadTecnico.Email;
-            rjCircularPictureBox_perfil.Image = CargarImagen(usuarioEntidadTecnico.Foto);
         }
 
         private Image CargarImagen(byte[] foto)
@@ -260,5 +317,36 @@ namespace Precentacion
             this.Close();
         }
 
+        private void richTextBox_Requisitos_Enter(object sender, EventArgs e)
+        {
+            if (richTextBox_Requisitos.Text == "Escriba todo lo necesitado para solicionar el problema(heramientas, programas etc.)")
+            {
+                richTextBox_Requisitos.Text = "";
+            }
+        }
+
+        private void rjButton_EnviarRes_Click(object sender, EventArgs e)
+        {
+            if (richTextBox_Requisitos.Text != "")
+            {
+                asignacion.Terminada = true;
+                asignacion.Respuesta = richTextBox_Requisitos.Text;
+                asignacion.FechaFin = DateTime.Now;
+
+                asignacion = AsignacionNegocio.Actualizar(asignacion);
+                if (asignacion != null)
+                {
+                    MessageBox.Show("Se ha enviado su respuesta el tecnico jefe la revisara");
+                    richTextBox_Requisitos.ReadOnly = true;
+                    rjButton_EnviarRes.Visible = false;
+                }
+                else
+                    MessageBox.Show("Error al envia su respuesta");
+            }
+            else
+            {
+                MessageBox.Show("Aun no ha escrito su respuesta");
+            }
+        }
     }
 }

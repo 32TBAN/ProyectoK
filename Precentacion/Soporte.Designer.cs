@@ -235,9 +235,9 @@
             this.label_Solicitud.Font = new System.Drawing.Font("Roboto", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_Solicitud.Location = new System.Drawing.Point(14, 133);
             this.label_Solicitud.Name = "label_Solicitud";
-            this.label_Solicitud.Size = new System.Drawing.Size(316, 25);
+            this.label_Solicitud.Size = new System.Drawing.Size(224, 25);
             this.label_Solicitud.TabIndex = 2;
-            this.label_Solicitud.Text = "Aun no se han hecho solicitudes";
+            this.label_Solicitud.Text = "Aun no hay solicitudes";
             // 
             // panel_NuevaSolicitud
             // 

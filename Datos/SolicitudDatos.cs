@@ -65,6 +65,7 @@ namespace Datos
                                      c = 0;
                                 else
                                     c = Convert.ToInt32(dr["ID_TEC"].ToString());
+
                                 solicituds.Add(new SolicitudEntidad(
                                     Convert.ToInt32(dr["ID"].ToString()),
                                     Convert.ToInt32(dr["ID_USU"].ToString()),

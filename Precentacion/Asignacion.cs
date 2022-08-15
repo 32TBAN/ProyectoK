@@ -217,7 +217,6 @@ namespace Precentacion
         {
             try
             {
-                //TODO: Quitar del a lista de asignaciones y actulizar el estado a un no asignada
                 int Q = Convert.ToInt32(dataGridView_SolicitudesTec.Rows[e.RowIndex].Cells["Id"].Value.ToString());
                 EliminarAsignacion(Q);
             }

@@ -62,9 +62,9 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.panel_NuevaSolicitud = new System.Windows.Forms.Panel();
+            this.richTextBox_Descripcion = new System.Windows.Forms.RichTextBox();
             this.rjComboBox_Area = new RJCodeAdvance.RJControls.RJComboBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.label_RequicitisT = new System.Windows.Forms.Label();
             this.label_Error = new System.Windows.Forms.Label();
             this.iconButton_Error = new FontAwesome.Sharp.IconButton();
             this.rjComboBox_Dispositivo = new RJCodeAdvance.RJControls.RJComboBox();
@@ -74,12 +74,12 @@
             this.label12 = new System.Windows.Forms.Label();
             this.iconButton7 = new FontAwesome.Sharp.IconButton();
             this.rjButton1 = new RJCodeAdvance.RJControls.RJButton();
-            this.richTextBox_Descripcion = new System.Windows.Forms.RichTextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.textBox_Asunto = new System.Windows.Forms.TextBox();
             this.panel7 = new System.Windows.Forms.Panel();
             this.iconButton8 = new FontAwesome.Sharp.IconButton();
             this.label14 = new System.Windows.Forms.Label();
+            this.label_RequicitisT = new System.Windows.Forms.Label();
             this.Total = new System.Windows.Forms.Label();
             this.richTextBox_Requisitos = new System.Windows.Forms.RichTextBox();
             this.rjButton_EnviarRes = new RJCodeAdvance.RJControls.RJButton();
@@ -506,6 +506,7 @@
             // panel_NuevaSolicitud
             // 
             this.panel_NuevaSolicitud.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel_NuevaSolicitud.Controls.Add(this.richTextBox_Descripcion);
             this.panel_NuevaSolicitud.Controls.Add(this.rjComboBox_Area);
             this.panel_NuevaSolicitud.Controls.Add(this.label8);
             this.panel_NuevaSolicitud.Controls.Add(this.label_Error);
@@ -517,7 +518,6 @@
             this.panel_NuevaSolicitud.Controls.Add(this.label12);
             this.panel_NuevaSolicitud.Controls.Add(this.iconButton7);
             this.panel_NuevaSolicitud.Controls.Add(this.rjButton1);
-            this.panel_NuevaSolicitud.Controls.Add(this.richTextBox_Descripcion);
             this.panel_NuevaSolicitud.Controls.Add(this.label13);
             this.panel_NuevaSolicitud.Controls.Add(this.textBox_Asunto);
             this.panel_NuevaSolicitud.Controls.Add(this.panel7);
@@ -526,6 +526,16 @@
             this.panel_NuevaSolicitud.Size = new System.Drawing.Size(407, 354);
             this.panel_NuevaSolicitud.TabIndex = 18;
             this.panel_NuevaSolicitud.Visible = false;
+            // 
+            // richTextBox_Descripcion
+            // 
+            this.richTextBox_Descripcion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(237)))), ((int)(((byte)(242)))));
+            this.richTextBox_Descripcion.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.richTextBox_Descripcion.Location = new System.Drawing.Point(96, 76);
+            this.richTextBox_Descripcion.Name = "richTextBox_Descripcion";
+            this.richTextBox_Descripcion.Size = new System.Drawing.Size(299, 102);
+            this.richTextBox_Descripcion.TabIndex = 3;
+            this.richTextBox_Descripcion.Text = "";
             // 
             // rjComboBox_Area
             // 
@@ -558,16 +568,6 @@
             this.label8.Size = new System.Drawing.Size(39, 18);
             this.label8.TabIndex = 21;
             this.label8.Text = "Area";
-            // 
-            // label_RequicitisT
-            // 
-            this.label_RequicitisT.AutoSize = true;
-            this.label_RequicitisT.Font = new System.Drawing.Font("Roboto", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_RequicitisT.Location = new System.Drawing.Point(12, 374);
-            this.label_RequicitisT.Name = "label_RequicitisT";
-            this.label_RequicitisT.Size = new System.Drawing.Size(337, 25);
-            this.label_RequicitisT.TabIndex = 19;
-            this.label_RequicitisT.Text = "Respuesta y requesitos del técnico";
             // 
             // label_Error
             // 
@@ -704,16 +704,6 @@
             this.rjButton1.UseVisualStyleBackColor = false;
             this.rjButton1.Click += new System.EventHandler(this.rjButton1_Click);
             // 
-            // richTextBox_Descripcion
-            // 
-            this.richTextBox_Descripcion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(237)))), ((int)(((byte)(242)))));
-            this.richTextBox_Descripcion.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.richTextBox_Descripcion.Location = new System.Drawing.Point(96, 76);
-            this.richTextBox_Descripcion.Name = "richTextBox_Descripcion";
-            this.richTextBox_Descripcion.Size = new System.Drawing.Size(299, 102);
-            this.richTextBox_Descripcion.TabIndex = 3;
-            this.richTextBox_Descripcion.Text = "";
-            // 
             // label13
             // 
             this.label13.AutoSize = true;
@@ -769,6 +759,16 @@
             this.label14.TabIndex = 0;
             this.label14.Text = "Editar Solicitud";
             // 
+            // label_RequicitisT
+            // 
+            this.label_RequicitisT.AutoSize = true;
+            this.label_RequicitisT.Font = new System.Drawing.Font("Roboto", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_RequicitisT.Location = new System.Drawing.Point(12, 374);
+            this.label_RequicitisT.Name = "label_RequicitisT";
+            this.label_RequicitisT.Size = new System.Drawing.Size(337, 25);
+            this.label_RequicitisT.TabIndex = 19;
+            this.label_RequicitisT.Text = "Respuesta y requesitos del técnico";
+            // 
             // Total
             // 
             this.Total.AutoSize = true;
@@ -787,6 +787,7 @@
             this.richTextBox_Requisitos.Size = new System.Drawing.Size(488, 96);
             this.richTextBox_Requisitos.TabIndex = 22;
             this.richTextBox_Requisitos.Text = "";
+            this.richTextBox_Requisitos.Enter += new System.EventHandler(this.richTextBox_Requisitos_Enter);
             // 
             // rjButton_EnviarRes
             // 
@@ -807,6 +808,7 @@
             this.rjButton_EnviarRes.TextColor = System.Drawing.Color.White;
             this.rjButton_EnviarRes.UseVisualStyleBackColor = false;
             this.rjButton_EnviarRes.Visible = false;
+            this.rjButton_EnviarRes.Click += new System.EventHandler(this.rjButton_EnviarRes_Click);
             // 
             // Calificar
             // 

@@ -11,6 +11,34 @@ namespace Datos
 {
     public class AsignacionesDatos : Conexion
     {
+        public static Asignaciones Actualizar(Asignaciones asignacion)
+        {
+            try
+            {
+                using (OracleConnection connection = Conexion.ObtenerConexion())
+                {
+                    connection.Open();
+                    using (OracleCommand cmd = new OracleCommand("ActualizarAsignacion", connection))
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.Add("id_sol", OracleType.Number).Value = asignacion.IdSolicitud;
+                        cmd.Parameters.Add("resp", OracleType.NVarChar).Value = asignacion.Respuesta;
+                        cmd.Parameters.Add("termi", OracleType.Number).Value = Convert.ToInt16(asignacion.Terminada);
+                        cmd.Parameters.Add("tot", OracleType.Number).Value = asignacion.Total;
+                        cmd.Parameters.Add("fec", OracleType.DateTime).Value = asignacion.FechaFin;
+
+                        cmd.ExecuteNonQuery();
+                    }
+                }
+                return asignacion;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
         public static bool Eliminar(int id, int idTecnico)
         {
             try
@@ -93,9 +121,9 @@ namespace Datos
                                     Convert.ToInt32(dr["ID_SOL"].ToString()),
                                     Convert.ToInt32(dr["ID_TEC"].ToString()),
                                     dr["RESPUESTA"].ToString(),
-                                    Convert.ToBoolean(dr["TERMINADA"].ToString()),
+                                    Convert.ToBoolean(dr["TERMINADA"]),
                                     Convert.ToSingle(dr["TOTAL"].ToString()),
-                                    Convert.ToDateTime(dr["FEC_FIN"])));
+                                    (DateTime)(dr["FEC_FIN"]) ));
                             }
                         }
 

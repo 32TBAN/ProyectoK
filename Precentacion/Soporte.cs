@@ -23,13 +23,14 @@ namespace Precentacion
         public Soporte(UsuarioEntidad usuarioEntidad)
         {
             InitializeComponent();
-            CargarDatos();
             this.usuarioEntidad = usuarioEntidad;
+            CargarDatos();
+
         }
 
         private void CargarDatos()
         {
-            CargarSolicitudes(true);
+            CargarSolicitudes(0);
             //botones
             bordeInferior = new Panel();
             bordeInferior.Size = new Size(181, 2);
@@ -37,68 +38,42 @@ namespace Precentacion
             ActivateButton(iconButton_Pincipal);
         }
 
-        private void CargarSolicitudes(bool general)
+        private void CargarSolicitudes(int general)
         {
-            List<SolicitudEntidad> solicitudEntidads = SolicitudNegocio.ListaSolicitudes(22);
+
+           List<SolicitudEntidad> solicitudEntidads = new List<SolicitudEntidad>();
+
+            foreach (var item in SolicitudNegocio.ListaSolicitudesCompleta())
+            {
+                if (item.IdUsuario == usuarioEntidad.Id || item.IdTecnico == usuarioEntidad.Id)
+                {
+                    solicitudEntidads.Add(item);
+                }
+            }
             if (solicitudEntidads.Count >= 1)
             {
                 panel_Contendor.Controls.Clear();
                 panel_Contendor.Controls.Add(label_Solicitud);
-                if (general)
+                if (general == 0)
                 {
-                    foreach (var item in solicitudEntidads)
-                    {
-                        Solicitudes solicitudes = new Solicitudes();
-                        solicitudes.textBox_IdSol.Click += TextBox_IdSol_Click;
-                        if (item.Estado == 0)
-                            solicitudes.Emisor = "Aun no se ha asignado aun tecnico";
-                        else
-                            solicitudes.Emisor = UsuarioNegocio.BuscarUsuarioID(item.IdTecnico).Nombre;
-                        solicitudes.Asunto = item.Asunto;
-                        solicitudes.Descripcion = item.Descripcion;
-                        solicitudes.Fecha = item.Fecha.ToShortDateString();
-                        solicitudes.IdSolicitud = item.Id;
+                    List<SolicitudEntidad> solicitudesPendiente = null;
+                    if (usuarioEntidad.Perfil == "Usuario")
+                       solicitudesPendiente = solicitudEntidads.Where(x => x.Estado == 0 || x.Estado == 1).ToList();
+                    else
+                        solicitudesPendiente = solicitudEntidads.Where(x => x.Estado == 1).ToList();
 
-                        panel_Contendor.Controls.Add(solicitudes);
-                        foreach (Solicitudes sol in panel_Contendor.Controls.OfType<Solicitudes>())
-                        {
-                            sol.Dock = DockStyle.Top;
-                        }
-                    }
-                    label_Solicitud.Visible = false;
+                    CargarSolicitudComponente(solicitudesPendiente);
+                  
+                }
+                else if (general == 1)
+                {
+                    List<SolicitudEntidad> solicitudHechas = solicitudEntidads.Where(x => x.Estado == 2).ToList();
+                    CargarSolicitudComponente(solicitudHechas);
                 }
                 else
                 {
-                    //Carga los datos de solicitudes hechas
-                    List<SolicitudEntidad> solicitudHechas = solicitudEntidads.Where(x => x.Estado == 2).ToList();
-                    if (solicitudHechas.Count >=1 )
-                    {
-                        foreach (var item in solicitudHechas)
-                        {
-                            if (item.Estado == 2)
-                            {
-                                Solicitudes solicitudes = new Solicitudes();
-                                solicitudes.Emisor = "Aun no se ha asignado aun tecnico";
-                                solicitudes.Asunto = item.Asunto;
-                                solicitudes.Descripcion = item.Descripcion;
-                                solicitudes.Fecha = item.Fecha.ToShortDateString();
-                                solicitudes.IdSolicitud = item.Id;
-
-                                panel_Contendor.Controls.Add(solicitudes);
-                                foreach (Solicitudes sol in panel_Contendor.Controls.OfType<Solicitudes>())
-                                {
-                                    sol.Dock = DockStyle.Top;
-                                }
-                            }
-                        }
-                    }
-                    else
-                    {
-                        label_Solicitud.Text = "Sus solicitudestan aun estan pendientes";
-                        label_Solicitud.Visible = true;
-                        
-                    }
-
+                    List<SolicitudEntidad> solicitudAsignadas = solicitudEntidads.Where(x => x.Estado == 1).ToList();
+                    CargarSolicitudComponente(solicitudAsignadas);
                 }
             }
             else
@@ -107,13 +82,53 @@ namespace Precentacion
             panel_NuevaSolicitud.Visible = false;
         }
 
+        private void CargarSolicitudComponente(List<SolicitudEntidad> solicitudesPendiente)
+        {
+            if (solicitudesPendiente.Count >= 1)
+            {
+                foreach (var item in solicitudesPendiente)
+                {
+                    Solicitudes solicitudes = new Solicitudes();
+                    solicitudes.textBox_IdSol.Click += TextBox_IdSol_Click;
+                    if (item.Estado == 0)
+                        solicitudes.Emisor = "Aun no se ha asignado aun tecnico";
+                    else
+                    {
+                        if (usuarioEntidad.Perfil == "Tecnico")
+                            solicitudes.Emisor = "Jefe Tecnico";
+                        else
+                            solicitudes.Emisor = UsuarioNegocio.BuscarUsuarioID(item.IdTecnico).Nombre;
+                    }
+
+
+                    solicitudes.Asunto = item.Asunto;
+                    solicitudes.Descripcion = item.Descripcion;
+                    solicitudes.Fecha = item.Fecha.ToShortDateString();
+                    solicitudes.IdSolicitud = item.Id;
+
+                    panel_Contendor.Controls.Add(solicitudes);
+                    foreach (Solicitudes sol in panel_Contendor.Controls.OfType<Solicitudes>())
+                    {
+                        sol.Dock = DockStyle.Top;
+                    }
+                }
+                label_Solicitud.Visible = false;
+                //TODO: Si es un tecnico tambien debe apareser las solitudes asignadas
+            }
+            else
+            {
+                label_Solicitud.Visible = true;
+            }
+
+        }
+
         //Envia la informacion
         private void TextBox_IdSol_Click(object sender, EventArgs e)
         {
             panel_Cabezera.Visible = false;
             panel_Contendor.Controls.Clear();
             panel_Contendor.Controls.Add(panel_NuevaSolicitud);
-            AbrirForm(new Calificar(Convert.ToInt32(((TextBox)(sender)).Text)));
+            AbrirForm(new Calificar(Convert.ToInt32(((TextBox)(sender)).Text), usuarioEntidad.Id));
         }
 
         public void AbrirForm(Form form)
@@ -132,13 +147,13 @@ namespace Precentacion
         private void Form_FormClosed(object sender, FormClosedEventArgs e)
         {
             panel_Cabezera.Visible = true;
-            CargarSolicitudes(true);
+            CargarSolicitudes(0);
         }
 
         private void iconButton1_Click(object sender, EventArgs e)
         {
             ActivateButton(sender);
-            CargarSolicitudes(false);
+            CargarSolicitudes(1);
         }
 
         private void iconButton2_Click(object sender, EventArgs e)
@@ -173,7 +188,7 @@ namespace Precentacion
         {
             if (ControlDatos())
             {
-                solicitudEntidad.IdUsuario = 22;//TODO: Poner datos usuario
+                solicitudEntidad.IdUsuario = usuarioEntidad.Id;
                 solicitudEntidad.IdTecnico = 0;
                 solicitudEntidad.Asunto = textBox_Asunto.Text;
                 solicitudEntidad.Descripcion = richTextBox_Descripcion.Text;
@@ -189,7 +204,7 @@ namespace Precentacion
                     MessageBox.Show("Se ha enviado su solicitud");
                     Limpiar();
                     panel_NuevaSolicitud.Visible = false;
-                    CargarSolicitudes(true);
+                    CargarSolicitudes(0);
                 }
             }
         }
@@ -248,12 +263,14 @@ namespace Precentacion
         private void iconButton_Pincipal_Click(object sender, EventArgs e)
         {
             ActivateButton(sender);
-            CargarSolicitudes(true);
+            CargarSolicitudes(0);
         }
 
         private void iconButton5_Click(object sender, EventArgs e)
         {
             //TODO: Mostras solicitudes asignadas por el tecnico jefe
+            ActivateButton(sender);
+            CargarSolicitudes(2);
         }
     }
 }
