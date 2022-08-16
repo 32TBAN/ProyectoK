@@ -113,7 +113,6 @@ namespace Precentacion
                     }
                 }
                 label_Solicitud.Visible = false;
-                //TODO: Si es un tecnico tambien debe apareser las solitudes asignadas
             }
             else
             {
@@ -147,6 +146,7 @@ namespace Precentacion
         private void Form_FormClosed(object sender, FormClosedEventArgs e)
         {
             panel_Cabezera.Visible = true;
+            ActivateButton(iconButton_Pincipal);
             CargarSolicitudes(0);
         }
 

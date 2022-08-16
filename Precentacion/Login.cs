@@ -48,6 +48,8 @@ namespace Presentacion
                 Principal principal = new Principal(usuarioEntidad);
                 principal.FormClosed += Principal_FormClosed;
                 principal.Show();
+                rjTextBox_Usuario.Texts = "";
+                rjTextBox_Contrasenia.Texts = "";
             }
         }
 

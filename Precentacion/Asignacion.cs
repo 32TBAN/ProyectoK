@@ -17,7 +17,7 @@ namespace Precentacion
         private UsuarioEntidad usuarioSeleccionado = new UsuarioEntidad();
         private SolicitudEntidad solicitudSeleccionado = new SolicitudEntidad();
         private List<SolicitudEntidad> solicitudEntidadsAsignadas = new List<SolicitudEntidad>();
-        private Asignaciones asignacion = new Asignaciones();
+        private AsignacionesEntidad asignacion = new AsignacionesEntidad();
         public Asignacion()
         {
             InitializeComponent();

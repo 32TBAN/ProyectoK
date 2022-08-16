@@ -43,6 +43,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Asignaciones.cs" />
+    <Compile Include="CalificacionEntidad.cs" />
     <Compile Include="SolicitudEntidad.cs" />
     <Compile Include="UsuarioEntidad.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

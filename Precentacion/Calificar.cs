@@ -9,7 +9,12 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Entidades;
+using FontAwesome.Sharp;
 using Negocio;
+using iTextSharp.text;
+using iTextSharp.text.pdf;
+using iTextSharp.tool.xml;
+using Image = System.Drawing.Image;
 
 namespace Precentacion
 {
@@ -19,7 +24,8 @@ namespace Precentacion
         private UsuarioEntidad usuarioEntidadTecnico { get; set; }
         private UsuarioEntidad usuarioEntidadNormal { get; set; }
         private int usllama { get; set; }
-        Asignaciones asignacion = new Asignaciones();
+        private int cali=1;
+        AsignacionesEntidad asignacion = new AsignacionesEntidad();
         public Calificar(int idSolicitud,int usllama)
         {
             InitializeComponent();
@@ -62,7 +68,7 @@ namespace Precentacion
                     label_Coreo.Text = usuarioEntidadTecnico.Email;
                     rjCircularPictureBox_perfil.Image = CargarImagen(usuarioEntidadTecnico.Foto);
 
-                    List<Asignaciones>  asignacionesTerminada = AsignacionNegocio.ListaAsignacionTerminada();
+                    List<AsignacionesEntidad>  asignacionesTerminada = AsignacionNegocio.ListaAsignacionTerminada();
 
                     foreach (var item in asignacionesTerminada)
                     {
@@ -91,26 +97,35 @@ namespace Precentacion
                     label_Fecha.Text = solicitudEntidad.Fecha.ToString();
                     richTextBox_Requisitos.Text = "Escriba todo lo necesitado para solicionar el problema(heramientas, programas etc.)";
                     Total.Text += "Aun no se revisa la solicitud";
-
-                    List<Asignaciones> asignacionesTerminada = AsignacionNegocio.ListaAsignacionTerminada();
-                    foreach (var item in asignacionesTerminada)
-                    {
-                        if (item.IdSolicitud == solicitudEntidad.Id)
-                        {
-                            label_Coreo.Text = usuarioEnvio.Email;
-                            rjCircularPictureBox_perfil.Image = CargarImagen(usuarioEnvio.Foto);
-                            label_Fecha.Text = solicitudEntidad.Fecha.ToString();
-                            richTextBox_Requisitos.Text = item.Respuesta;
-                            Total.Text += item.Total.ToString();
-                        }
-                    }
-
                     richTextBox_Requisitos.ReadOnly = false;
                     rjButton_EnviarRes.Visible = true;
+
+                    List<AsignacionesEntidad> asignacionesTerminada = AsignacionNegocio.ListaAsignacionTerminada();
+
+                    if (asignacionesTerminada.Count >= 1)
+                    {
+                        foreach (var item in asignacionesTerminada)
+                        {
+                            if (item.IdSolicitud == solicitudEntidad.Id)
+                            {
+                                label_Coreo.Text = usuarioEnvio.Email;
+                                rjCircularPictureBox_perfil.Image = CargarImagen(usuarioEnvio.Foto);
+                                label_Fecha.Text = solicitudEntidad.Fecha.ToString();
+                                richTextBox_Requisitos.Text = item.Respuesta;
+                                Total.Text = "Total: "+item.Total.ToString();
+                            }
+                            if (richTextBox_Requisitos.Text == item.Respuesta)
+                            {
+                                richTextBox_Requisitos.ReadOnly = true;
+                                rjButton_EnviarRes.Visible = false;
+                            }
+                        }
+
+                    }
                 }
                 else
                 {
-                    List<Asignaciones> asignacionesTerminada = AsignacionNegocio.ListaAsignacionTerminada();
+                    List<AsignacionesEntidad> asignacionesTerminada = AsignacionNegocio.ListaAsignacionTerminada();
                     foreach (var item in asignacionesTerminada)
                     {
                         if (item.IdSolicitud == solicitudEntidad.Id)
@@ -119,7 +134,7 @@ namespace Precentacion
                             rjCircularPictureBox_perfil.Image = CargarImagen(usuarioEnvio.Foto);
                             label_Fecha.Text = solicitudEntidad.Fecha.ToString();
                             richTextBox_Requisitos.Text = item.Respuesta;
-                            Total.Text += item.Total.ToString();
+                            Total.Text = "Total: " + item.Total.ToString();
                         }
                     }
                     richTextBox_Requisitos.ReadOnly = true;
@@ -144,25 +159,20 @@ namespace Precentacion
 
         private void iconButton1_Click(object sender, EventArgs e)
         {
-            if (solicitudEntidad.Estado==2)
-            {
-                NotaServicio();
-            }
-            else
-            {
-                this.Close();
-            }
+            NotaServicio();
         }
 
         private void NotaServicio()
         {
-            //TODO: Calificar
-            panel_Calificasion.Visible = true;
+            CalificacionEntidad calificacionEntidad = CalificacionNegocio.SolicitudCal(solicitudEntidad.Id);
+            if (solicitudEntidad.Estado == 2 && usuarioEntidadNormal.Id == usllama && calificacionEntidad.IdSol == 0)
+                panel_Calificasion.Visible = true;
+            else
+                this.Close();
         }
 
         private void iconButton3_Click(object sender, EventArgs e)
         {
-            //TODO: Ver informacion del tecnico si no hay no mostrar
             if (!panel_Min.Visible)
             {
                 panel_Min.Visible = true;
@@ -198,24 +208,29 @@ namespace Precentacion
 
         private void iconButton5_Click(object sender, EventArgs e)
         {
-            if (solicitudEntidad.Estado == 2)
-            {
-                NotaServicio();
-            }
-            else
-            {
-                PdfServicio();
-            }
-        }
+            NotaServicio();
+            PdfServicio();
+        }        
 
         private void PdfServicio()
         {
-           //TODO: Hacer pdf del servicio
+            SaveFileDialog save = new SaveFileDialog();
+            save.FileName = DateTime.Now.ToString()+" "+solicitudEntidad.Id+".pdf";
+            string estructura = "";
+
+            if (save.ShowDialog() == DialogResult.OK)
+            {
+                using (FileStream stream = new FileStream(save.FileName,FileMode.Create))
+                {
+                    Document document = new Document(PageSize.A4,25,25,25,25);
+                    PdfWriter writer = PdfWriter.GetInstance(document,stream);
+
+                }
+            }
         }
 
         private void iconButton2_Click(object sender, EventArgs e)
         {
-            //TODO: Editar Solicitud
             panel_NuevaSolicitud.Visible = true;
         }
         private bool ControlDatos()
@@ -243,7 +258,6 @@ namespace Precentacion
         }
         private void iconButton4_Click(object sender, EventArgs e)
         {
-            //TODO: Eliminar Solicitud
             if (MessageBox.Show("Esta seguro que desea eliminar esta solicitud?","Eliminar",MessageBoxButtons.YesNo,
                 MessageBoxIcon.Question) == DialogResult.Yes)
             {
@@ -257,12 +271,6 @@ namespace Precentacion
             }
         }
 
-        private void iconPictureBox5_MouseHover(object sender, EventArgs e)
-        {
-            //TODO: Calificacion estrellas
-
-        }
-
         private void iconButton7_Click(object sender, EventArgs e)
         {
             Limpiar();
@@ -272,11 +280,7 @@ namespace Precentacion
         {
             panel_NuevaSolicitud.Visible = false;
         }
-        /// <summary>
-        /// Edita la solicitudes
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+
         private void rjButton1_Click(object sender, EventArgs e)
         {
             if (solicitudEntidad.Estado == 0)
@@ -313,7 +317,15 @@ namespace Precentacion
 
         private void Enviar_Click(object sender, EventArgs e)
         {
-            //enviar calificacion
+            CalificacionEntidad calificacionEntidad = new CalificacionEntidad();
+            calificacionEntidad.IdSol = solicitudEntidad.Id;
+            calificacionEntidad.Calificacion = cali;
+            calificacionEntidad.Comentario = richTextBox_Comentario.Text;
+            calificacionEntidad = CalificacionNegocio.Calificar(calificacionEntidad);
+            if (calificacionEntidad != null)
+            {
+                MessageBox.Show("Gracias");
+            }
             this.Close();
         }
 
@@ -346,6 +358,20 @@ namespace Precentacion
             else
             {
                 MessageBox.Show("Aun no ha escrito su respuesta");
+            }
+        }
+
+        private void iconPictureBox1_MouseHover(object sender, EventArgs e)
+        {
+            if (((IconPictureBox)(sender)).IconColor == Color.Yellow)
+            {
+                ((IconPictureBox)(sender)).IconColor = Color.Black;
+                cali -= 1;
+            }
+            else
+            {
+                ((IconPictureBox)(sender)).IconColor = Color.Yellow;
+                cali += 1;
             }
         }
     }

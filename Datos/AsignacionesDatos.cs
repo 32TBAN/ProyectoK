@@ -11,7 +11,7 @@ namespace Datos
 {
     public class AsignacionesDatos : Conexion
     {
-        public static Asignaciones Actualizar(Asignaciones asignacion)
+        public static AsignacionesEntidad Actualizar(AsignacionesEntidad asignacion)
         {
             try
             {
@@ -65,7 +65,7 @@ namespace Datos
             }
         }
 
-        public static Asignaciones Guardar(Asignaciones asignacion)
+        public static AsignacionesEntidad Guardar(AsignacionesEntidad asignacion)
         {
 			try
 			{
@@ -93,11 +93,11 @@ namespace Datos
 			}
         }
 
-        public static List<Asignaciones> ListaAsignacionTerminada()
+        public static List<AsignacionesEntidad> ListaAsignacionTerminada()
         {
             try
             {
-                List<Asignaciones> asignacionesTerminadas = new List<Asignaciones>();
+                List<AsignacionesEntidad> asignacionesTerminadas = new List<AsignacionesEntidad>();
 
                 using (OracleConnection connection = Conexion.ObtenerConexion())
                 {
@@ -106,7 +106,7 @@ namespace Datos
                     {
                         cmd.CommandType = CommandType.StoredProcedure;
                         cmd.Parameters.Add("buscar", OracleType.Cursor).Direction = ParameterDirection.Output;
-
+                        cmd.Parameters.Add("terminada",OracleType.Number).Value = 1;
                         using (var dr = cmd.ExecuteReader())
                         {
                             while (dr.Read())
@@ -117,7 +117,7 @@ namespace Datos
                                 else
                                     c = Convert.ToInt32(dr["ID_TEC"].ToString());
 
-                                asignacionesTerminadas.Add(new Asignaciones(
+                                asignacionesTerminadas.Add(new AsignacionesEntidad(
                                     Convert.ToInt32(dr["ID_SOL"].ToString()),
                                     Convert.ToInt32(dr["ID_TEC"].ToString()),
                                     dr["RESPUESTA"].ToString(),

@@ -9,7 +9,7 @@ namespace Negocio
 {
     public static class AsignacionNegocio
     {
-        public static Asignaciones Actualizar(Asignaciones asignacion)
+        public static AsignacionesEntidad Actualizar(AsignacionesEntidad asignacion)
         {
             return AsignacionesDatos.Actualizar(asignacion);
         }
@@ -19,12 +19,12 @@ namespace Negocio
             return AsignacionesDatos.Eliminar(id,idTecnico);
         }
 
-        public static Asignaciones Guardar(Asignaciones asignacion)
+        public static AsignacionesEntidad Guardar(AsignacionesEntidad asignacion)
         {
             return AsignacionesDatos.Guardar(asignacion);
         }
 
-        public static List<Asignaciones> ListaAsignacionTerminada()
+        public static List<AsignacionesEntidad> ListaAsignacionTerminada()
         {
             return AsignacionesDatos.ListaAsignacionTerminada();
         }

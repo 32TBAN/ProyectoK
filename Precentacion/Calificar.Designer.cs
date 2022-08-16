@@ -35,7 +35,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.iconButton2 = new FontAwesome.Sharp.IconButton();
             this.iconButton3 = new FontAwesome.Sharp.IconButton();
-            this.iconButton5 = new FontAwesome.Sharp.IconButton();
+            this.iconButton_Imprimir = new FontAwesome.Sharp.IconButton();
             this.rjCircularPictureBox_perfil = new RJCodeAdvance.RJControls.RJCircularPictureBox();
             this.label_Coreo = new System.Windows.Forms.Label();
             this.label_Fecha_Envio = new System.Windows.Forms.Label();
@@ -51,7 +51,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel_Calificasion = new System.Windows.Forms.Panel();
             this.Enviar = new RJCodeAdvance.RJControls.RJButton();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.richTextBox_Comentario = new System.Windows.Forms.RichTextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.iconPictureBox5 = new FontAwesome.Sharp.IconPictureBox();
             this.iconPictureBox4 = new FontAwesome.Sharp.IconPictureBox();
@@ -185,21 +185,21 @@
             this.iconButton3.UseVisualStyleBackColor = true;
             this.iconButton3.Click += new System.EventHandler(this.iconButton3_Click);
             // 
-            // iconButton5
+            // iconButton_Imprimir
             // 
-            this.iconButton5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.iconButton5.FlatAppearance.BorderSize = 0;
-            this.iconButton5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton5.IconChar = FontAwesome.Sharp.IconChar.Print;
-            this.iconButton5.IconColor = System.Drawing.Color.Black;
-            this.iconButton5.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton5.IconSize = 20;
-            this.iconButton5.Location = new System.Drawing.Point(1099, -2);
-            this.iconButton5.Name = "iconButton5";
-            this.iconButton5.Size = new System.Drawing.Size(33, 27);
-            this.iconButton5.TabIndex = 12;
-            this.iconButton5.UseVisualStyleBackColor = true;
-            this.iconButton5.Click += new System.EventHandler(this.iconButton5_Click);
+            this.iconButton_Imprimir.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.iconButton_Imprimir.FlatAppearance.BorderSize = 0;
+            this.iconButton_Imprimir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton_Imprimir.IconChar = FontAwesome.Sharp.IconChar.Print;
+            this.iconButton_Imprimir.IconColor = System.Drawing.Color.Black;
+            this.iconButton_Imprimir.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton_Imprimir.IconSize = 20;
+            this.iconButton_Imprimir.Location = new System.Drawing.Point(602, -2);
+            this.iconButton_Imprimir.Name = "iconButton_Imprimir";
+            this.iconButton_Imprimir.Size = new System.Drawing.Size(33, 27);
+            this.iconButton_Imprimir.TabIndex = 12;
+            this.iconButton_Imprimir.UseVisualStyleBackColor = true;
+            this.iconButton_Imprimir.Click += new System.EventHandler(this.iconButton5_Click);
             // 
             // rjCircularPictureBox_perfil
             // 
@@ -229,7 +229,7 @@
             // 
             this.label_Fecha_Envio.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label_Fecha_Envio.AutoSize = true;
-            this.label_Fecha_Envio.Location = new System.Drawing.Point(984, 79);
+            this.label_Fecha_Envio.Location = new System.Drawing.Point(487, 79);
             this.label_Fecha_Envio.Name = "label_Fecha_Envio";
             this.label_Fecha_Envio.Size = new System.Drawing.Size(64, 13);
             this.label_Fecha_Envio.TabIndex = 15;
@@ -238,6 +238,7 @@
             // 
             // panel_Min
             // 
+            this.panel_Min.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel_Min.Controls.Add(this.label_ENCARGO);
             this.panel_Min.Controls.Add(this.label_AsuntoMin);
             this.panel_Min.Controls.Add(this.label9);
@@ -343,7 +344,7 @@
             // panel_Calificasion
             // 
             this.panel_Calificasion.Controls.Add(this.Enviar);
-            this.panel_Calificasion.Controls.Add(this.richTextBox1);
+            this.panel_Calificasion.Controls.Add(this.richTextBox_Comentario);
             this.panel_Calificasion.Controls.Add(this.label6);
             this.panel_Calificasion.Controls.Add(this.iconPictureBox5);
             this.panel_Calificasion.Controls.Add(this.iconPictureBox4);
@@ -353,14 +354,16 @@
             this.panel_Calificasion.Controls.Add(this.iconButton6);
             this.panel_Calificasion.Controls.Add(this.label4);
             this.panel_Calificasion.Controls.Add(this.label3);
-            this.panel_Calificasion.Location = new System.Drawing.Point(526, 395);
+            this.panel_Calificasion.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel_Calificasion.Location = new System.Drawing.Point(0, 0);
             this.panel_Calificasion.Name = "panel_Calificasion";
-            this.panel_Calificasion.Size = new System.Drawing.Size(606, 296);
+            this.panel_Calificasion.Size = new System.Drawing.Size(638, 559);
             this.panel_Calificasion.TabIndex = 17;
             this.panel_Calificasion.Visible = false;
             // 
             // Enviar
             // 
+            this.Enviar.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Enviar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(97)))), ((int)(((byte)(209)))));
             this.Enviar.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(97)))), ((int)(((byte)(209)))));
             this.Enviar.BorderColor = System.Drawing.Color.PaleVioletRed;
@@ -370,7 +373,7 @@
             this.Enviar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Enviar.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Enviar.ForeColor = System.Drawing.Color.White;
-            this.Enviar.Location = new System.Drawing.Point(223, 220);
+            this.Enviar.Location = new System.Drawing.Point(242, 370);
             this.Enviar.Name = "Enviar";
             this.Enviar.Size = new System.Drawing.Size(169, 49);
             this.Enviar.TabIndex = 11;
@@ -379,19 +382,23 @@
             this.Enviar.UseVisualStyleBackColor = false;
             this.Enviar.Click += new System.EventHandler(this.Enviar_Click);
             // 
-            // richTextBox1
+            // richTextBox_Comentario
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(283, 159);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(217, 48);
-            this.richTextBox1.TabIndex = 10;
-            this.richTextBox1.Text = "";
+            this.richTextBox_Comentario.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.richTextBox_Comentario.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.richTextBox_Comentario.Location = new System.Drawing.Point(302, 309);
+            this.richTextBox_Comentario.MaxLength = 150;
+            this.richTextBox_Comentario.Name = "richTextBox_Comentario";
+            this.richTextBox_Comentario.Size = new System.Drawing.Size(217, 48);
+            this.richTextBox_Comentario.TabIndex = 10;
+            this.richTextBox_Comentario.Text = "";
             // 
             // label6
             // 
+            this.label6.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(135, 157);
+            this.label6.Location = new System.Drawing.Point(154, 307);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(142, 19);
             this.label6.TabIndex = 9;
@@ -399,84 +406,94 @@
             // 
             // iconPictureBox5
             // 
+            this.iconPictureBox5.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.iconPictureBox5.BackColor = System.Drawing.Color.White;
             this.iconPictureBox5.ForeColor = System.Drawing.SystemColors.ControlText;
             this.iconPictureBox5.IconChar = FontAwesome.Sharp.IconChar.Star;
             this.iconPictureBox5.IconColor = System.Drawing.SystemColors.ControlText;
             this.iconPictureBox5.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconPictureBox5.IconSize = 55;
-            this.iconPictureBox5.Location = new System.Drawing.Point(423, 87);
+            this.iconPictureBox5.Location = new System.Drawing.Point(442, 237);
             this.iconPictureBox5.Name = "iconPictureBox5";
             this.iconPictureBox5.Size = new System.Drawing.Size(55, 57);
             this.iconPictureBox5.TabIndex = 8;
             this.iconPictureBox5.TabStop = false;
-            this.iconPictureBox5.MouseHover += new System.EventHandler(this.iconPictureBox5_MouseHover);
+            this.iconPictureBox5.MouseHover += new System.EventHandler(this.iconPictureBox1_MouseHover);
             // 
             // iconPictureBox4
             // 
+            this.iconPictureBox4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.iconPictureBox4.BackColor = System.Drawing.Color.White;
             this.iconPictureBox4.ForeColor = System.Drawing.SystemColors.ControlText;
             this.iconPictureBox4.IconChar = FontAwesome.Sharp.IconChar.Star;
             this.iconPictureBox4.IconColor = System.Drawing.SystemColors.ControlText;
             this.iconPictureBox4.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconPictureBox4.IconSize = 55;
-            this.iconPictureBox4.Location = new System.Drawing.Point(353, 88);
+            this.iconPictureBox4.Location = new System.Drawing.Point(372, 238);
             this.iconPictureBox4.Name = "iconPictureBox4";
             this.iconPictureBox4.Size = new System.Drawing.Size(55, 57);
             this.iconPictureBox4.TabIndex = 7;
             this.iconPictureBox4.TabStop = false;
+            this.iconPictureBox4.MouseHover += new System.EventHandler(this.iconPictureBox1_MouseHover);
             // 
             // iconPictureBox3
             // 
+            this.iconPictureBox3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.iconPictureBox3.BackColor = System.Drawing.Color.White;
             this.iconPictureBox3.ForeColor = System.Drawing.SystemColors.ControlText;
             this.iconPictureBox3.IconChar = FontAwesome.Sharp.IconChar.Star;
             this.iconPictureBox3.IconColor = System.Drawing.SystemColors.ControlText;
             this.iconPictureBox3.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconPictureBox3.IconSize = 55;
-            this.iconPictureBox3.Location = new System.Drawing.Point(279, 88);
+            this.iconPictureBox3.Location = new System.Drawing.Point(298, 238);
             this.iconPictureBox3.Name = "iconPictureBox3";
             this.iconPictureBox3.Size = new System.Drawing.Size(55, 57);
             this.iconPictureBox3.TabIndex = 6;
             this.iconPictureBox3.TabStop = false;
+            this.iconPictureBox3.MouseHover += new System.EventHandler(this.iconPictureBox1_MouseHover);
             // 
             // iconPictureBox2
             // 
+            this.iconPictureBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.iconPictureBox2.BackColor = System.Drawing.Color.White;
             this.iconPictureBox2.ForeColor = System.Drawing.SystemColors.ControlText;
             this.iconPictureBox2.IconChar = FontAwesome.Sharp.IconChar.Star;
             this.iconPictureBox2.IconColor = System.Drawing.SystemColors.ControlText;
             this.iconPictureBox2.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconPictureBox2.IconSize = 55;
-            this.iconPictureBox2.Location = new System.Drawing.Point(209, 87);
+            this.iconPictureBox2.Location = new System.Drawing.Point(228, 237);
             this.iconPictureBox2.Name = "iconPictureBox2";
             this.iconPictureBox2.Size = new System.Drawing.Size(55, 57);
             this.iconPictureBox2.TabIndex = 5;
             this.iconPictureBox2.TabStop = false;
+            this.iconPictureBox2.MouseHover += new System.EventHandler(this.iconPictureBox1_MouseHover);
             // 
             // iconPictureBox1
             // 
+            this.iconPictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.iconPictureBox1.BackColor = System.Drawing.Color.White;
             this.iconPictureBox1.ForeColor = System.Drawing.SystemColors.ControlText;
             this.iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.Star;
             this.iconPictureBox1.IconColor = System.Drawing.SystemColors.ControlText;
             this.iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconPictureBox1.IconSize = 55;
-            this.iconPictureBox1.Location = new System.Drawing.Point(139, 87);
+            this.iconPictureBox1.Location = new System.Drawing.Point(158, 237);
             this.iconPictureBox1.Name = "iconPictureBox1";
             this.iconPictureBox1.Size = new System.Drawing.Size(55, 57);
             this.iconPictureBox1.TabIndex = 4;
             this.iconPictureBox1.TabStop = false;
+            this.iconPictureBox1.MouseHover += new System.EventHandler(this.iconPictureBox1_MouseHover);
             // 
             // iconButton6
             // 
+            this.iconButton6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.iconButton6.FlatAppearance.BorderSize = 0;
             this.iconButton6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.iconButton6.IconChar = FontAwesome.Sharp.IconChar.X;
             this.iconButton6.IconColor = System.Drawing.Color.Black;
             this.iconButton6.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButton6.IconSize = 20;
-            this.iconButton6.Location = new System.Drawing.Point(685, 3);
+            this.iconButton6.Location = new System.Drawing.Point(613, 10);
             this.iconButton6.Name = "iconButton6";
             this.iconButton6.Size = new System.Drawing.Size(22, 23);
             this.iconButton6.TabIndex = 2;
@@ -485,9 +502,10 @@
             // 
             // label4
             // 
+            this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(255, 58);
+            this.label4.Location = new System.Drawing.Point(274, 208);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(81, 23);
             this.label4.TabIndex = 1;
@@ -495,9 +513,10 @@
             // 
             // label3
             // 
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Roboto", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(59, 7);
+            this.label3.Location = new System.Drawing.Point(78, 157);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(480, 25);
             this.label3.TabIndex = 0;
@@ -521,7 +540,7 @@
             this.panel_NuevaSolicitud.Controls.Add(this.label13);
             this.panel_NuevaSolicitud.Controls.Add(this.textBox_Asunto);
             this.panel_NuevaSolicitud.Controls.Add(this.panel7);
-            this.panel_NuevaSolicitud.Location = new System.Drawing.Point(98, 20);
+            this.panel_NuevaSolicitud.Location = new System.Drawing.Point(110, 17);
             this.panel_NuevaSolicitud.Name = "panel_NuevaSolicitud";
             this.panel_NuevaSolicitud.Size = new System.Drawing.Size(407, 354);
             this.panel_NuevaSolicitud.TabIndex = 18;
@@ -782,6 +801,7 @@
             // richTextBox_Requisitos
             // 
             this.richTextBox_Requisitos.Location = new System.Drawing.Point(16, 402);
+            this.richTextBox_Requisitos.MaxLength = 150;
             this.richTextBox_Requisitos.Name = "richTextBox_Requisitos";
             this.richTextBox_Requisitos.ReadOnly = true;
             this.richTextBox_Requisitos.Size = new System.Drawing.Size(488, 96);
@@ -815,18 +835,18 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1135, 694);
+            this.ClientSize = new System.Drawing.Size(638, 559);
+            this.Controls.Add(this.panel_Calificasion);
             this.Controls.Add(this.rjButton_EnviarRes);
             this.Controls.Add(this.richTextBox_Requisitos);
             this.Controls.Add(this.label_RequicitisT);
             this.Controls.Add(this.Total);
             this.Controls.Add(this.panel_NuevaSolicitud);
-            this.Controls.Add(this.panel_Calificasion);
             this.Controls.Add(this.panel_Min);
             this.Controls.Add(this.label_Fecha_Envio);
             this.Controls.Add(this.label_Coreo);
             this.Controls.Add(this.rjCircularPictureBox_perfil);
-            this.Controls.Add(this.iconButton5);
+            this.Controls.Add(this.iconButton_Imprimir);
             this.Controls.Add(this.iconButton3);
             this.Controls.Add(this.iconButton2);
             this.Controls.Add(this.label2);
@@ -865,7 +885,7 @@
         private System.Windows.Forms.Label label2;
         private FontAwesome.Sharp.IconButton iconButton2;
         private FontAwesome.Sharp.IconButton iconButton3;
-        private FontAwesome.Sharp.IconButton iconButton5;
+        private FontAwesome.Sharp.IconButton iconButton_Imprimir;
         private RJCodeAdvance.RJControls.RJCircularPictureBox rjCircularPictureBox_perfil;
         private System.Windows.Forms.Label label_Coreo;
         private System.Windows.Forms.Label label_Fecha_Envio;
@@ -889,7 +909,7 @@
         private FontAwesome.Sharp.IconPictureBox iconPictureBox3;
         private FontAwesome.Sharp.IconPictureBox iconPictureBox2;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.RichTextBox richTextBox_Comentario;
         private RJCodeAdvance.RJControls.RJButton Enviar;
         private System.Windows.Forms.Panel panel_NuevaSolicitud;
         private RJCodeAdvance.RJControls.RJComboBox rjComboBox_Area;

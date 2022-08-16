@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Entidades
 {
-    public class Asignaciones
+    public class AsignacionesEntidad
     {
         public int IdSolicitud { get; set; }
         public int IdTecnico { get; set; }
@@ -14,12 +14,12 @@ namespace Entidades
         public bool Terminada { get; set; }
         public float Total { get; set; }
         public DateTime FechaFin { get; set; }
-        public Asignaciones()
+        public AsignacionesEntidad()
         {
 
         }
 
-        public Asignaciones(int idSolicitud, int idTecnico, string respuesta, bool terminada, float total, DateTime fechaFin)
+        public AsignacionesEntidad(int idSolicitud, int idTecnico, string respuesta, bool terminada, float total, DateTime fechaFin)
         {
             IdSolicitud = idSolicitud;
             IdTecnico = idTecnico;
