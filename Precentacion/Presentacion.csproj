@@ -207,5 +207,8 @@
   <ItemGroup>
     <None Include="Resources\profile_icon_176363.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Plantillapdf.html" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

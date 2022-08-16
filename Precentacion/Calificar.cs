@@ -15,6 +15,8 @@ using iTextSharp.text;
 using iTextSharp.text.pdf;
 using iTextSharp.tool.xml;
 using Image = System.Drawing.Image;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
+using iTextSharp.tool.xml.html;
 
 namespace Precentacion
 {
@@ -214,19 +216,59 @@ namespace Precentacion
 
         private void PdfServicio()
         {
-            SaveFileDialog save = new SaveFileDialog();
-            save.FileName = DateTime.Now.ToString()+" "+solicitudEntidad.Id+".pdf";
-            string estructura = "";
-
-            if (save.ShowDialog() == DialogResult.OK)
+            try
             {
-                using (FileStream stream = new FileStream(save.FileName,FileMode.Create))
-                {
-                    Document document = new Document(PageSize.A4,25,25,25,25);
-                    PdfWriter writer = PdfWriter.GetInstance(document,stream);
+                SaveFileDialog save = new SaveFileDialog();
+                save.FileName = solicitudEntidad.Id + ".pdf";
+                string estructura = Properties.Resources.Plantillapdf.ToString();
 
+                estructura = estructura.Replace("@nombre", (usuarioEntidadNormal.Nombre + " " + usuarioEntidadNormal.Apellido));
+                estructura = estructura.Replace("@cedula", usuarioEntidadNormal.Cedula);
+                estructura = estructura.Replace("@email", usuarioEntidadNormal.Email);
+
+                estructura = estructura.Replace("@numSol", solicitudEntidad.Id.ToString());
+                estructura = estructura.Replace("@fecha", DateTime.Now.ToString());
+
+                estructura = estructura.Replace("@dispositivo", solicitudEntidad.Dispositivo);
+                estructura = estructura.Replace("@asunto", solicitudEntidad.Asunto);
+                estructura = estructura.Replace("@descripcion", solicitudEntidad.Descripcion);
+                estructura = estructura.Replace("@total", Total.Text);
+
+                estructura = estructura.Replace("@nombreTec", (usuarioEntidadTecnico.Nombre + " " + usuarioEntidadTecnico.Apellido));
+                estructura = estructura.Replace("@emailTec", usuarioEntidadTecnico.Email);
+                
+                if (save.ShowDialog() == DialogResult.OK)
+                {
+                    using (FileStream stream = new FileStream(save.FileName, FileMode.Create))
+                    {
+                        Document document = new Document(PageSize.A4, 25, 25, 25, 25);
+                        PdfWriter writer = PdfWriter.GetInstance(document, stream);
+
+                        document.Open();
+                        document.Add(new Phrase(""));
+
+                        iTextSharp.text.Image img = iTextSharp.text.Image.GetInstance(Properties.Resources.inicio, System.Drawing.Imaging.ImageFormat.Png);
+                        img.ScaleToFit(60, 75);
+                        img.Alignment = iTextSharp.text.Image.UNDERLYING;
+                        img.SetAbsolutePosition(document.LeftMargin, document.Top-50);
+                        document.Add(img);
+
+                        using (StringReader sr = new StringReader(estructura))
+                        {
+                            XMLWorkerHelper.GetInstance().ParseXHtml(writer, document, sr);
+                        }
+                        document.Close();
+                        stream.Close();
+                        writer.Close();
+                    }
                 }
+                MessageBox.Show("Se ha generado su pdf");
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al generar el pdf "+ex.Message.ToString());
+            }
+          
         }
 
         private void iconButton2_Click(object sender, EventArgs e)

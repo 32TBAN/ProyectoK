@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using System.Data.OracleClient;
 using System.Data.SqlClient;
 using System.Data;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace Datos
 {
@@ -59,6 +60,12 @@ namespace Datos
         {
             try
             {
+                OracleParameter blobParameter = new OracleParameter();
+
+                blobParameter.OracleType = OracleType.Blob;
+                blobParameter.ParameterName = "fotoG";
+                blobParameter.Value = usuarioEntidad.Foto;
+
                 using (OracleConnection connection = Conexion.ObtenerConexion())
                 {
                     connection.Open();
@@ -70,9 +77,10 @@ namespace Datos
                         cmd.Parameters.Add("nombreG", OracleType.VarChar).Value = usuarioEntidad.Nombre;
                         cmd.Parameters.Add("apellidoG", OracleType.VarChar).Value = usuarioEntidad.Apellido;
                         cmd.Parameters.Add("emailG", OracleType.VarChar).Value = usuarioEntidad.Email;
-                        cmd.Parameters.Add("fotoG", OracleType.Blob).Value = usuarioEntidad.Foto;
                         cmd.Parameters.Add("perfilG", OracleType.VarChar).Value = usuarioEntidad.Perfil[0];
                         cmd.Parameters.Add("contraseG", OracleType.VarChar).Value = usuarioEntidad.Contraseña;
+                       // cmd.Parameters.Add("fotoG", OracleType.Blob).Value = usuarioEntidad.Foto;
+                        cmd.Parameters.Add(blobParameter);
                         cmd.ExecuteNonQuery();
                     }
                 }
@@ -100,9 +108,9 @@ namespace Datos
                         cmd.Parameters.Add("nombreG", OracleType.VarChar).Value = usuarioEntidad.Nombre;
                         cmd.Parameters.Add("apellidoG", OracleType.VarChar).Value = usuarioEntidad.Apellido;
                         cmd.Parameters.Add("emailG", OracleType.VarChar).Value = usuarioEntidad.Email;
-                        cmd.Parameters.Add("fotoG", OracleType.Blob).Value = usuarioEntidad.Foto;
                         cmd.Parameters.Add("perfilG", OracleType.VarChar).Value = usuarioEntidad.Perfil;
                         cmd.Parameters.Add("contraseG", OracleType.VarChar).Value = usuarioEntidad.Contraseña;
+                        cmd.Parameters.Add("fotoG", OracleType.Blob).Value = usuarioEntidad.Foto;
 
                         cmd.ExecuteNonQuery();
                     }

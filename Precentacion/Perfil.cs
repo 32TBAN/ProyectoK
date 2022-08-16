@@ -40,14 +40,27 @@ namespace Precentacion
             label_Apellido.Text = usuarioEntidad.Apellido;
             label_Email.Text = usuarioEntidad.Email;
             label_Permisos.Text = usuarioEntidad.Perfil;
-            //TODO: mETODO PARA CARGA LA FOTO
-            //rjCircularPictureBox_Foto.Image = CargarImagen(usuarioEntidad.Foto);
+            rjCircularPictureBox_Foto.Image = CargarBytesImagen(usuarioEntidad.Foto);
             rjTextBox_Nombre.Texts = usuarioEntidad.Nombre;
             rjTextBox_Apellido.Texts = usuarioEntidad.Apellido;
             rjTextBox_Email.Texts = usuarioEntidad.Email;
             rjTextBox_Contrasenia.Texts = usuarioEntidad.Contraseña;
         }
+        private Image CargarBytesImagen(byte[] foto)
+        {
+            try
+            {
+                MemoryStream ms = new MemoryStream(foto, 0, foto.Length);
+                ms.Write(foto, 0, foto.Length);
+                return Image.FromStream(ms, true);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Error al cargar imagen de perfil");
+                return null;
+            }
 
+        }
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             if (panel_EditarPerfil.Visible)

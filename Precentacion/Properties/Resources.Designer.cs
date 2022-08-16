@@ -101,6 +101,37 @@ namespace Precentacion.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a &lt;!DOCTYPE html&gt;
+        ///&lt;html lang=&quot;en&quot;&gt;
+        ///&lt;head&gt;
+        ///  &lt;meta charset=&quot;UTF-8&quot;&gt;
+        ///  &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
+        ///  &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+        ///  &lt;title&gt;Document&lt;/title&gt;
+        ///  &lt;style&gt;
+        ///    h1{
+        ///      text-align: center;
+        ///    }
+        ///    .datos{
+        ///      float: left;
+        ///      margin-left: 5%;
+        ///      border-style: solid;
+        ///      padding: 10px;
+        ///      padding-right: 150px;
+        ///      padding-bottom: 24px;
+        ///    }
+        ///    .fac{
+        ///      float: left;
+        ///      border-style: solid;
+        /// [resto de la cadena truncado]&quot;;.
+        /// </summary>
+        internal static string Plantillapdf {
+            get {
+                return ResourceManager.GetString("Plantillapdf", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap profile_icon_176363 {
