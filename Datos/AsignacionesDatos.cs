@@ -138,5 +138,44 @@ namespace Datos
                 throw;
             }
         }
+
+        public static List<AsignacionesEntidad> ListaTotalSemana(DateTime dateTime, DateTime now)
+        {
+            try
+            {
+                List<AsignacionesEntidad> asiganciones = new List<AsignacionesEntidad>();
+
+                using (OracleConnection connection = Conexion.ObtenerConexion())
+                {
+                    connection.Open();
+                    using (OracleCommand cmd = new OracleCommand("ListaTotalSemana", connection))
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.Add("buscar", OracleType.Cursor).Direction = ParameterDirection.Output;
+                        cmd.Parameters.Add("inicio", OracleType.DateTime).Value = dateTime;
+                        cmd.Parameters.Add("fin", OracleType.DateTime).Value = now;
+
+                        AsignacionesEntidad asignacionesEntidad = new AsignacionesEntidad();
+                        using (var dr = cmd.ExecuteReader())
+                        {
+                            while (dr.Read())
+                            {
+                                asignacionesEntidad.Total = Convert.ToSingle(dr["total"].ToString());
+                                asignacionesEntidad.FechaFin = Convert.ToDateTime(dr["FEC_FIN"]);
+                                asiganciones.Add(asignacionesEntidad);
+                            }
+                        }
+
+                    }
+                }
+
+                return asiganciones;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
     }
 }

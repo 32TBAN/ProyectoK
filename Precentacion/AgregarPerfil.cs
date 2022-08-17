@@ -28,42 +28,55 @@ namespace Precentacion
 
         private void CrearNuevoPerfil()
         {
-            if (ControlDatos())
+            try
             {
-                usuarioEntidad.Nombre = rjTextBox_Nombre.Texts;
-                usuarioEntidad.Apellido = rjTextBox_Apellido.Texts;
-                usuarioEntidad.Cedula = rjTextBox_Cedula.Texts;
-                usuarioEntidad.Email = rjTextBox_Email.Texts;
-                usuarioEntidad.Contraseña = rjTextBox_Contrasenia.Texts;
-                usuarioEntidad.Foto = CargarImagen();
-
-                switch (rjComboBox_TipoPerfil.Texts)
+                if (ControlDatos())
                 {
-                    case "Gerente":
-                        usuarioEntidad.Perfil = "G";
-                        break;
-                    case "Jefe Técnico":
-                        usuarioEntidad.Perfil = "J";
-                        break;
-                    case "Técnico":
-                        usuarioEntidad.Perfil = "T";
-                        break;
-                    case "Usuario":
-                        usuarioEntidad.Perfil = "U";
-                        break;
-                    default:
-                        break;
-                }
-             
+                    usuarioEntidad.Nombre = rjTextBox_Nombre.Texts;
+                    usuarioEntidad.Apellido = rjTextBox_Apellido.Texts;
+                    usuarioEntidad.Cedula = rjTextBox_Cedula.Texts;
+                    usuarioEntidad.Email = rjTextBox_Email.Texts;
+                    usuarioEntidad.Contraseña = rjTextBox_Contrasenia.Texts;
+                    usuarioEntidad.Foto = CargarImagen();
 
-                usuarioEntidad = UsuarioNegocio.Guardar(usuarioEntidad);
-                if (usuarioEntidad != null)
-                {
-                    MessageBox.Show("Se ha guardado");
-                    iconButton_Error.Visible = false;
-                    label_Error.Visible = false;
+                    switch (rjComboBox_TipoPerfil.Texts)
+                    {
+                        case "Gerente":
+                            usuarioEntidad.Perfil = "G";
+                            break;
+                        case "Jefe Técnico":
+                            usuarioEntidad.Perfil = "J";
+                            break;
+                        case "Técnico":
+                            usuarioEntidad.Perfil = "T";
+                            break;
+                        case "Usuario":
+                            usuarioEntidad.Perfil = "U";
+                            break;
+                        default:
+                            break;
+                    }
+
+                    UsuarioEntidad usuarioEntidadRespadldo = usuarioEntidad;
+                    usuarioEntidad = UsuarioNegocio.Guardar(usuarioEntidad);
+                    if (usuarioEntidad != null)
+                    {
+                        MessageBox.Show("Se ha guardado");
+                        iconButton_Error.Visible = false;
+                        label_Error.Visible = false;
+                    }
+                    else
+                    {
+                        MessageBox.Show("La imagen tiene que ser menor a 32KB", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        usuarioEntidad = usuarioEntidadRespadldo;
+                    }
                 }
             }
+            catch (Exception)
+            {
+                MessageBox.Show("Error: datos no validos");
+            }
+           
         }
 
         private byte[] CargarImagen()
@@ -82,40 +95,49 @@ namespace Precentacion
 
         private bool ControlDatos()
         {
-            if (rjTextBox_Nombre.Texts == "" || rjTextBox_Apellido.Texts == "" || 
-                rjTextBox_Cedula.Texts == "" || rjTextBox_Contrasenia.Texts == "" ||
-                rjComboBox_TipoPerfil.Texts == "" || rjTextBox_Email.Texts == "")
+            UsuarioEntidad usuarioEntidadBuscado = UsuarioNegocio.BuscarUsuarioCedula(rjTextBox_Cedula.Texts);
+            if (usuarioEntidadBuscado != null)
             {
-                MostrarError(0);
-                return false;
-            }
-            else if (rjTextBox_Email.Texts == UsuarioNegocio.BuscarUsuarioEmail(rjTextBox_Email.Texts).Email)
-            {
-                MostrarError(2);
-                return false;
-            }
-            else if (rjTextBox_Cedula.Texts == UsuarioNegocio.BuscarUsuarioCedula(rjTextBox_Cedula.Texts).Cedula)
-            {
-                MostrarError(3);
-                return false;
-            }
-            else if (rjTextBox_Cedula.Texts.Length > 10)
-            {
-                MostrarError(4);
-                return false;
-            }
-            else 
-            {
-                foreach (var item in rjComboBox_TipoPerfil.Items)
+                if (rjTextBox_Nombre.Texts == "" || rjTextBox_Apellido.Texts == "" ||
+                                rjTextBox_Cedula.Texts == "" || rjTextBox_Contrasenia.Texts == "" ||
+                                rjComboBox_TipoPerfil.Texts == "" || rjTextBox_Email.Texts == "")
                 {
-                    if (item.ToString().Equals(rjComboBox_TipoPerfil.Texts))
+                    MostrarError(0);
+                    return false;
+                }
+                else if (rjTextBox_Email.Texts == UsuarioNegocio.BuscarUsuarioEmail(rjTextBox_Email.Texts).Email)
+                {
+                    MostrarError(2);
+                    return false;
+                }
+                else if (rjTextBox_Cedula.Texts == usuarioEntidadBuscado.Cedula)
+                {
+                    MostrarError(3);
+                    return false;
+                }
+                else if (rjTextBox_Cedula.Texts.Length != 10)
+                {
+                    MostrarError(4);
+                    return false;
+                }
+                else
+                {
+                    foreach (var item in rjComboBox_TipoPerfil.Items)
                     {
-                        return true;
+                        if (item.ToString().Equals(rjComboBox_TipoPerfil.Texts))
+                        {
+                            return true;
+                        }
                     }
                 }
+                MostrarError(1);
+                return false;
             }
-            MostrarError(1);
-            return false;
+            else
+            {
+                MessageBox.Show("Cedula invalida");
+                return false;
+            }
         }
 
         private void MostrarError(int v)

@@ -79,11 +79,18 @@ namespace Precentacion
                 usuarioEntidad.Contraseña = rjTextBox_Contrasenia.Texts;
                 usuarioEntidad.Foto = CargarImagen();
 
-                usuarioEntidad = UsuarioNegocio.Guardar(usuarioEntidad);//TODO: Error al ingresar otra imagen
+                UsuarioEntidad usuarioEntidadRespadlo = usuarioEntidad;
+                usuarioEntidad = UsuarioNegocio.Guardar(usuarioEntidad);
+
                 if (usuarioEntidad != null)
                 {
                     MessageBox.Show("Se ha Editado");
                     OcultarComponentes();
+                }
+                else
+                {
+                    MessageBox.Show("La imagen tiene que ser menor a 32KB", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    usuarioEntidad = usuarioEntidadRespadlo;
                 }
             }
         }
@@ -156,6 +163,11 @@ namespace Precentacion
                 editarC = false;
             else
                 editarC = true;
+        }
+
+        private void rjButton2_Click(object sender, EventArgs e)
+        {
+            panel_EditarPerfil.Visible = false;
         }
     }
 }

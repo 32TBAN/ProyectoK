@@ -12,6 +12,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Entidades;
 using FontAwesome.Sharp;
+using Negocio;
+
 namespace Precentacion
 {
     public partial class Principal : Form
@@ -35,6 +37,24 @@ namespace Precentacion
             leftBorderBtn.Size = new Size(7, 60);
             panel_Menu.Controls.Add(leftBorderBtn);
             ContraerMenu();
+            MostrarPermiso();
+        }
+
+        private void MostrarPermiso()
+        {
+            if (usuarioEntidad.Perfil == "Usuario")
+            {
+                chart_IngresoFecha.Visible = false;
+                iconButton_Agregar.Visible = false;
+                iconButton_ASIGNAR.Visible = false;
+                iconButton_revisar.Visible = false;
+            }
+            else if (usuarioEntidad.Perfil == "Tecnico")
+            {
+                iconButton_Agregar.Visible = false;
+                iconButton_ASIGNAR.Visible = false;
+                iconButton_revisar.Visible = false;
+            }
         }
 
         private void CargarDatos()
@@ -47,6 +67,8 @@ namespace Precentacion
                 rjCircularPictureBox_ImagenP.Image = CargarImagen(usuarioEntidad.Foto);
             }
             label_Bienvenida.Text += " " + usuarioEntidad.Nombre;
+
+            CargarChat();
         }
 
         private Image CargarImagen(byte[] foto)
@@ -71,8 +93,6 @@ namespace Precentacion
             public static Color color2 = Color.FromArgb(249, 118, 176);
             public static Color color3 = Color.FromArgb(253, 138, 114);
             public static Color color4 = Color.FromArgb(95, 77, 221);
-            public static Color color5 = Color.FromArgb(249, 88, 155);
-            public static Color color6 = Color.FromArgb(24, 161, 251);
         }
         //Methods
         private void ActivateButton(object senderBtn, Color color)
@@ -321,8 +341,20 @@ namespace Precentacion
             if (formAbierto != null)
             {
                 formAbierto.Close();
+                CargarChat();
                 Reset();
             }
+        }
+
+        private void CargarChat()
+        {
+            //Tabla datos
+            List<AsignacionesEntidad> asignacionesEntidads = AsignacionNegocio.ListaTotalSemana(DateTime.Today.AddDays(-7), DateTime.Now);
+            chart_IngresoFecha.DataSource = null;
+            chart_IngresoFecha.DataSource = asignacionesEntidads;
+            chart_IngresoFecha.Series[0].XValueMember = "FechaFin";
+            chart_IngresoFecha.Series[0].YValueMembers = "Total";
+            chart_IngresoFecha.DataBind();
         }
 
         private void Reset()
@@ -335,12 +367,14 @@ namespace Precentacion
 
         private void iconButton8_Click(object sender, EventArgs e)
         {
-            //TODO: SALIR FORM
+            if (MessageBox.Show("Esta seguro que desea salir?","Salir",MessageBoxButtons.YesNo,MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                this.Close();
+            }
         }
 
         private void iconButton1_Click_1(object sender, EventArgs e)
         {
-            //TODO: Asignar una solicitud a un tecnico
             ActivateButton(sender, RGBColors.color3);
             AbrirFormularios(new Asignacion());
         }

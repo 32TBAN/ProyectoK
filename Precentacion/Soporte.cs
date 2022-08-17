@@ -25,7 +25,15 @@ namespace Precentacion
             InitializeComponent();
             this.usuarioEntidad = usuarioEntidad;
             CargarDatos();
+            CargarPermisos();
+        }
 
+        private void CargarPermisos()
+        {
+            if (usuarioEntidad.Perfil == "Usuarios")
+                iconButton_SolicituAsig.Visible = false;
+            else
+                iconButton_NUebasol.Visible = false;
         }
 
         private void CargarDatos()
@@ -268,7 +276,6 @@ namespace Precentacion
 
         private void iconButton5_Click(object sender, EventArgs e)
         {
-            //TODO: Mostras solicitudes asignadas por el tecnico jefe
             ActivateButton(sender);
             CargarSolicitudes(2);
         }

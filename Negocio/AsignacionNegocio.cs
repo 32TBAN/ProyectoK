@@ -28,5 +28,10 @@ namespace Negocio
         {
             return AsignacionesDatos.ListaAsignacionTerminada();
         }
+
+        public static List<AsignacionesEntidad> ListaTotalSemana(DateTime dateTime, DateTime now)
+        {
+            return AsignacionesDatos.ListaTotalSemana(dateTime,now);
+        }
     }
 }

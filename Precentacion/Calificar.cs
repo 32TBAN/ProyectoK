@@ -33,6 +33,16 @@ namespace Precentacion
             InitializeComponent();
             this.usllama = usllama;
             CargarDatos(idSolicitud);
+            CargarPermisos();
+        }
+
+        private void CargarPermisos()
+        {
+            if (usuarioEntidadNormal.Id != usllama)
+            {
+                iconButton_Eliminar.Visible = false;
+                iconButton_Editar.Visible = false;
+            }
         }
 
         private void CargarDatos(int idSolicitud)

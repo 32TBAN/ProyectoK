@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.iconButton2 = new FontAwesome.Sharp.IconButton();
+            this.iconButton_NUebasol = new FontAwesome.Sharp.IconButton();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel_Cabezera = new System.Windows.Forms.Panel();
-            this.iconButton5 = new FontAwesome.Sharp.IconButton();
+            this.iconButton_SolicituAsig = new FontAwesome.Sharp.IconButton();
             this.solicitudes1 = new Precentacion.Solicitudes();
             this.iconButton1 = new FontAwesome.Sharp.IconButton();
             this.iconButton_Pincipal = new FontAwesome.Sharp.IconButton();
@@ -57,6 +57,8 @@
             this.panel7 = new System.Windows.Forms.Panel();
             this.iconButton3 = new FontAwesome.Sharp.IconButton();
             this.label1 = new System.Windows.Forms.Label();
+            this.iconButton_SolAsig = new FontAwesome.Sharp.IconButton();
+            this.iconButton_NUeba_sol = new FontAwesome.Sharp.IconButton();
             this.panel1.SuspendLayout();
             this.panel_Cabezera.SuspendLayout();
             this.panel_Contendor.SuspendLayout();
@@ -67,37 +69,37 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Controls.Add(this.iconButton2);
+            this.panel1.Controls.Add(this.iconButton_NUebasol);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(755, 44);
             this.panel1.TabIndex = 0;
             // 
-            // iconButton2
+            // iconButton_NUebasol
             // 
-            this.iconButton2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.iconButton2.FlatAppearance.BorderSize = 0;
-            this.iconButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton2.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.iconButton2.ForeColor = System.Drawing.Color.Black;
-            this.iconButton2.IconChar = FontAwesome.Sharp.IconChar.Plus;
-            this.iconButton2.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(207)))), ((int)(((byte)(141)))));
-            this.iconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton2.IconSize = 25;
-            this.iconButton2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton2.Location = new System.Drawing.Point(0, 0);
-            this.iconButton2.Margin = new System.Windows.Forms.Padding(2);
-            this.iconButton2.Name = "iconButton2";
-            this.iconButton2.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.iconButton2.Size = new System.Drawing.Size(114, 44);
-            this.iconButton2.TabIndex = 17;
-            this.iconButton2.Tag = "Agregar Perfil";
-            this.iconButton2.Text = "   Nueva Solicitud";
-            this.iconButton2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconButton2.UseVisualStyleBackColor = true;
-            this.iconButton2.Click += new System.EventHandler(this.iconButton2_Click);
+            this.iconButton_NUebasol.Dock = System.Windows.Forms.DockStyle.Left;
+            this.iconButton_NUebasol.FlatAppearance.BorderSize = 0;
+            this.iconButton_NUebasol.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton_NUebasol.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.iconButton_NUebasol.ForeColor = System.Drawing.Color.Black;
+            this.iconButton_NUebasol.IconChar = FontAwesome.Sharp.IconChar.Plus;
+            this.iconButton_NUebasol.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(207)))), ((int)(((byte)(141)))));
+            this.iconButton_NUebasol.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton_NUebasol.IconSize = 25;
+            this.iconButton_NUebasol.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButton_NUebasol.Location = new System.Drawing.Point(0, 0);
+            this.iconButton_NUebasol.Margin = new System.Windows.Forms.Padding(2);
+            this.iconButton_NUebasol.Name = "iconButton_NUebasol";
+            this.iconButton_NUebasol.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.iconButton_NUebasol.Size = new System.Drawing.Size(114, 44);
+            this.iconButton_NUebasol.TabIndex = 17;
+            this.iconButton_NUebasol.Tag = "Agregar Perfil";
+            this.iconButton_NUebasol.Text = "   Nueva Solicitud";
+            this.iconButton_NUebasol.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButton_NUebasol.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.iconButton_NUebasol.UseVisualStyleBackColor = true;
+            this.iconButton_NUebasol.Click += new System.EventHandler(this.iconButton2_Click);
             // 
             // panel2
             // 
@@ -111,7 +113,7 @@
             // panel_Cabezera
             // 
             this.panel_Cabezera.BackColor = System.Drawing.Color.White;
-            this.panel_Cabezera.Controls.Add(this.iconButton5);
+            this.panel_Cabezera.Controls.Add(this.iconButton_SolicituAsig);
             this.panel_Cabezera.Controls.Add(this.solicitudes1);
             this.panel_Cabezera.Controls.Add(this.iconButton1);
             this.panel_Cabezera.Controls.Add(this.iconButton_Pincipal);
@@ -122,29 +124,29 @@
             this.panel_Cabezera.Size = new System.Drawing.Size(755, 87);
             this.panel_Cabezera.TabIndex = 2;
             // 
-            // iconButton5
+            // iconButton_SolicituAsig
             // 
-            this.iconButton5.FlatAppearance.BorderSize = 0;
-            this.iconButton5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton5.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.iconButton5.ForeColor = System.Drawing.Color.Black;
-            this.iconButton5.IconChar = FontAwesome.Sharp.IconChar.EnvelopeCircleCheck;
-            this.iconButton5.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(207)))), ((int)(((byte)(141)))));
-            this.iconButton5.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton5.IconSize = 25;
-            this.iconButton5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton5.Location = new System.Drawing.Point(368, 0);
-            this.iconButton5.Margin = new System.Windows.Forms.Padding(2);
-            this.iconButton5.Name = "iconButton5";
-            this.iconButton5.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.iconButton5.Size = new System.Drawing.Size(181, 39);
-            this.iconButton5.TabIndex = 19;
-            this.iconButton5.Tag = "Agregar Perfil";
-            this.iconButton5.Text = "   Solicitudes Asignadas";
-            this.iconButton5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton5.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconButton5.UseVisualStyleBackColor = true;
-            this.iconButton5.Click += new System.EventHandler(this.iconButton5_Click);
+            this.iconButton_SolicituAsig.FlatAppearance.BorderSize = 0;
+            this.iconButton_SolicituAsig.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton_SolicituAsig.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.iconButton_SolicituAsig.ForeColor = System.Drawing.Color.Black;
+            this.iconButton_SolicituAsig.IconChar = FontAwesome.Sharp.IconChar.EnvelopeCircleCheck;
+            this.iconButton_SolicituAsig.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(207)))), ((int)(((byte)(141)))));
+            this.iconButton_SolicituAsig.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton_SolicituAsig.IconSize = 25;
+            this.iconButton_SolicituAsig.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButton_SolicituAsig.Location = new System.Drawing.Point(368, 0);
+            this.iconButton_SolicituAsig.Margin = new System.Windows.Forms.Padding(2);
+            this.iconButton_SolicituAsig.Name = "iconButton_SolicituAsig";
+            this.iconButton_SolicituAsig.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.iconButton_SolicituAsig.Size = new System.Drawing.Size(181, 39);
+            this.iconButton_SolicituAsig.TabIndex = 19;
+            this.iconButton_SolicituAsig.Tag = "Agregar Perfil";
+            this.iconButton_SolicituAsig.Text = "   Solicitudes Asignadas";
+            this.iconButton_SolicituAsig.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButton_SolicituAsig.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.iconButton_SolicituAsig.UseVisualStyleBackColor = true;
+            this.iconButton_SolicituAsig.Click += new System.EventHandler(this.iconButton5_Click);
             // 
             // solicitudes1
             // 
@@ -496,6 +498,55 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Nueva Solicitud";
             // 
+            // iconButton_SolAsig
+            // 
+            this.iconButton_SolAsig.FlatAppearance.BorderSize = 0;
+            this.iconButton_SolAsig.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton_SolAsig.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.iconButton_SolAsig.ForeColor = System.Drawing.Color.Black;
+            this.iconButton_SolAsig.IconChar = FontAwesome.Sharp.IconChar.EnvelopeCircleCheck;
+            this.iconButton_SolAsig.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(207)))), ((int)(((byte)(141)))));
+            this.iconButton_SolAsig.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton_SolAsig.IconSize = 25;
+            this.iconButton_SolAsig.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButton_SolAsig.Location = new System.Drawing.Point(368, 0);
+            this.iconButton_SolAsig.Margin = new System.Windows.Forms.Padding(2);
+            this.iconButton_SolAsig.Name = "iconButton_SolAsig";
+            this.iconButton_SolAsig.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.iconButton_SolAsig.Size = new System.Drawing.Size(181, 39);
+            this.iconButton_SolAsig.TabIndex = 19;
+            this.iconButton_SolAsig.Tag = "Agregar Perfil";
+            this.iconButton_SolAsig.Text = "   Solicitudes Asignadas";
+            this.iconButton_SolAsig.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButton_SolAsig.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.iconButton_SolAsig.UseVisualStyleBackColor = true;
+            this.iconButton_SolAsig.Click += new System.EventHandler(this.iconButton5_Click);
+            // 
+            // iconButton_NUeba_sol
+            // 
+            this.iconButton_NUeba_sol.Dock = System.Windows.Forms.DockStyle.Left;
+            this.iconButton_NUeba_sol.FlatAppearance.BorderSize = 0;
+            this.iconButton_NUeba_sol.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton_NUeba_sol.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.iconButton_NUeba_sol.ForeColor = System.Drawing.Color.Black;
+            this.iconButton_NUeba_sol.IconChar = FontAwesome.Sharp.IconChar.Plus;
+            this.iconButton_NUeba_sol.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(207)))), ((int)(((byte)(141)))));
+            this.iconButton_NUeba_sol.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton_NUeba_sol.IconSize = 25;
+            this.iconButton_NUeba_sol.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButton_NUeba_sol.Location = new System.Drawing.Point(0, 0);
+            this.iconButton_NUeba_sol.Margin = new System.Windows.Forms.Padding(2);
+            this.iconButton_NUeba_sol.Name = "iconButton_NUeba_sol";
+            this.iconButton_NUeba_sol.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.iconButton_NUeba_sol.Size = new System.Drawing.Size(114, 44);
+            this.iconButton_NUeba_sol.TabIndex = 17;
+            this.iconButton_NUeba_sol.Tag = "Agregar Perfil";
+            this.iconButton_NUeba_sol.Text = "   Nueva Solicitud";
+            this.iconButton_NUeba_sol.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButton_NUeba_sol.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.iconButton_NUeba_sol.UseVisualStyleBackColor = true;
+            this.iconButton_NUeba_sol.Click += new System.EventHandler(this.iconButton2_Click);
+            // 
             // Soporte
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -530,7 +581,7 @@
         private FontAwesome.Sharp.IconButton iconButton1;
         private FontAwesome.Sharp.IconButton iconButton_Pincipal;
         private System.Windows.Forms.Panel panel_Contendor;
-        private FontAwesome.Sharp.IconButton iconButton2;
+        private FontAwesome.Sharp.IconButton iconButton_NUebasol;
         private System.Windows.Forms.Panel panel_NuevaSolicitud;
         private System.Windows.Forms.TextBox textBox_Asunto;
         private System.Windows.Forms.Panel panel7;
@@ -551,6 +602,8 @@
         private RJCodeAdvance.RJControls.RJComboBox rjComboBox_Area;
         private System.Windows.Forms.Label label6;
         private Solicitudes solicitudes1;
-        private FontAwesome.Sharp.IconButton iconButton5;
+        private FontAwesome.Sharp.IconButton iconButton_SolicituAsig;
+        private FontAwesome.Sharp.IconButton iconButton_SolAsig;
+        private FontAwesome.Sharp.IconButton iconButton_NUeba_sol;
     }
 }

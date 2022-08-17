@@ -73,9 +73,9 @@
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.rjTextBox_Nombre);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(98, 12);
+            this.panel1.Location = new System.Drawing.Point(86, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(600, 439);
+            this.panel1.Size = new System.Drawing.Size(600, 500);
             this.panel1.TabIndex = 0;
             // 
             // label_Error
@@ -83,7 +83,7 @@
             this.label_Error.AutoSize = true;
             this.label_Error.Font = new System.Drawing.Font("Roboto", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_Error.ForeColor = System.Drawing.Color.White;
-            this.label_Error.Location = new System.Drawing.Point(415, 302);
+            this.label_Error.Location = new System.Drawing.Point(415, 336);
             this.label_Error.Name = "label_Error";
             this.label_Error.Size = new System.Drawing.Size(31, 13);
             this.label_Error.TabIndex = 18;
@@ -98,7 +98,7 @@
             this.iconButton_Error.IconColor = System.Drawing.Color.Red;
             this.iconButton_Error.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButton_Error.IconSize = 25;
-            this.iconButton_Error.Location = new System.Drawing.Point(411, 274);
+            this.iconButton_Error.Location = new System.Drawing.Point(411, 308);
             this.iconButton_Error.Name = "iconButton_Error";
             this.iconButton_Error.Size = new System.Drawing.Size(37, 25);
             this.iconButton_Error.TabIndex = 17;
@@ -115,7 +115,7 @@
             this.rjButton2.FlatAppearance.BorderSize = 0;
             this.rjButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.rjButton2.ForeColor = System.Drawing.Color.Black;
-            this.rjButton2.Location = new System.Drawing.Point(425, 236);
+            this.rjButton2.Location = new System.Drawing.Point(425, 270);
             this.rjButton2.Name = "rjButton2";
             this.rjButton2.Size = new System.Drawing.Size(160, 28);
             this.rjButton2.TabIndex = 16;
@@ -133,7 +133,7 @@
             this.rjCircularPictureBox_Foto.BorderSize = 2;
             this.rjCircularPictureBox_Foto.GradientAngle = 50F;
             this.rjCircularPictureBox_Foto.Image = global::Precentacion.Properties.Resources.profile_icon_176363;
-            this.rjCircularPictureBox_Foto.Location = new System.Drawing.Point(425, 70);
+            this.rjCircularPictureBox_Foto.Location = new System.Drawing.Point(425, 104);
             this.rjCircularPictureBox_Foto.Name = "rjCircularPictureBox_Foto";
             this.rjCircularPictureBox_Foto.Size = new System.Drawing.Size(160, 160);
             this.rjCircularPictureBox_Foto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -150,7 +150,7 @@
             this.rjButton1.FlatAppearance.BorderSize = 0;
             this.rjButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.rjButton1.ForeColor = System.Drawing.Color.Black;
-            this.rjButton1.Location = new System.Drawing.Point(45, 378);
+            this.rjButton1.Location = new System.Drawing.Point(45, 412);
             this.rjButton1.Name = "rjButton1";
             this.rjButton1.Size = new System.Drawing.Size(341, 43);
             this.rjButton1.TabIndex = 13;
@@ -175,7 +175,7 @@
             "Usuario"});
             this.rjComboBox_TipoPerfil.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(36)))), ((int)(((byte)(64)))));
             this.rjComboBox_TipoPerfil.ListTextColor = System.Drawing.Color.White;
-            this.rjComboBox_TipoPerfil.Location = new System.Drawing.Point(28, 331);
+            this.rjComboBox_TipoPerfil.Location = new System.Drawing.Point(28, 365);
             this.rjComboBox_TipoPerfil.MinimumSize = new System.Drawing.Size(200, 30);
             this.rjComboBox_TipoPerfil.Name = "rjComboBox_TipoPerfil";
             this.rjComboBox_TipoPerfil.Padding = new System.Windows.Forms.Padding(1);
@@ -188,7 +188,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.Black;
-            this.label7.Location = new System.Drawing.Point(24, 309);
+            this.label7.Location = new System.Drawing.Point(24, 343);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(101, 19);
             this.label7.TabIndex = 11;
@@ -199,7 +199,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.Black;
-            this.label6.Location = new System.Drawing.Point(24, 236);
+            this.label6.Location = new System.Drawing.Point(24, 270);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(90, 19);
             this.label6.TabIndex = 10;
@@ -214,7 +214,7 @@
             this.rjTextBox_Contrasenia.BorderSize = 2;
             this.rjTextBox_Contrasenia.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rjTextBox_Contrasenia.ForeColor = System.Drawing.Color.Black;
-            this.rjTextBox_Contrasenia.Location = new System.Drawing.Point(28, 259);
+            this.rjTextBox_Contrasenia.Location = new System.Drawing.Point(28, 293);
             this.rjTextBox_Contrasenia.Margin = new System.Windows.Forms.Padding(4);
             this.rjTextBox_Contrasenia.Multiline = false;
             this.rjTextBox_Contrasenia.Name = "rjTextBox_Contrasenia";
@@ -232,7 +232,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(24, 176);
+            this.label5.Location = new System.Drawing.Point(24, 210);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(49, 19);
             this.label5.TabIndex = 8;
@@ -247,7 +247,7 @@
             this.rjTextBox_Email.BorderSize = 2;
             this.rjTextBox_Email.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rjTextBox_Email.ForeColor = System.Drawing.Color.Black;
-            this.rjTextBox_Email.Location = new System.Drawing.Point(28, 199);
+            this.rjTextBox_Email.Location = new System.Drawing.Point(28, 233);
             this.rjTextBox_Email.Margin = new System.Windows.Forms.Padding(4);
             this.rjTextBox_Email.Multiline = false;
             this.rjTextBox_Email.Name = "rjTextBox_Email";
@@ -265,7 +265,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(24, 114);
+            this.label4.Location = new System.Drawing.Point(24, 148);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(58, 19);
             this.label4.TabIndex = 6;
@@ -280,7 +280,7 @@
             this.rjTextBox_Cedula.BorderSize = 2;
             this.rjTextBox_Cedula.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rjTextBox_Cedula.ForeColor = System.Drawing.Color.Black;
-            this.rjTextBox_Cedula.Location = new System.Drawing.Point(28, 137);
+            this.rjTextBox_Cedula.Location = new System.Drawing.Point(28, 171);
             this.rjTextBox_Cedula.Margin = new System.Windows.Forms.Padding(4);
             this.rjTextBox_Cedula.Multiline = false;
             this.rjTextBox_Cedula.Name = "rjTextBox_Cedula";
@@ -299,7 +299,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(220, 47);
+            this.label3.Location = new System.Drawing.Point(220, 81);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(66, 19);
             this.label3.TabIndex = 4;
@@ -314,7 +314,7 @@
             this.rjTextBox_Apellido.BorderSize = 2;
             this.rjTextBox_Apellido.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rjTextBox_Apellido.ForeColor = System.Drawing.Color.Black;
-            this.rjTextBox_Apellido.Location = new System.Drawing.Point(224, 70);
+            this.rjTextBox_Apellido.Location = new System.Drawing.Point(224, 104);
             this.rjTextBox_Apellido.Margin = new System.Windows.Forms.Padding(4);
             this.rjTextBox_Apellido.Multiline = false;
             this.rjTextBox_Apellido.Name = "rjTextBox_Apellido";
@@ -333,7 +333,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(24, 47);
+            this.label2.Location = new System.Drawing.Point(24, 81);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(65, 19);
             this.label2.TabIndex = 2;
@@ -348,7 +348,7 @@
             this.rjTextBox_Nombre.BorderSize = 2;
             this.rjTextBox_Nombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rjTextBox_Nombre.ForeColor = System.Drawing.Color.Black;
-            this.rjTextBox_Nombre.Location = new System.Drawing.Point(28, 70);
+            this.rjTextBox_Nombre.Location = new System.Drawing.Point(28, 104);
             this.rjTextBox_Nombre.Margin = new System.Windows.Forms.Padding(4);
             this.rjTextBox_Nombre.Multiline = false;
             this.rjTextBox_Nombre.Name = "rjTextBox_Nombre";
@@ -367,7 +367,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Roboto", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(219, 1);
+            this.label1.Location = new System.Drawing.Point(219, 35);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(139, 25);
             this.label1.TabIndex = 0;
@@ -377,7 +377,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(237)))), ((int)(((byte)(242)))));
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(755, 495);
             this.Controls.Add(this.panel1);
             this.Name = "AgregarPerfil";

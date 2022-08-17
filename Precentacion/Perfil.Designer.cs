@@ -29,7 +29,9 @@
         private void InitializeComponent()
         {
             this.panel_EditarPerfil = new System.Windows.Forms.Panel();
+            this.label_Error = new System.Windows.Forms.Label();
             this.iconButton1 = new FontAwesome.Sharp.IconButton();
+            this.iconButton_Error = new FontAwesome.Sharp.IconButton();
             this.rjButton2 = new RJCodeAdvance.RJControls.RJButton();
             this.rjButton1 = new RJCodeAdvance.RJControls.RJButton();
             this.linkLabel2 = new System.Windows.Forms.LinkLabel();
@@ -57,8 +59,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.rjCircularPictureBox_Foto = new RJCodeAdvance.RJControls.RJCircularPictureBox();
-            this.label_Error = new System.Windows.Forms.Label();
-            this.iconButton_Error = new FontAwesome.Sharp.IconButton();
             this.panel_EditarPerfil.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.rjCircularPictureBox_Foto)).BeginInit();
             this.SuspendLayout();
@@ -93,6 +93,18 @@
             this.panel_EditarPerfil.TabIndex = 26;
             this.panel_EditarPerfil.Visible = false;
             // 
+            // label_Error
+            // 
+            this.label_Error.AutoSize = true;
+            this.label_Error.Font = new System.Drawing.Font("Roboto", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_Error.ForeColor = System.Drawing.Color.White;
+            this.label_Error.Location = new System.Drawing.Point(59, 406);
+            this.label_Error.Name = "label_Error";
+            this.label_Error.Size = new System.Drawing.Size(31, 13);
+            this.label_Error.TabIndex = 49;
+            this.label_Error.Text = "Error";
+            this.label_Error.Visible = false;
+            // 
             // iconButton1
             // 
             this.iconButton1.FlatAppearance.BorderSize = 0;
@@ -107,6 +119,21 @@
             this.iconButton1.TabIndex = 18;
             this.iconButton1.UseVisualStyleBackColor = true;
             this.iconButton1.Click += new System.EventHandler(this.iconButton1_Click);
+            // 
+            // iconButton_Error
+            // 
+            this.iconButton_Error.FlatAppearance.BorderSize = 0;
+            this.iconButton_Error.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton_Error.IconChar = FontAwesome.Sharp.IconChar.Warning;
+            this.iconButton_Error.IconColor = System.Drawing.Color.Red;
+            this.iconButton_Error.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton_Error.IconSize = 25;
+            this.iconButton_Error.Location = new System.Drawing.Point(19, 399);
+            this.iconButton_Error.Name = "iconButton_Error";
+            this.iconButton_Error.Size = new System.Drawing.Size(37, 25);
+            this.iconButton_Error.TabIndex = 48;
+            this.iconButton_Error.UseVisualStyleBackColor = true;
+            this.iconButton_Error.Visible = false;
             // 
             // rjButton2
             // 
@@ -128,6 +155,7 @@
             this.rjButton2.Text = "Cancelar";
             this.rjButton2.TextColor = System.Drawing.Color.White;
             this.rjButton2.UseVisualStyleBackColor = false;
+            this.rjButton2.Click += new System.EventHandler(this.rjButton2_Click);
             // 
             // rjButton1
             // 
@@ -569,33 +597,6 @@
             this.rjCircularPictureBox_Foto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.rjCircularPictureBox_Foto.TabIndex = 47;
             this.rjCircularPictureBox_Foto.TabStop = false;
-            // 
-            // label_Error
-            // 
-            this.label_Error.AutoSize = true;
-            this.label_Error.Font = new System.Drawing.Font("Roboto", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Error.ForeColor = System.Drawing.Color.White;
-            this.label_Error.Location = new System.Drawing.Point(59, 406);
-            this.label_Error.Name = "label_Error";
-            this.label_Error.Size = new System.Drawing.Size(31, 13);
-            this.label_Error.TabIndex = 49;
-            this.label_Error.Text = "Error";
-            this.label_Error.Visible = false;
-            // 
-            // iconButton_Error
-            // 
-            this.iconButton_Error.FlatAppearance.BorderSize = 0;
-            this.iconButton_Error.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton_Error.IconChar = FontAwesome.Sharp.IconChar.Warning;
-            this.iconButton_Error.IconColor = System.Drawing.Color.Red;
-            this.iconButton_Error.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton_Error.IconSize = 25;
-            this.iconButton_Error.Location = new System.Drawing.Point(19, 399);
-            this.iconButton_Error.Name = "iconButton_Error";
-            this.iconButton_Error.Size = new System.Drawing.Size(37, 25);
-            this.iconButton_Error.TabIndex = 48;
-            this.iconButton_Error.UseVisualStyleBackColor = true;
-            this.iconButton_Error.Visible = false;
             // 
             // Perfil
             // 

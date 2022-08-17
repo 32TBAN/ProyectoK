@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.iconButton1 = new FontAwesome.Sharp.IconButton();
-            this.iconButton4 = new FontAwesome.Sharp.IconButton();
+            this.iconButton_Eliminar = new FontAwesome.Sharp.IconButton();
             this.label_Asunto = new System.Windows.Forms.Label();
             this.label_Descrpcion = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.iconButton2 = new FontAwesome.Sharp.IconButton();
+            this.iconButton_Editar = new FontAwesome.Sharp.IconButton();
             this.iconButton3 = new FontAwesome.Sharp.IconButton();
             this.iconButton_Imprimir = new FontAwesome.Sharp.IconButton();
             this.rjCircularPictureBox_perfil = new RJCodeAdvance.RJControls.RJCircularPictureBox();
@@ -110,20 +110,20 @@
             this.iconButton1.UseVisualStyleBackColor = true;
             this.iconButton1.Click += new System.EventHandler(this.iconButton1_Click);
             // 
-            // iconButton4
+            // iconButton_Eliminar
             // 
-            this.iconButton4.FlatAppearance.BorderSize = 0;
-            this.iconButton4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton4.IconChar = FontAwesome.Sharp.IconChar.TrashAlt;
-            this.iconButton4.IconColor = System.Drawing.Color.Black;
-            this.iconButton4.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton4.IconSize = 20;
-            this.iconButton4.Location = new System.Drawing.Point(46, 0);
-            this.iconButton4.Name = "iconButton4";
-            this.iconButton4.Size = new System.Drawing.Size(33, 27);
-            this.iconButton4.TabIndex = 6;
-            this.iconButton4.UseVisualStyleBackColor = true;
-            this.iconButton4.Click += new System.EventHandler(this.iconButton4_Click);
+            this.iconButton_Eliminar.FlatAppearance.BorderSize = 0;
+            this.iconButton_Eliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton_Eliminar.IconChar = FontAwesome.Sharp.IconChar.TrashAlt;
+            this.iconButton_Eliminar.IconColor = System.Drawing.Color.Black;
+            this.iconButton_Eliminar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton_Eliminar.IconSize = 20;
+            this.iconButton_Eliminar.Location = new System.Drawing.Point(46, 0);
+            this.iconButton_Eliminar.Name = "iconButton_Eliminar";
+            this.iconButton_Eliminar.Size = new System.Drawing.Size(33, 27);
+            this.iconButton_Eliminar.TabIndex = 6;
+            this.iconButton_Eliminar.UseVisualStyleBackColor = true;
+            this.iconButton_Eliminar.Click += new System.EventHandler(this.iconButton4_Click);
             // 
             // label_Asunto
             // 
@@ -155,20 +155,20 @@
             this.label2.TabIndex = 9;
             this.label2.Text = "Para mi";
             // 
-            // iconButton2
+            // iconButton_Editar
             // 
-            this.iconButton2.FlatAppearance.BorderSize = 0;
-            this.iconButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton2.IconChar = FontAwesome.Sharp.IconChar.Pen;
-            this.iconButton2.IconColor = System.Drawing.Color.Black;
-            this.iconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton2.IconSize = 20;
-            this.iconButton2.Location = new System.Drawing.Point(82, 0);
-            this.iconButton2.Name = "iconButton2";
-            this.iconButton2.Size = new System.Drawing.Size(33, 27);
-            this.iconButton2.TabIndex = 10;
-            this.iconButton2.UseVisualStyleBackColor = true;
-            this.iconButton2.Click += new System.EventHandler(this.iconButton2_Click);
+            this.iconButton_Editar.FlatAppearance.BorderSize = 0;
+            this.iconButton_Editar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton_Editar.IconChar = FontAwesome.Sharp.IconChar.Pen;
+            this.iconButton_Editar.IconColor = System.Drawing.Color.Black;
+            this.iconButton_Editar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton_Editar.IconSize = 20;
+            this.iconButton_Editar.Location = new System.Drawing.Point(82, 0);
+            this.iconButton_Editar.Name = "iconButton_Editar";
+            this.iconButton_Editar.Size = new System.Drawing.Size(33, 27);
+            this.iconButton_Editar.TabIndex = 10;
+            this.iconButton_Editar.UseVisualStyleBackColor = true;
+            this.iconButton_Editar.Click += new System.EventHandler(this.iconButton2_Click);
             // 
             // iconButton3
             // 
@@ -848,11 +848,11 @@
             this.Controls.Add(this.rjCircularPictureBox_perfil);
             this.Controls.Add(this.iconButton_Imprimir);
             this.Controls.Add(this.iconButton3);
-            this.Controls.Add(this.iconButton2);
+            this.Controls.Add(this.iconButton_Editar);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label_Descrpcion);
             this.Controls.Add(this.label_Asunto);
-            this.Controls.Add(this.iconButton4);
+            this.Controls.Add(this.iconButton_Eliminar);
             this.Controls.Add(this.iconButton1);
             this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.Name = "Calificar";
@@ -879,11 +879,11 @@
         #endregion
 
         private FontAwesome.Sharp.IconButton iconButton1;
-        private FontAwesome.Sharp.IconButton iconButton4;
+        private FontAwesome.Sharp.IconButton iconButton_Eliminar;
         private System.Windows.Forms.Label label_Asunto;
         private System.Windows.Forms.Label label_Descrpcion;
         private System.Windows.Forms.Label label2;
-        private FontAwesome.Sharp.IconButton iconButton2;
+        private FontAwesome.Sharp.IconButton iconButton_Editar;
         private FontAwesome.Sharp.IconButton iconButton3;
         private FontAwesome.Sharp.IconButton iconButton_Imprimir;
         private RJCodeAdvance.RJControls.RJCircularPictureBox rjCircularPictureBox_perfil;

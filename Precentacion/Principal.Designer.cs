@@ -32,10 +32,11 @@
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Principal));
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel_C = new System.Windows.Forms.Panel();
-            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.chart_IngresoFecha = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.label1 = new System.Windows.Forms.Label();
             this.label_Bienvenida = new System.Windows.Forms.Label();
             this.label_Hora = new System.Windows.Forms.Label();
@@ -46,11 +47,11 @@
             this.iconButton2 = new FontAwesome.Sharp.IconButton();
             this.iconButton4 = new FontAwesome.Sharp.IconButton();
             this.panel_Menu = new System.Windows.Forms.Panel();
-            this.iconButton7 = new FontAwesome.Sharp.IconButton();
-            this.iconButton1 = new FontAwesome.Sharp.IconButton();
+            this.iconButton_revisar = new FontAwesome.Sharp.IconButton();
+            this.iconButton_ASIGNAR = new FontAwesome.Sharp.IconButton();
             this.iconButton8 = new FontAwesome.Sharp.IconButton();
             this.iconButton6 = new FontAwesome.Sharp.IconButton();
-            this.iconButton5 = new FontAwesome.Sharp.IconButton();
+            this.iconButton_Agregar = new FontAwesome.Sharp.IconButton();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label_Nombre = new System.Windows.Forms.Label();
             this.label_Permisos = new System.Windows.Forms.Label();
@@ -60,7 +61,7 @@
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel1.SuspendLayout();
             this.panel_C.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chart_IngresoFecha)).BeginInit();
             this.panel3.SuspendLayout();
             this.panel_Menu.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -82,7 +83,7 @@
             // panel_C
             // 
             this.panel_C.BackColor = System.Drawing.Color.White;
-            this.panel_C.Controls.Add(this.chart1);
+            this.panel_C.Controls.Add(this.chart_IngresoFecha);
             this.panel_C.Controls.Add(this.label1);
             this.panel_C.Controls.Add(this.label_Bienvenida);
             this.panel_C.Controls.Add(this.label_Hora);
@@ -94,22 +95,42 @@
             this.panel_C.Size = new System.Drawing.Size(714, 634);
             this.panel_C.TabIndex = 20;
             // 
-            // chart1
+            // chart_IngresoFecha
             // 
-            this.chart1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.chart_IngresoFecha.Anchor = System.Windows.Forms.AnchorStyles.None;
+            chartArea1.AxisX.IsMarginVisible = false;
+            chartArea1.AxisX.LineWidth = 0;
+            chartArea1.AxisX.MajorGrid.LineWidth = 0;
+            chartArea1.AxisX.MajorTickMark.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(207)))), ((int)(((byte)(141)))));
+            chartArea1.AxisX.MajorTickMark.Size = 3F;
+            chartArea1.AxisX.ScaleBreakStyle.LineColor = System.Drawing.Color.White;
+            chartArea1.AxisY.IsMarginVisible = false;
+            chartArea1.AxisY.LabelStyle.Format = "${0:0,}k";
+            chartArea1.AxisY.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(207)))), ((int)(((byte)(141)))));
+            chartArea1.BackColor = System.Drawing.Color.White;
             chartArea1.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea1);
+            this.chart_IngresoFecha.ChartAreas.Add(chartArea1);
+            legend1.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Top;
             legend1.Name = "Legend1";
-            this.chart1.Legends.Add(legend1);
-            this.chart1.Location = new System.Drawing.Point(10, 137);
-            this.chart1.Name = "chart1";
+            this.chart_IngresoFecha.Legends.Add(legend1);
+            this.chart_IngresoFecha.Location = new System.Drawing.Point(10, 137);
+            this.chart_IngresoFecha.Name = "chart_IngresoFecha";
+            series1.BackGradientStyle = System.Windows.Forms.DataVisualization.Charting.GradientStyle.LeftRight;
+            series1.BackSecondaryColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(207)))), ((int)(((byte)(141)))));
+            series1.BorderColor = System.Drawing.Color.White;
+            series1.BorderWidth = 3;
             series1.ChartArea = "ChartArea1";
+            series1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(89)))));
             series1.Legend = "Legend1";
             series1.Name = "Series1";
-            this.chart1.Series.Add(series1);
-            this.chart1.Size = new System.Drawing.Size(692, 444);
-            this.chart1.TabIndex = 15;
-            this.chart1.Text = "chart1";
+            this.chart_IngresoFecha.Series.Add(series1);
+            this.chart_IngresoFecha.Size = new System.Drawing.Size(692, 431);
+            this.chart_IngresoFecha.TabIndex = 15;
+            title1.Alignment = System.Drawing.ContentAlignment.MiddleLeft;
+            title1.Font = new System.Drawing.Font("Roboto Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            title1.Name = "Title1";
+            title1.Text = "Ingresos en los ultimos 7 días";
+            this.chart_IngresoFecha.Titles.Add(title1);
             // 
             // label1
             // 
@@ -138,7 +159,7 @@
             this.label_Hora.AutoSize = true;
             this.label_Hora.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_Hora.ForeColor = System.Drawing.Color.Black;
-            this.label_Hora.Location = new System.Drawing.Point(537, 34);
+            this.label_Hora.Location = new System.Drawing.Point(537, 43);
             this.label_Hora.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label_Hora.Name = "label_Hora";
             this.label_Hora.Size = new System.Drawing.Size(52, 19);
@@ -151,7 +172,7 @@
             this.label_fecha.AutoSize = true;
             this.label_fecha.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_fecha.ForeColor = System.Drawing.Color.Black;
-            this.label_fecha.Location = new System.Drawing.Point(494, 2);
+            this.label_fecha.Location = new System.Drawing.Point(494, 11);
             this.label_fecha.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label_fecha.Name = "label_fecha";
             this.label_fecha.Size = new System.Drawing.Size(52, 19);
@@ -252,11 +273,11 @@
             // panel_Menu
             // 
             this.panel_Menu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(89)))));
-            this.panel_Menu.Controls.Add(this.iconButton7);
-            this.panel_Menu.Controls.Add(this.iconButton1);
+            this.panel_Menu.Controls.Add(this.iconButton_revisar);
+            this.panel_Menu.Controls.Add(this.iconButton_ASIGNAR);
             this.panel_Menu.Controls.Add(this.iconButton8);
             this.panel_Menu.Controls.Add(this.iconButton6);
-            this.panel_Menu.Controls.Add(this.iconButton5);
+            this.panel_Menu.Controls.Add(this.iconButton_Agregar);
             this.panel_Menu.Controls.Add(this.panel4);
             this.panel_Menu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel_Menu.Location = new System.Drawing.Point(0, 0);
@@ -265,55 +286,55 @@
             this.panel_Menu.Size = new System.Drawing.Size(230, 661);
             this.panel_Menu.TabIndex = 18;
             // 
-            // iconButton7
+            // iconButton_revisar
             // 
-            this.iconButton7.Dock = System.Windows.Forms.DockStyle.Top;
-            this.iconButton7.FlatAppearance.BorderSize = 0;
-            this.iconButton7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton7.Font = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.iconButton7.ForeColor = System.Drawing.Color.White;
-            this.iconButton7.IconChar = FontAwesome.Sharp.IconChar.Clipboard;
-            this.iconButton7.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(207)))), ((int)(((byte)(141)))));
-            this.iconButton7.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton7.IconSize = 30;
-            this.iconButton7.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton7.Location = new System.Drawing.Point(0, 250);
-            this.iconButton7.Margin = new System.Windows.Forms.Padding(2);
-            this.iconButton7.Name = "iconButton7";
-            this.iconButton7.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.iconButton7.Size = new System.Drawing.Size(230, 60);
-            this.iconButton7.TabIndex = 20;
-            this.iconButton7.Tag = "Revisión Asignaciones";
-            this.iconButton7.Text = "   Revisión Asignaciones";
-            this.iconButton7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton7.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconButton7.UseVisualStyleBackColor = true;
-            this.iconButton7.Click += new System.EventHandler(this.iconButton7_Click);
+            this.iconButton_revisar.Dock = System.Windows.Forms.DockStyle.Top;
+            this.iconButton_revisar.FlatAppearance.BorderSize = 0;
+            this.iconButton_revisar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton_revisar.Font = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.iconButton_revisar.ForeColor = System.Drawing.Color.White;
+            this.iconButton_revisar.IconChar = FontAwesome.Sharp.IconChar.Clipboard;
+            this.iconButton_revisar.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(207)))), ((int)(((byte)(141)))));
+            this.iconButton_revisar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton_revisar.IconSize = 30;
+            this.iconButton_revisar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButton_revisar.Location = new System.Drawing.Point(0, 250);
+            this.iconButton_revisar.Margin = new System.Windows.Forms.Padding(2);
+            this.iconButton_revisar.Name = "iconButton_revisar";
+            this.iconButton_revisar.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.iconButton_revisar.Size = new System.Drawing.Size(230, 60);
+            this.iconButton_revisar.TabIndex = 20;
+            this.iconButton_revisar.Tag = "Revisión Asignaciones";
+            this.iconButton_revisar.Text = "   Revisión Asignaciones";
+            this.iconButton_revisar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButton_revisar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.iconButton_revisar.UseVisualStyleBackColor = true;
+            this.iconButton_revisar.Click += new System.EventHandler(this.iconButton7_Click);
             // 
-            // iconButton1
+            // iconButton_ASIGNAR
             // 
-            this.iconButton1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.iconButton1.FlatAppearance.BorderSize = 0;
-            this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton1.Font = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.iconButton1.ForeColor = System.Drawing.Color.White;
-            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.Envelope;
-            this.iconButton1.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(207)))), ((int)(((byte)(141)))));
-            this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton1.IconSize = 30;
-            this.iconButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton1.Location = new System.Drawing.Point(0, 190);
-            this.iconButton1.Margin = new System.Windows.Forms.Padding(2);
-            this.iconButton1.Name = "iconButton1";
-            this.iconButton1.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.iconButton1.Size = new System.Drawing.Size(230, 60);
-            this.iconButton1.TabIndex = 19;
-            this.iconButton1.Tag = "Asignar Solicitud";
-            this.iconButton1.Text = "   Asignar Solicitud";
-            this.iconButton1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconButton1.UseVisualStyleBackColor = true;
-            this.iconButton1.Click += new System.EventHandler(this.iconButton1_Click_1);
+            this.iconButton_ASIGNAR.Dock = System.Windows.Forms.DockStyle.Top;
+            this.iconButton_ASIGNAR.FlatAppearance.BorderSize = 0;
+            this.iconButton_ASIGNAR.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton_ASIGNAR.Font = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.iconButton_ASIGNAR.ForeColor = System.Drawing.Color.White;
+            this.iconButton_ASIGNAR.IconChar = FontAwesome.Sharp.IconChar.Envelope;
+            this.iconButton_ASIGNAR.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(207)))), ((int)(((byte)(141)))));
+            this.iconButton_ASIGNAR.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton_ASIGNAR.IconSize = 30;
+            this.iconButton_ASIGNAR.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButton_ASIGNAR.Location = new System.Drawing.Point(0, 190);
+            this.iconButton_ASIGNAR.Margin = new System.Windows.Forms.Padding(2);
+            this.iconButton_ASIGNAR.Name = "iconButton_ASIGNAR";
+            this.iconButton_ASIGNAR.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.iconButton_ASIGNAR.Size = new System.Drawing.Size(230, 60);
+            this.iconButton_ASIGNAR.TabIndex = 19;
+            this.iconButton_ASIGNAR.Tag = "Asignar Solicitud";
+            this.iconButton_ASIGNAR.Text = "   Asignar Solicitud";
+            this.iconButton_ASIGNAR.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButton_ASIGNAR.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.iconButton_ASIGNAR.UseVisualStyleBackColor = true;
+            this.iconButton_ASIGNAR.Click += new System.EventHandler(this.iconButton1_Click_1);
             // 
             // iconButton8
             // 
@@ -365,30 +386,30 @@
             this.iconButton6.UseVisualStyleBackColor = true;
             this.iconButton6.Click += new System.EventHandler(this.iconButton6_Click);
             // 
-            // iconButton5
+            // iconButton_Agregar
             // 
-            this.iconButton5.Dock = System.Windows.Forms.DockStyle.Top;
-            this.iconButton5.FlatAppearance.BorderSize = 0;
-            this.iconButton5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton5.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.iconButton5.ForeColor = System.Drawing.Color.White;
-            this.iconButton5.IconChar = FontAwesome.Sharp.IconChar.User;
-            this.iconButton5.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(207)))), ((int)(((byte)(141)))));
-            this.iconButton5.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton5.IconSize = 30;
-            this.iconButton5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton5.Location = new System.Drawing.Point(0, 70);
-            this.iconButton5.Margin = new System.Windows.Forms.Padding(2);
-            this.iconButton5.Name = "iconButton5";
-            this.iconButton5.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.iconButton5.Size = new System.Drawing.Size(230, 60);
-            this.iconButton5.TabIndex = 15;
-            this.iconButton5.Tag = "Agregar Perfil";
-            this.iconButton5.Text = "   Agregar Perfil";
-            this.iconButton5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton5.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconButton5.UseVisualStyleBackColor = true;
-            this.iconButton5.Click += new System.EventHandler(this.iconButton5_Click);
+            this.iconButton_Agregar.Dock = System.Windows.Forms.DockStyle.Top;
+            this.iconButton_Agregar.FlatAppearance.BorderSize = 0;
+            this.iconButton_Agregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton_Agregar.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.iconButton_Agregar.ForeColor = System.Drawing.Color.White;
+            this.iconButton_Agregar.IconChar = FontAwesome.Sharp.IconChar.User;
+            this.iconButton_Agregar.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(207)))), ((int)(((byte)(141)))));
+            this.iconButton_Agregar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton_Agregar.IconSize = 30;
+            this.iconButton_Agregar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButton_Agregar.Location = new System.Drawing.Point(0, 70);
+            this.iconButton_Agregar.Margin = new System.Windows.Forms.Padding(2);
+            this.iconButton_Agregar.Name = "iconButton_Agregar";
+            this.iconButton_Agregar.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.iconButton_Agregar.Size = new System.Drawing.Size(230, 60);
+            this.iconButton_Agregar.TabIndex = 15;
+            this.iconButton_Agregar.Tag = "Agregar Perfil";
+            this.iconButton_Agregar.Text = "   Agregar Perfil";
+            this.iconButton_Agregar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButton_Agregar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.iconButton_Agregar.UseVisualStyleBackColor = true;
+            this.iconButton_Agregar.Click += new System.EventHandler(this.iconButton5_Click);
             // 
             // panel4
             // 
@@ -498,7 +519,7 @@
             this.panel1.ResumeLayout(false);
             this.panel_C.ResumeLayout(false);
             this.panel_C.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chart_IngresoFecha)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel_Menu.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
@@ -520,7 +541,7 @@
         private FontAwesome.Sharp.IconButton iconButton4;
         private System.Windows.Forms.Panel panel_Menu;
         private System.Windows.Forms.Timer timer1;
-        private FontAwesome.Sharp.IconButton iconButton5;
+        private FontAwesome.Sharp.IconButton iconButton_Agregar;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label label_Nombre;
         private System.Windows.Forms.Label label_Permisos;
@@ -530,10 +551,10 @@
         private FontAwesome.Sharp.IconButton iconButton6;
         private FontAwesome.Sharp.IconButton iconButton8;
         private FontAwesome.Sharp.IconButton iconButton_Form;
-        private FontAwesome.Sharp.IconButton iconButton1;
+        private FontAwesome.Sharp.IconButton iconButton_ASIGNAR;
         private System.Windows.Forms.Label label_Bienvenida;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
-        private FontAwesome.Sharp.IconButton iconButton7;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chart_IngresoFecha;
+        private FontAwesome.Sharp.IconButton iconButton_revisar;
     }
 }
