@@ -15,8 +15,6 @@ using iTextSharp.text;
 using iTextSharp.text.pdf;
 using iTextSharp.tool.xml;
 using Image = System.Drawing.Image;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
-using iTextSharp.tool.xml.html;
 
 namespace Precentacion
 {
@@ -310,17 +308,25 @@ namespace Precentacion
         }
         private void iconButton4_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Esta seguro que desea eliminar esta solicitud?","Eliminar",MessageBoxButtons.YesNo,
-                MessageBoxIcon.Question) == DialogResult.Yes)
+            try
             {
-                if (SolicitudNegocio.EliminarSolicitud(solicitudEntidad.Id))
+                if (MessageBox.Show("Esta seguro que desea eliminar esta solicitud?", "Eliminar", MessageBoxButtons.YesNo,
+                              MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    MessageBox.Show("Se ha eliminado");
-                    this.Close();
-                }  
-                else
-                    MessageBox.Show("No se ha podido eliminar");
+                    if (SolicitudNegocio.EliminarSolicitud(solicitudEntidad.Id))
+                    {
+                        MessageBox.Show("Se ha eliminado");
+                        this.Close();
+                    }
+                    else
+                        MessageBox.Show("No se ha podido eliminar");
+                }
             }
+            catch (Exception)
+            {
+                MessageBox.Show("No se puede eliminar esta solictud por que ya esta en proceso");
+            }
+          
         }
 
         private void iconButton7_Click(object sender, EventArgs e)

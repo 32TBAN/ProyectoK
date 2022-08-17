@@ -193,6 +193,7 @@ namespace Precentacion
                     asignacion.Respuesta = "";
                     asignacion.Terminada = false;
                     asignacion.Total = 0;
+                    AsignacionesEntidad asignacionesRespaldo = asignacion;
                     asignacion = AsignacionNegocio.Guardar(asignacion);
                     item.IdTecnico = usuarioSeleccionado.Id;
                     item.Estado = 1;
@@ -200,7 +201,7 @@ namespace Precentacion
                     if (asignacion == null)
                     {
                         MessageBox.Show("Error al asignar la solicitud"+" "+asignacion.IdSolicitud);
-             
+                        asignacion = asignacionesRespaldo;
                     }
                 }
                 MessageBox.Show("Se han asignado tadas las solicitudes");

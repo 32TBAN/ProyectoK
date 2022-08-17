@@ -76,7 +76,7 @@ namespace Precentacion
                 usuarioEntidad.Nombre = rjTextBox_Nombre.Texts;
                 usuarioEntidad.Apellido = rjTextBox_Apellido.Texts;
                 usuarioEntidad.Email = rjTextBox_Email.Texts;
-                usuarioEntidad.Contraseña = rjTextBox_Contrasenia.Texts;
+                usuarioEntidad.Contraseña = rjTextBox_NuevaC.Texts;
                 usuarioEntidad.Foto = CargarImagen();
 
                 UsuarioEntidad usuarioEntidadRespadlo = usuarioEntidad;
@@ -86,6 +86,7 @@ namespace Precentacion
                 {
                     MessageBox.Show("Se ha Editado");
                     OcultarComponentes();
+                    CargarDatos();
                 }
                 else
                 {
@@ -125,7 +126,7 @@ namespace Precentacion
             }
             else if (editarC)
             {
-                if (rjTextBox_NuevaC.Texts == rjTextBox_Confirmar.Texts)
+                if (rjTextBox_NuevaC.Texts != rjTextBox_Confirmar.Texts)
                 {
                     MostrarError(1);
                     return false;
@@ -168,6 +169,14 @@ namespace Precentacion
         private void rjButton2_Click(object sender, EventArgs e)
         {
             panel_EditarPerfil.Visible = false;
+        }
+
+        private void rjTextBox_Apellido_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(char.IsLetter(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
+            {
+                e.Handled = true;
+            }
         }
     }
 }

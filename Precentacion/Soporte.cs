@@ -30,7 +30,7 @@ namespace Precentacion
 
         private void CargarPermisos()
         {
-            if (usuarioEntidad.Perfil == "Usuarios")
+            if (usuarioEntidad.Perfil == "Usuario")
                 iconButton_SolicituAsig.Visible = false;
             else
                 iconButton_NUebasol.Visible = false;

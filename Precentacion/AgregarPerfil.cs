@@ -153,12 +153,20 @@ namespace Precentacion
 
         private void rjButton2_Click(object sender, EventArgs e)
         {
-            OpenFileDialog of = new OpenFileDialog();
-            DialogResult dr = of.ShowDialog();
-            if (dr == DialogResult.OK)
+            try
             {
-                rjCircularPictureBox_Foto.Image = Image.FromFile(of.FileName);
+                OpenFileDialog of = new OpenFileDialog();
+                DialogResult dr = of.ShowDialog();
+                if (dr == DialogResult.OK)
+                {
+                    rjCircularPictureBox_Foto.Image = Image.FromFile(of.FileName);
+                }
             }
+            catch (Exception)
+            {
+                MessageBox.Show("Error en el tipo de imagen");
+            }
+
         }
 
         private void rjTextBox_Apellido_KeyPress(object sender, KeyPressEventArgs e)

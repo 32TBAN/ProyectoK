@@ -60,8 +60,7 @@ namespace Datos
             }
             catch (Exception)
             {
-
-                throw;
+                return false;
             }
         }
 
@@ -88,8 +87,7 @@ namespace Datos
             }
 			catch (Exception)
 			{
-
-				throw;
+                return null;
 			}
         }
 
@@ -134,8 +132,7 @@ namespace Datos
             }
             catch (Exception)
             {
-
-                throw;
+                return null;
             }
         }
 

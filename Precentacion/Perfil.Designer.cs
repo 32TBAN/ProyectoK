@@ -389,6 +389,7 @@
             this.rjTextBox_Apellido.TabIndex = 4;
             this.rjTextBox_Apellido.Texts = "";
             this.rjTextBox_Apellido.UnderlinedStyle = false;
+            this.rjTextBox_Apellido.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.rjTextBox_Apellido_KeyPress);
             // 
             // label6
             // 
@@ -430,6 +431,7 @@
             this.rjTextBox_Nombre.TabIndex = 2;
             this.rjTextBox_Nombre.Texts = "";
             this.rjTextBox_Nombre.UnderlinedStyle = false;
+            this.rjTextBox_Nombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.rjTextBox_Apellido_KeyPress);
             // 
             // label4
             // 
